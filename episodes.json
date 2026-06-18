@@ -17,26 +17,29 @@
       "label": "02",
       "title": "Blood Transfusion",
       "date": "April 2026",
-      "summary": "The birth of blood transfusion — from early concepts to future directions in cardiothoracic surgery.",
+      "summary": "Blood product use in cardiac surgery — the full arc of transfusion, from ancient ideas about blood to modern blood management in the cardiac OR.",
       "apple_episode_id": "1000763178589",
       "notes": [
-        "1665 — Richard Lower performs the first documented transfusion between animals (dog to dog).",
-        "1818 — James Blundell carries out the first successful human-to-human transfusion, for postpartum hemorrhage.",
-        "1901 — Karl Landsteiner describes the ABO blood groups, explaining fatal mismatches and making transfusion safe (Nobel Prize, 1930).",
-        "1914–1916 — Sodium-citrate anticoagulation (Hustin, Agote, Lewisohn) ends the need for direct donor-to-recipient transfusion; Rous & Turner add citrate-glucose storage.",
-        "1937 — Bernard Fantus opens the first U.S. “blood bank” at Cook County Hospital, Chicago; WWII drives large-scale plasma banking (Charles Drew).",
-        "Modern era — component therapy, additive storage solutions, and patient blood management / blood conservation in the cardiac OR."
+        "Opens with Surgeon General Leonard D. Heaton's reflection from the 1964 Blood Program in World War II — transfusion as miraculous, yet lethal without precision.",
+        "Ancient roots: blood in Egyptian medicine (Ebers Papyrus, ~1550 BCE) and the humoral tradition of Hippocrates and Galen.",
+        "The Renaissance turn: Vesalius (De humani corporis fabrica, 1543), Harvey's circulation (1628), and Richard Lower's first animal-to-animal transfusion (Oxford, 1665).",
+        "First human transfusions: James Blundell's 1818 success for postpartum hemorrhage (Medical and Physical Journal); George Crile's first direct human-to-human transfusion (1905).",
+        "The three pillars of safe transfusion: Landsteiner's ABO groups (1901), sodium-citrate anticoagulation (Hustin 1914, Agote, Lewisohn), and Rous–Turner dextrose storage.",
+        "War as accelerator: Oswald Robertson's WWI blood depot (France, 1917), Cohn plasma fractionation (1946), and WWII's 'Blood for Britain' — with Charles Drew, who resigned over segregated-blood policy.",
+        "Into cardiac surgery: from liberal whole blood in the early bypass era to component therapy, cell salvage, antifibrinolytics (TXA, aminocaproic acid, aprotinin), and point-of-care testing (TEG, ROTEM).",
+        "The evidence and the ethos: restrictive-transfusion trials (TRICC, TRACS, TITRe2, FOCUS, CRASH-2), the STS/SCA blood-conservation guidelines, and patient blood management today."
       ],
       "references": [
+        "Kendrick DB. Blood Program in World War II. Washington, DC: Office of the Surgeon General, U.S. Army; 1964.",
         "Giangrande PLF. The history of blood transfusion. Br J Haematol. 2000;110(4):758–767.",
-        "Learoyd P. The history of blood transfusion prior to the 20th century. Transfus Med. 2012;22(5):308–314.",
         "Landsteiner K. Über Agglutinationserscheinungen normalen menschlichen Blutes. Wien Klin Wochenschr. 1901;14:1132–1134.",
-        "Lewisohn R. A new and greatly simplified method of blood transfusion. Med Rec. 1915;87:141–142."
+        "Hébert PC, et al. A multicenter, randomized, controlled clinical trial of transfusion requirements in critical care (TRICC). N Engl J Med. 1999;340(6):409–417.",
+        "Ferraris VA, et al. 2011 Update to the STS and SCA Blood Conservation Clinical Practice Guidelines. Ann Thorac Surg. 2011;91(3):944–982."
       ],
       "resources": [
+        { "label": "2011 STS/SCA Blood Conservation Clinical Practice Guidelines — Annals of Thoracic Surgery", "url": "https://www.annalsthoracicsurgery.org/article/S0003-4975(10)02888-2/fulltext" },
         { "label": "A Brief History of Blood Transfusion — Stanford Blood Center", "url": "https://stanfordbloodcenter.org/a-brief-history-of-blood-transfusion-through-the-years/" },
-        { "label": "Transfusion Medicine History — AABB", "url": "https://www.aabb.org/blood-biotherapies/blood/transfusion-medicine/transfusion-medicine-resources/transfusion-medicine-history" },
-        { "label": "History of Blood Transfusion — American Red Cross", "url": "https://www.redcrossblood.org/donate-blood/blood-donation-process/what-happens-to-donated-blood/blood-transfusions/history-blood-transfusion.html" }
+        { "label": "Transfusion Medicine History — AABB", "url": "https://www.aabb.org/blood-biotherapies/blood/transfusion-medicine/transfusion-medicine-resources/transfusion-medicine-history" }
       ]
     },
     {
@@ -44,27 +47,28 @@
       "label": "01",
       "title": "Norman Shumway and the Birth of Heart Transplantation",
       "date": "April 2026",
-      "summary": "A brief look into the life and career of Dr. Norman Shumway — from small beginnings in southeastern Michigan to being dubbed the Father of Heart Transplantation, a titan of medical history.",
+      "summary": "A look into the life and career of Dr. Norman Shumway — the man often called the Father of heart transplantation — and the race, the backlash, and the revival that followed.",
       "apple_episode_id": "1000762171284",
       "notes": [
-        "Norman Shumway (1923–2006), trained at the University of Minnesota, built the experimental foundation of heart transplantation at Stanford with Richard Lower.",
-        "1959–1960 — Lower & Shumway perfect orthotopic canine heart transplantation, showing a transplanted heart could resume normal function.",
-        "Dec 3, 1967 — Christiaan Barnard performs the first human heart transplant in Cape Town, using the technique pioneered by Lower & Shumway.",
-        "Jan 6, 1968 — Shumway performs the first adult heart transplant in the United States at Stanford (patient Mike Kasperak).",
-        "Early enthusiasm gave way to a near-moratorium as rejection and infection produced dismal survival.",
-        "Stanford's persistence — endomyocardial biopsy for rejection surveillance (Caves, 1973) and, later, cyclosporine — revived transplantation as durable therapy in the 1980s.",
-        "Shumway is widely remembered as the “father of heart transplantation.”"
+        "Frames the 'race' to the first human heart transplant — Christiaan Barnard, Norman Shumway, Richard Lower, and Adrian Kantrowitz — as chronicled in Donald McRae's Every Second Counts.",
+        "Shumway's roots: born in Kalamazoo, Michigan (1923); routed into medicine through the Army Specialized Training Program; medical school at Vanderbilt (1945).",
+        "Surgical training at the University of Minnesota under Wangensteen, Walt Lillehei, and John Lewis — assisting Lillehei's first cross-circulation, with PhD work in hypothermia.",
+        "At Stanford with Richard Lower, developed topical cardiac hypothermia and a reproducible canine heart-transplant technique ('Special Problems in Transplantation of the Heart,' Surgery, 1965).",
+        "Experimental lineage: Carrel & Guthrie's 1905 heterotopic transplant and Mann's 1933 work defining rejection.",
+        "The clinical race: Barnard's first human transplant (Cape Town, Dec 3, 1967) using the Lower–Shumway technique; Shumway's first U.S. adult transplant (Stanford, Jan 1968) — Mike Kasperak, who survived about two weeks.",
+        "The backlash: brain-death disputes and the Andrew Lyons trial, California's 1976 brain-death law, the 1970 moratorium Stanford defied, and Life magazine's 1971 'era of medical failure.'",
+        "The revival and the future: endomyocardial biopsy, the cyclosporine revolution (1-year survival from ~20% to >80%), modern immunosuppression and mechanical support, and where transplant is heading — DCD, ex-vivo perfusion, and xenotransplantation."
       ],
       "references": [
+        "Baumgartner WA, Reitz BA, Gott VL, Shumway SJ. Norman E. Shumway, MD, PhD: Visionary, innovator, humorist. J Thorac Cardiovasc Surg. 2009;137(2):269–277.",
         "Lower RR, Shumway NE. Studies on orthotopic homotransplantation of the canine heart. Surg Forum. 1960;11:18–19.",
-        "Barnard CN. The operation. A human cardiac transplant: an interim report of a successful operation performed at Groote Schuur Hospital, Cape Town. S Afr Med J. 1967;41(48):1271–1274.",
-        "Caves PK, Stinson EB, Billingham ME, Shumway NE. Percutaneous transvenous endomyocardial biopsy. JAMA. 1973;225(3):288–291.",
-        "DiBardino DJ. The history and development of cardiac transplantation. Tex Heart Inst J. 1999;26(3):198–205."
+        "Barnard CN. The operation. A human cardiac transplant... S Afr Med J. 1967;41(48):1271–1274.",
+        "McRae D. Every Second Counts: The Race to Transplant the First Human Heart. New York: G.P. Putnam's Sons; 2006."
       ],
       "resources": [
-        { "label": "Norman E. Shumway — Encyclopaedia Britannica", "url": "https://www.britannica.com/biography/Norman-E-Shumway" },
+        { "label": "Norman E. Shumway, MD, PhD: Visionary, innovator, humorist — J Thorac Cardiovasc Surg (2009)", "url": "https://www.jtcvs.org/article/S0022-5223(08)01934-X/fulltext" },
         { "label": "50 Years Ago, Stanford Heart Doctors Made History — Stanford Medicine", "url": "https://med.stanford.edu/news/all-news/2018/01/50-years-ago-stanford-heart-doctors-made-history.html" },
-        { "label": "In Memoriam: Norman E. Shumway — Texas Heart Institute Journal", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC1413616/" }
+        { "label": "Norman E. Shumway — Encyclopaedia Britannica", "url": "https://www.britannica.com/biography/Norman-E-Shumway" }
       ]
     }
   ]
