@@ -429,13 +429,13 @@ CSS = CSS.replace("{{", "{").replace("}}", "}") + """
   .topnav .links a.active{background:var(--gold);color:#3a2f10;}
 
   /* ---------- slim banner ---------- */
-  .banner{position:relative;overflow:hidden;height:210px;
+  .banner{position:relative;overflow:hidden;height:232px;
     background:linear-gradient(180deg,var(--sky-top) 0%,#dcebe0 55%,var(--sky-mid) 100%);}
-  .banner .banner-in{position:relative;z-index:2;padding:30px 48px;}
-  .banner h1{font-family:var(--serif);font-weight:600;font-size:clamp(26px,4vw,36px);margin:0;
-    color:#2a2722;text-shadow:0 1px 9px rgba(255,253,246,.92);}
-  .banner .sub{margin:7px 0 0;color:#4a443a;font-size:15px;max-width:62ch;
-    text-shadow:0 1px 7px rgba(255,253,246,.92);}
+  .banner .banner-in{position:relative;z-index:2;padding:26px 48px;max-width:470px;}
+  .banner h1{font-family:var(--serif);font-weight:600;font-size:clamp(22px,3.3vw,30px);margin:0;
+    line-height:1.08;color:#2a2722;text-shadow:0 1px 9px rgba(255,253,246,.95),0 0 3px rgba(255,253,246,.85);}
+  .banner .sub{margin:8px 0 0;color:#4a443a;font-size:14.5px;max-width:34ch;
+    text-shadow:0 1px 7px rgba(255,253,246,.95),0 0 3px rgba(255,253,246,.8);}
 
   /* ---------- doorways (landing) ---------- */
   .doors{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:6px 0 8px;}
@@ -487,7 +487,7 @@ CSS = CSS.replace("{{", "{").replace("}}", "}") + """
   @media (max-width:680px){
     .doors{grid-template-columns:1fr;}
     .episode{flex-direction:column;}
-    .banner{height:180px;} .banner .banner-in{padding:24px 20px;}
+    .banner{height:200px;} .banner .banner-in{padding:22px 20px;max-width:none;}
   }
 """
 
@@ -524,7 +524,7 @@ def topnav(active):
         return f'<a href="{href}"{cls}>{label}</a>'
     return ('<nav class="topnav"><a class="brand" href="index.html">' + ANCHOR_SVG + esc(BRAND) + '</a>'
             '<div class="links">' + lk("index.html", "Home", "home")
-            + lk("lectures.html", "Lecture Library", "lectures")
+            + lk("lectures.html", "ABA Content Lecture Library", "lectures")
             + lk("chronicles.html", "The Chronicles", "chronicles") + '</div></nav>')
 
 FOOTER = (f'<footer>'
@@ -615,19 +615,19 @@ landing_inner = f'''<header class="hero">{SCENE}
     <h1>Cross-Clamp<br><span class="accent">Chronicles</span></h1>
     <p class="tagline">Cardiothoracic anesthesia, two ways — a lecture library mapped to the ABA content outline, and a history podcast on how the field came to be.</p>
     <p class="byline">Curated by <strong>{esc(AUTHOR)}</strong></p>
-    <div class="btns"><a class="btn btn-primary" href="lectures.html">Lecture Library</a><a class="btn btn-yt" href="chronicles.html">The Chronicles</a></div>
+    <div class="btns"><a class="btn btn-primary" href="lectures.html">ABA Content Lecture Library</a><a class="btn btn-yt" href="chronicles.html">The Chronicles</a></div>
   </div>
 </header>
 <div class="body">
   <p class="welcome">Welcome aboard. Choose your heading — the teaching modules, or stories from the history of cardiac surgery &amp; anesthesia.</p>
   <div class="doors">
-    <a class="door lib" href="lectures.html"><div class="art">{ICON_BOOK}</div><div class="txt"><h3>Lecture Library</h3><p>Video modules covering the ABA Advanced Cardiac Anesthesiology content outline — built for fellows and anyone brushing up.</p><div class="go">Enter the library →</div><div class="meta">{n_recorded} recorded · {n_topics} topics</div></div></a>
+    <a class="door lib" href="lectures.html"><div class="art">{ICON_BOOK}</div><div class="txt"><h3>ABA Content Lecture Library</h3><p>Video modules covering the ABA Advanced Cardiac Anesthesiology content outline — built for fellows and anyone brushing up.</p><div class="go">Enter the library →</div><div class="meta">{n_recorded} recorded · {n_topics} topics</div></div></a>
     <a class="door pod" href="chronicles.html"><div class="art">{ICON_MIC}</div><div class="txt"><h3>The Chronicles</h3><p>A history podcast &amp; archive — episodes, articles, and films on the people and breakthroughs behind modern cardiac care.</p><div class="go">Open the Chronicles →</div><div class="meta">{n_entries} entries &amp; growing</div></div></a>
   </div>
 </div>'''
 
 lectures_inner = f'''<header class="banner">{SCENE}
-  <div class="banner-in"><h1>Lecture Library</h1><p class="sub">Video modules mapped to the ABA Advanced Cardiac Anesthesiology content outline.</p></div>
+  <div class="banner-in"><h1>ABA Content<br>Lecture Library</h1><p class="sub">Video modules, mapped to the ABA content outline.</p></div>
 </header>
 <div class="stats">
   <div class="stat"><span class="n">{n_sections}</span><span class="l">ABA Sections</span></div>
@@ -664,7 +664,7 @@ SCRIPT_LECTURES = """<script>
 </script>"""
 
 chron_inner = f'''<header class="banner">{SCENE}
-  <div class="banner-in"><h1>Cross-Clamp Chronicles</h1><p class="sub">A history podcast &amp; archive — cardiac surgery and anesthesia, and how it all came to be.</p></div>
+  <div class="banner-in"><h1>Cross-Clamp<br>Chronicles</h1><p class="sub">A history podcast &amp; archive.</p></div>
 </header>
 <div class="body">
   <div class="mascot-wrap">{build_commodore_mic()}<div class="mtext">“{esc(POD.get("blurb",""))}”</div></div>
@@ -676,7 +676,7 @@ chron_inner = f'''<header class="banner">{SCENE}
     shell(BRAND, f"Cardiothoracic anesthesia lectures and a history podcast, from {AUTHOR}.", landing_inner, "home"),
     encoding="utf-8")
 (HERE / "lectures.html").write_text(
-    shell("Lecture Library · " + BRAND, "Video lectures mapped to the ABA Advanced Cardiac Anesthesiology content outline.", lectures_inner, "lectures", SCRIPT_LECTURES),
+    shell("ABA Content Lecture Library · " + BRAND, "Video lectures mapped to the ABA Advanced Cardiac Anesthesiology content outline.", lectures_inner, "lectures", SCRIPT_LECTURES),
     encoding="utf-8")
 (HERE / "chronicles.html").write_text(
     shell("The Chronicles · " + BRAND, POD.get("blurb", "A history podcast on cardiac surgery and anesthesia."), chron_inner, "chronicles"),

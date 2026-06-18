@@ -159,13 +159,13 @@
   .topnav .links a.active{background:var(--gold);color:#3a2f10;}
 
   /* ---------- slim banner ---------- */
-  .banner{position:relative;overflow:hidden;height:210px;
+  .banner{position:relative;overflow:hidden;height:232px;
     background:linear-gradient(180deg,var(--sky-top) 0%,#dcebe0 55%,var(--sky-mid) 100%);}
-  .banner .banner-in{position:relative;z-index:2;padding:30px 48px;}
-  .banner h1{font-family:var(--serif);font-weight:600;font-size:clamp(26px,4vw,36px);margin:0;
-    color:#2a2722;text-shadow:0 1px 9px rgba(255,253,246,.92);}
-  .banner .sub{margin:7px 0 0;color:#4a443a;font-size:15px;max-width:62ch;
-    text-shadow:0 1px 7px rgba(255,253,246,.92);}
+  .banner .banner-in{position:relative;z-index:2;padding:26px 48px;max-width:470px;}
+  .banner h1{font-family:var(--serif);font-weight:600;font-size:clamp(22px,3.3vw,30px);margin:0;
+    line-height:1.08;color:#2a2722;text-shadow:0 1px 9px rgba(255,253,246,.95),0 0 3px rgba(255,253,246,.85);}
+  .banner .sub{margin:8px 0 0;color:#4a443a;font-size:14.5px;max-width:34ch;
+    text-shadow:0 1px 7px rgba(255,253,246,.95),0 0 3px rgba(255,253,246,.8);}
 
   /* ---------- doorways (landing) ---------- */
   .doors{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:6px 0 8px;}
@@ -217,13 +217,13 @@
   @media (max-width:680px){
     .doors{grid-template-columns:1fr;}
     .episode{flex-direction:column;}
-    .banner{height:180px;} .banner .banner-in{padding:24px 20px;}
+    .banner{height:200px;} .banner .banner-in{padding:22px 20px;max-width:none;}
   }
 </style>
 </head>
 <body>
 <div class="wrap">
-<nav class="topnav"><a class="brand" href="index.html"><svg class="anchor" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="4" r="2"/><line x1="12" y1="6" x2="12" y2="22"/><line x1="7" y1="10" x2="17" y2="10"/><path d="M4 14 a8 8 0 0 0 16 0"/></svg>Cross-Clamp Chronicles</a><div class="links"><a href="index.html">Home</a><a href="lectures.html">Lecture Library</a><a href="chronicles.html" class="active">The Chronicles</a></div></nav>
+<nav class="topnav"><a class="brand" href="index.html"><svg class="anchor" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="4" r="2"/><line x1="12" y1="6" x2="12" y2="22"/><line x1="7" y1="10" x2="17" y2="10"/><path d="M4 14 a8 8 0 0 0 16 0"/></svg>Cross-Clamp Chronicles</a><div class="links"><a href="index.html">Home</a><a href="lectures.html">ABA Content Lecture Library</a><a href="chronicles.html" class="active">The Chronicles</a></div></nav>
 <header class="banner">
 <svg class="scene" viewBox="0 0 1200 460" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
   <defs>
@@ -351,7 +351,7 @@
   </g>
 </svg>
 
-  <div class="banner-in"><h1>Cross-Clamp Chronicles</h1><p class="sub">A history podcast &amp; archive — cardiac surgery and anesthesia, and how it all came to be.</p></div>
+  <div class="banner-in"><h1>Cross-Clamp<br>Chronicles</h1><p class="sub">A history podcast &amp; archive.</p></div>
 </header>
 <div class="body">
   <div class="mascot-wrap"><svg class="mascot-mic" viewBox="0 0 124 146" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><g transform="translate(0,4)"><rect x="56" y="56" width="13" height="34" rx="4" fill="#f0c9a8"/><path d="M37,86 q25 -9 50 0 l5 40 q-30 10 -60 0 z" fill="#181a22"/><path d="M53,80 L62,98 L71,80 q-9 -4 -18 0 z" fill="#f3efe6"/><g stroke="#d9b53e" stroke-width="2.4" stroke-linecap="round"><line x1="49" y1="94" x2="75" y2="94"/><line x1="50" y1="102" x2="74" y2="102"/><line x1="51" y1="110" x2="73" y2="110"/></g><ellipse cx="35" cy="86" rx="9" ry="5" fill="#d9b53e"/><ellipse cx="89" cy="86" rx="9" ry="5" fill="#d9b53e"/><path d="M40,92 q-6 14 -3 28 l10 1 q1 -14 6 -27 z" fill="#181a22"/><circle cx="44" cy="120" r="5" fill="#f0c9a8"/><path d="M43,44 q0 -16 19 -16 q19 0 19 16 l0 12 q0 13 -19 19 q-19 -6 -19 -19 z" fill="#f3d2b3"/><path d="M43,44 q0 -17 19 -17 q19 0 19 17 q-6 -7 -19 -7 q-13 0 -19 7 z" fill="#15151a"/><rect x="42" y="44" width="4" height="15" rx="2" fill="#15151a"/><rect x="78" y="44" width="4" height="15" rx="2" fill="#15151a"/><path d="M49,45 l8 2" stroke="#15151a" stroke-width="2" stroke-linecap="round"/><path d="M75,45 l-8 2" stroke="#15151a" stroke-width="2" stroke-linecap="round"/><circle cx="54" cy="50" r="2.4" fill="#2a2018"/><circle cx="70" cy="50" r="2.4" fill="#2a2018"/><path d="M62,52 l-2 7 l3 1" stroke="#cda584" stroke-width="1.3" fill="none" stroke-linecap="round"/><path d="M55,63 q7 5 14 -1" stroke="#9c5f44" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M29,30 C33,7 48,5 62,12 C76,5 91,7 95,30 C80,41 70,41 62,41 C54,41 44,41 29,30 Z" fill="#15151a"/><path d="M31,30 C36,11 48,9 62,16 C76,9 88,11 93,30" stroke="#d9b53e" stroke-width="2.4" fill="none"/><path d="M55,17 L62,33 L69,17" stroke="#e6c558" stroke-width="3.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M86,90 C91,82 91,73 85,68 l-9 5 C80,80 79,86 78,92 Z" fill="#181a22"/><circle cx="82" cy="68" r="5.4" fill="#f0c9a8"/><g transform="rotate(-10 82 58)"><rect x="78" y="52" width="8" height="18" rx="4" fill="#2c2f35"/><ellipse cx="82" cy="50" rx="7.5" ry="8.5" fill="#3a3e45" stroke="#23252b" stroke-width="0.8"/><path d="M75,47 h14 M75,50 h14 M76,53 h12" stroke="#5b616a" stroke-width="0.8" fill="none"/><ellipse cx="79" cy="47" rx="2" ry="3" fill="#6d737c" opacity="0.6"/></g></g></svg><div class="mtext">“Stories from the history of cardiac surgery and anesthesia — the people, the breakthroughs, and the hard-won lessons that shaped how we care for hearts today.”</div></div>

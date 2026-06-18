@@ -159,13 +159,13 @@
   .topnav .links a.active{background:var(--gold);color:#3a2f10;}
 
   /* ---------- slim banner ---------- */
-  .banner{position:relative;overflow:hidden;height:210px;
+  .banner{position:relative;overflow:hidden;height:232px;
     background:linear-gradient(180deg,var(--sky-top) 0%,#dcebe0 55%,var(--sky-mid) 100%);}
-  .banner .banner-in{position:relative;z-index:2;padding:30px 48px;}
-  .banner h1{font-family:var(--serif);font-weight:600;font-size:clamp(26px,4vw,36px);margin:0;
-    color:#2a2722;text-shadow:0 1px 9px rgba(255,253,246,.92);}
-  .banner .sub{margin:7px 0 0;color:#4a443a;font-size:15px;max-width:62ch;
-    text-shadow:0 1px 7px rgba(255,253,246,.92);}
+  .banner .banner-in{position:relative;z-index:2;padding:26px 48px;max-width:470px;}
+  .banner h1{font-family:var(--serif);font-weight:600;font-size:clamp(22px,3.3vw,30px);margin:0;
+    line-height:1.08;color:#2a2722;text-shadow:0 1px 9px rgba(255,253,246,.95),0 0 3px rgba(255,253,246,.85);}
+  .banner .sub{margin:8px 0 0;color:#4a443a;font-size:14.5px;max-width:34ch;
+    text-shadow:0 1px 7px rgba(255,253,246,.95),0 0 3px rgba(255,253,246,.8);}
 
   /* ---------- doorways (landing) ---------- */
   .doors{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:6px 0 8px;}
@@ -217,13 +217,13 @@
   @media (max-width:680px){
     .doors{grid-template-columns:1fr;}
     .episode{flex-direction:column;}
-    .banner{height:180px;} .banner .banner-in{padding:24px 20px;}
+    .banner{height:200px;} .banner .banner-in{padding:22px 20px;max-width:none;}
   }
 </style>
 </head>
 <body>
 <div class="wrap">
-<nav class="topnav"><a class="brand" href="index.html"><svg class="anchor" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="4" r="2"/><line x1="12" y1="6" x2="12" y2="22"/><line x1="7" y1="10" x2="17" y2="10"/><path d="M4 14 a8 8 0 0 0 16 0"/></svg>Cross-Clamp Chronicles</a><div class="links"><a href="index.html" class="active">Home</a><a href="lectures.html">Lecture Library</a><a href="chronicles.html">The Chronicles</a></div></nav>
+<nav class="topnav"><a class="brand" href="index.html"><svg class="anchor" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="4" r="2"/><line x1="12" y1="6" x2="12" y2="22"/><line x1="7" y1="10" x2="17" y2="10"/><path d="M4 14 a8 8 0 0 0 16 0"/></svg>Cross-Clamp Chronicles</a><div class="links"><a href="index.html" class="active">Home</a><a href="lectures.html">ABA Content Lecture Library</a><a href="chronicles.html">The Chronicles</a></div></nav>
 <header class="hero">
 <svg class="scene" viewBox="0 0 1200 460" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
   <defs>
@@ -356,13 +356,13 @@
     <h1>Cross-Clamp<br><span class="accent">Chronicles</span></h1>
     <p class="tagline">Cardiothoracic anesthesia, two ways — a lecture library mapped to the ABA content outline, and a history podcast on how the field came to be.</p>
     <p class="byline">Curated by <strong>John Bryant, MD</strong></p>
-    <div class="btns"><a class="btn btn-primary" href="lectures.html">Lecture Library</a><a class="btn btn-yt" href="chronicles.html">The Chronicles</a></div>
+    <div class="btns"><a class="btn btn-primary" href="lectures.html">ABA Content Lecture Library</a><a class="btn btn-yt" href="chronicles.html">The Chronicles</a></div>
   </div>
 </header>
 <div class="body">
   <p class="welcome">Welcome aboard. Choose your heading — the teaching modules, or stories from the history of cardiac surgery &amp; anesthesia.</p>
   <div class="doors">
-    <a class="door lib" href="lectures.html"><div class="art"><svg viewBox="0 0 64 64" fill="#fffdf6" stroke="#a07f17" stroke-width="2.6" stroke-linejoin="round"><path d="M32 18 C26 14 16 14 11 16 V50 C16 48 26 48 32 52 Z"/><path d="M32 18 C38 14 48 14 53 16 V50 C48 48 38 48 32 52 Z"/><path d="M17 26 h9 M17 33 h9 M38 26 h9 M38 33 h9" stroke="#c9a227" stroke-width="2" fill="none"/></svg></div><div class="txt"><h3>Lecture Library</h3><p>Video modules covering the ABA Advanced Cardiac Anesthesiology content outline — built for fellows and anyone brushing up.</p><div class="go">Enter the library →</div><div class="meta">19 recorded · 79 topics</div></div></a>
+    <a class="door lib" href="lectures.html"><div class="art"><svg viewBox="0 0 64 64" fill="#fffdf6" stroke="#a07f17" stroke-width="2.6" stroke-linejoin="round"><path d="M32 18 C26 14 16 14 11 16 V50 C16 48 26 48 32 52 Z"/><path d="M32 18 C38 14 48 14 53 16 V50 C48 48 38 48 32 52 Z"/><path d="M17 26 h9 M17 33 h9 M38 26 h9 M38 33 h9" stroke="#c9a227" stroke-width="2" fill="none"/></svg></div><div class="txt"><h3>ABA Content Lecture Library</h3><p>Video modules covering the ABA Advanced Cardiac Anesthesiology content outline — built for fellows and anyone brushing up.</p><div class="go">Enter the library →</div><div class="meta">19 recorded · 79 topics</div></div></a>
     <a class="door pod" href="chronicles.html"><div class="art"><svg viewBox="0 0 64 64" fill="none" stroke="#2f7d8a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="24" y="10" width="16" height="28" rx="8" fill="#fffdf6"/><path d="M18 30 a14 14 0 0 0 28 0"/><line x1="32" y1="44" x2="32" y2="54"/><line x1="22" y1="55" x2="42" y2="55"/></svg></div><div class="txt"><h3>The Chronicles</h3><p>A history podcast &amp; archive — episodes, articles, and films on the people and breakthroughs behind modern cardiac care.</p><div class="go">Open the Chronicles →</div><div class="meta">3 entries &amp; growing</div></div></a>
   </div>
 </div>
