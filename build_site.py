@@ -481,6 +481,9 @@ CSS = CSS.replace("{{", "{").replace("}}", "}") + """
   .act-listen{background:var(--live-bg);color:var(--live);}
   .act-watch{background:#fde9e7;color:#c0392b;}
   .act-read{background:var(--soon-bg);color:var(--soon);}
+  .act-apple{background:#efe3fb;color:#7b3fb3;}
+  .episode h3 a{color:#2f2b24;text-decoration:none;}
+  .episode h3 a:hover{color:var(--gold-deep);}
   .soon-tag{font-size:10px;text-transform:uppercase;letter-spacing:1px;font-weight:700;
     padding:4px 11px;border-radius:20px;background:var(--dev-bg);color:var(--dev);}
   .episode details{margin-top:12px;border-top:1px dashed var(--rule);padding-top:10px;}
@@ -596,7 +599,11 @@ def build_commodore_mic():
             '</g></svg>')
 
 def render_episode(ep):
+    aeid = (ep.get("apple_episode_id") or "").strip()
+    ap_url = f"{APPLE_URL}?i={aeid}" if (aeid and APPLE_URL) else ""
     acts = []
+    if ap_url:
+        acts.append(f'<a class="act-apple" href="{esc(ap_url)}" target="_blank" rel="noopener">Apple Podcasts ↗</a>')
     if ep.get("audio"):
         acts.append(f'<a class="act-listen" href="{esc(ep["audio"])}" target="_blank" rel="noopener">▶ Listen</a>')
     if ep.get("video"):
@@ -609,7 +616,6 @@ def render_episode(ep):
         if lbl:
             acts.append(f'<span class="soon-tag">{lbl}</span>')
     emb = ""
-    aeid = (ep.get("apple_episode_id") or "").strip()
     if aeid and APPLE_EMBED_BASE:
         emb = (f'<div class="player ep-player"><iframe title="{esc(ep.get("title",""))}" '
                f'allow="autoplay *; encrypted-media *; clipboard-write" frameborder="0" height="175" '
@@ -630,9 +636,11 @@ def render_episode(ep):
         if refs:
             inner += "<h4>References</h4><ul>" + "".join(f"<li>{esc(r)}</li>" for r in refs) + "</ul>"
         det = f'<details><summary>Show notes, articles &amp; references</summary>{inner}</details>'
+    _t = esc(ep.get("title", ""))
+    title_html = f'<a href="{esc(ap_url)}" target="_blank" rel="noopener">{_t}</a>' if ap_url else _t
     return (f'<article class="episode"><div class="badge2"><span class="k">{esc(ep.get("type",""))}</span>'
             f'<span class="v">{esc(ep.get("label",""))}</span></div><div class="ebody">'
-            f'<h3>{esc(ep.get("title",""))}</h3><p class="when">{esc(ep.get("date",""))}</p>'
+            f'<h3>{title_html}</h3><p class="when">{esc(ep.get("date",""))}</p>'
             f'<p class="sum">{esc(ep.get("summary",""))}</p>{emb}<div class="acts">{"".join(acts)}</div>{det}</div></article>')
 
 _sb = dict(POD.get("subscribe", {}))
