@@ -28,6 +28,14 @@ Listen / Watch / Read button appears automatically), plus optional `notes` and
 Set the podcast's `subscribe` links (Apple/Spotify/YouTube/RSS) at the top of the file.
 Then run `python3 build_site.py`. (Or just send me the details and I'll add them.)
 
+### Apple Podcasts players ("windows")
+The Chronicles page embeds live Apple Podcasts players. In `episodes.json`:
+`podcast.apple_id` / `podcast.apple_url` drive the **full-show player** at the top
+(and auto-fill the Apple subscribe button). Give any episode an `apple_episode_id`
+(the number after `?i=` in its Apple link) and it gets its **own embedded player**.
+Apple episode IDs can be pulled automatically from the show feed
+(`https://itunes.apple.com/lookup?id=<apple_id>&entity=podcastEpisode`).
+
 ---
 
 ## The recommended setup (why this shape)

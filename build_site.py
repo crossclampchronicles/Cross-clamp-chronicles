@@ -461,6 +461,9 @@ CSS = CSS.replace("{{", "{").replace("}}", "}") + """
   .subscribe a{display:inline-flex;align-items:center;gap:7px;padding:9px 16px;border-radius:22px;
     border:1px solid var(--rule);background:#fffdf6;text-decoration:none;font-weight:700;font-size:13px;color:#5d5648;}
   .subscribe a:hover{border-color:var(--gold);color:var(--gold-deep);}
+  .player{margin:4px 0 24px;}
+  .player iframe{display:block;}
+  .ep-player{margin:6px 0 12px;}
   .episode{display:flex;gap:16px;border:1px solid var(--rule);border-radius:16px;
     background:rgba(255,255,255,.7);padding:18px 20px;margin-bottom:16px;}
   .episode .badge2{flex:none;width:54px;height:54px;border-radius:14px;display:flex;flex-direction:column;
@@ -498,6 +501,23 @@ _ep = json.loads((HERE / "episodes.json").read_text(encoding="utf-8")) if (HERE 
 POD = _ep.get("podcast", {})
 EPISODES = _ep.get("episodes", [])
 n_entries = len(EPISODES)
+
+APPLE_ID = (POD.get("apple_id") or "").strip()
+APPLE_URL = (POD.get("apple_url") or "").strip()
+if APPLE_URL:
+    APPLE_EMBED_BASE = APPLE_URL.replace("https://podcasts.apple.com", "https://embed.podcasts.apple.com")
+elif APPLE_ID:
+    APPLE_EMBED_BASE = f"https://embed.podcasts.apple.com/us/podcast/id{APPLE_ID}"
+else:
+    APPLE_EMBED_BASE = ""
+_SANDBOX = ('sandbox="allow-forms allow-popups allow-same-origin allow-scripts '
+            'allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"')
+APPLE_EMBED = (
+    f'<div class="player"><iframe title="Cross-Clamp Chronicles on Apple Podcasts" '
+    f'allow="autoplay *; encrypted-media *; clipboard-write" frameborder="0" height="450" '
+    f'style="width:100%;max-width:660px;border-radius:16px;overflow:hidden;background:transparent;" '
+    f'{_SANDBOX} loading="lazy" src="{APPLE_EMBED_BASE}"></iframe></div>'
+) if APPLE_EMBED_BASE else ''
 
 FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com">'
          '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
@@ -586,6 +606,13 @@ def render_episode(ep):
         lbl = "Coming soon" if st == "coming" else ("Planned" if st == "planned" else "")
         if lbl:
             acts.append(f'<span class="soon-tag">{lbl}</span>')
+    emb = ""
+    aeid = (ep.get("apple_episode_id") or "").strip()
+    if aeid and APPLE_EMBED_BASE:
+        emb = (f'<div class="player ep-player"><iframe title="{esc(ep.get("title",""))}" '
+               f'allow="autoplay *; encrypted-media *; clipboard-write" frameborder="0" height="175" '
+               f'style="width:100%;max-width:660px;border-radius:14px;overflow:hidden;background:transparent;" '
+               f'{_SANDBOX} loading="lazy" src="{APPLE_EMBED_BASE}?i={aeid}"></iframe></div>')
     notes = ep.get("notes") or []
     refs = ep.get("references") or []
     det = ""
@@ -599,10 +626,12 @@ def render_episode(ep):
     return (f'<article class="episode"><div class="badge2"><span class="k">{esc(ep.get("type",""))}</span>'
             f'<span class="v">{esc(ep.get("label",""))}</span></div><div class="ebody">'
             f'<h3>{esc(ep.get("title",""))}</h3><p class="when">{esc(ep.get("date",""))}</p>'
-            f'<p class="sum">{esc(ep.get("summary",""))}</p><div class="acts">{"".join(acts)}</div>{det}</div></article>')
+            f'<p class="sum">{esc(ep.get("summary",""))}</p>{emb}<div class="acts">{"".join(acts)}</div>{det}</div></article>')
 
+_sb = dict(POD.get("subscribe", {}))
+if APPLE_URL and not _sb.get("apple"):
+    _sb["apple"] = APPLE_URL
 _subs = []
-_sb = POD.get("subscribe", {})
 for _k, _lab in (("apple", "Apple Podcasts"), ("spotify", "Spotify"), ("youtube", "YouTube"), ("rss", "RSS")):
     if _sb.get(_k):
         _subs.append(f'<a href="{esc(_sb[_k])}" target="_blank" rel="noopener">{_lab}</a>')
@@ -668,6 +697,7 @@ chron_inner = f'''<header class="banner">{SCENE}
 <div class="body">
   <div class="mascot-wrap">{build_commodore_mic()}<div class="mtext">“{esc(POD.get("blurb",""))}”</div></div>
   {subscribe_html}
+  {APPLE_EMBED}
   {"".join(render_episode(e) for e in EPISODES)}
 </div>'''
 

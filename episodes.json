@@ -2,14 +2,44 @@
   "podcast": {
     "name": "Cross-Clamp Chronicles",
     "blurb": "Stories from the history of cardiac surgery and anesthesia — the people, the breakthroughs, and the hard-won lessons that shaped how we care for hearts today.",
+    "apple_id": "1851348321",
+    "apple_url": "https://podcasts.apple.com/us/podcast/cross-clamp-chronicles/id1851348321",
     "subscribe": {
-      "apple": "",
+      "apple": "https://podcasts.apple.com/us/podcast/cross-clamp-chronicles/id1851348321",
       "spotify": "",
       "youtube": "",
-      "rss": ""
+      "rss": "https://api.riverside.fm/hosting/na7mGd8o.rss"
     }
   },
   "episodes": [
+    {
+      "type": "Episode",
+      "label": "02",
+      "title": "Blood Transfusion",
+      "date": "April 2026",
+      "summary": "The birth of blood transfusion — from early concepts to future directions in cardiothoracic surgery.",
+      "apple_episode_id": "1000763178589",
+      "audio": "",
+      "video": "",
+      "article": "",
+      "notes": [],
+      "references": [],
+      "status": ""
+    },
+    {
+      "type": "Episode",
+      "label": "01",
+      "title": "Norman Shumway and the Birth of Heart Transplantation",
+      "date": "April 2026",
+      "summary": "A brief look into the life and career of Dr. Norman Shumway — from small beginnings in southeastern Michigan to being dubbed the Father of Heart Transplantation, a titan of medical history.",
+      "apple_episode_id": "1000762171284",
+      "audio": "",
+      "video": "",
+      "article": "",
+      "notes": [],
+      "references": [],
+      "status": ""
+    },
     {
       "type": "Article",
       "label": "Pt 2",
@@ -43,19 +73,6 @@
       "notes": [],
       "references": [],
       "status": "planned"
-    },
-    {
-      "type": "Episode",
-      "label": "01",
-      "title": "Welcome to the Chronicles",
-      "date": "Coming soon",
-      "summary": "What this project is, why the history matters to today's cardiac anesthesiologist, and where we'll sail next.",
-      "audio": "",
-      "video": "",
-      "article": "",
-      "notes": [],
-      "references": [],
-      "status": "coming"
     }
   ]
 }
