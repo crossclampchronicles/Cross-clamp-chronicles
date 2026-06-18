@@ -615,7 +615,6 @@ landing_inner = f'''<header class="hero">{SCENE}
     <h1>Cross-Clamp<br><span class="accent">Chronicles</span></h1>
     <p class="tagline">Cardiothoracic anesthesia, two ways — a lecture library mapped to the ABA content outline, and a history podcast on how the field came to be.</p>
     <p class="byline">Curated by <strong>{esc(AUTHOR)}</strong></p>
-    <div class="btns"><a class="btn btn-primary" href="lectures.html">ABA Content Lecture Library</a><a class="btn btn-yt" href="chronicles.html">The Chronicles</a></div>
   </div>
 </header>
 <div class="body">
