@@ -302,10 +302,11 @@ CSS = """
   .hero{{position:relative;overflow:hidden;
     background:linear-gradient(180deg,var(--sky-top) 0%,#dcebe0 48%,var(--sky-mid) 100%);}}
   .scene{{position:absolute;inset:0;width:100%;height:100%;display:block;}}
+  .hero-scene{{position:relative;height:250px;overflow:hidden;}}
   .cloud{{animation:drift 90s linear infinite;}}
   .c2{{animation-duration:120s;}} .c3{{animation-duration:75s;}}
   @keyframes drift{{from{{transform:translateX(-220px);}} to{{transform:translateX(1320px);}}}}
-  .hero-content{{position:relative;z-index:2;padding:56px 48px 150px;}}
+  .hero-content{{position:relative;z-index:2;padding:46px 48px 22px;}}
   .crest{{display:inline-flex;align-items:center;gap:10px;margin-bottom:18px;}}
   .crest .anchor{{width:30px;height:30px;color:var(--gold-deep);}}
   .crest .crest-txt{{font-family:var(--sans);font-weight:700;font-size:12px;letter-spacing:1.5px;
@@ -330,7 +331,7 @@ CSS = """
 
   /* ---------- stats ---------- */
   .stats{{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;
-    margin:-66px 36px 0;position:relative;z-index:3;}}
+    margin:26px 36px 4px;position:relative;z-index:3;}}
   .stat{{background:var(--paper);border:1px solid var(--rule);border-radius:18px;
     padding:18px 14px;text-align:center;box-shadow:0 8px 24px rgba(120,100,60,.10);}}
   .stat .n{{font-family:var(--serif);font-size:30px;font-weight:600;color:var(--gold-deep);display:block;}}
@@ -409,7 +410,7 @@ CSS = """
   @media (prefers-reduced-motion: reduce){{ .cloud,.boat-rock,.row{{animation:none;}} }}
   @media (max-width:680px){{
     .hero-content{{padding:40px 22px 130px;}}
-    .stats{{grid-template-columns:repeat(2,1fr);margin:-66px 18px 0;}}
+    .stats{{grid-template-columns:repeat(2,1fr);margin:22px 18px 0;}}
     .body{{padding:26px 18px 50px;}} footer{{padding:60px 20px 40px;}}
     section.aba{{padding:18px 16px;}} .section-meta{{margin-left:0;}}
   }}
@@ -638,13 +639,14 @@ for _k, _lab in (("apple", "Apple Podcasts"), ("spotify", "Spotify"), ("youtube"
 subscribe_html = ('<div class="subscribe">' + "".join(_subs) + '</div>') if _subs else ''
 
 # ===================== build the three pages =====================
-landing_inner = f'''<header class="hero">{SCENE}
+landing_inner = f'''<header class="hero">
   <div class="hero-content">
     <div class="crest">{ANCHOR_SVG}<span class="crest-txt">{esc(DEPT)}<small>{esc(DIVISION)}</small></span></div>
     <h1>Cross-Clamp<br><span class="accent">Chronicles</span></h1>
     <p class="tagline">Cardiothoracic anesthesia, two ways — a lecture library mapped to the ABA content outline, and a history podcast on how the field came to be.</p>
     <p class="byline">Curated by <strong>{esc(AUTHOR)}</strong></p>
   </div>
+  <div class="hero-scene">{SCENE}</div>
 </header>
 <div class="body">
   <p class="welcome">Welcome aboard. Choose your heading — the teaching modules, or stories from the history of cardiac surgery &amp; anesthesia.</p>
