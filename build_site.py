@@ -487,6 +487,7 @@ CSS = CSS.replace("{{", "{").replace("}}", "}") + """
   .episode details summary{cursor:pointer;font-weight:700;font-size:13px;color:var(--gold-deep);}
   .episode details h4{margin:12px 0 4px;font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--muted);}
   .episode details ul{margin:0 0 6px;padding-left:18px;font-size:13.5px;color:#4f4a40;}
+  .episode details a{color:var(--gold-deep);font-weight:700;}
 
   @media (max-width:680px){
     .doors{grid-template-columns:1fr;}
@@ -616,14 +617,19 @@ def render_episode(ep):
                f'{_SANDBOX} loading="lazy" src="{APPLE_EMBED_BASE}?i={aeid}"></iframe></div>')
     notes = ep.get("notes") or []
     refs = ep.get("references") or []
+    resources = ep.get("resources") or []
     det = ""
-    if notes or refs:
+    if notes or refs or resources:
         inner = ""
         if notes:
             inner += "<h4>Show notes</h4><ul>" + "".join(f"<li>{esc(n)}</li>" for n in notes) + "</ul>"
+        if resources:
+            inner += "<h4>Articles &amp; resources</h4><ul>" + "".join(
+                f'<li><a href="{esc(r.get("url",""))}" target="_blank" rel="noopener">{esc(r.get("label",""))}</a></li>'
+                for r in resources) + "</ul>"
         if refs:
             inner += "<h4>References</h4><ul>" + "".join(f"<li>{esc(r)}</li>" for r in refs) + "</ul>"
-        det = f'<details><summary>Show notes &amp; references</summary>{inner}</details>'
+        det = f'<details><summary>Show notes, articles &amp; references</summary>{inner}</details>'
     return (f'<article class="episode"><div class="badge2"><span class="k">{esc(ep.get("type",""))}</span>'
             f'<span class="v">{esc(ep.get("label",""))}</span></div><div class="ebody">'
             f'<h3>{esc(ep.get("title",""))}</h3><p class="when">{esc(ep.get("date",""))}</p>'

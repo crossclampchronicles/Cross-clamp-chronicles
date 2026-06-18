@@ -24,7 +24,10 @@ Open `episodes.json` and add an entry to `episodes` (newest first). Fields:
 `type` ("Episode" or "Article"), `label` (e.g. "01" or "Pt 2"), `title`, `date`,
 `summary`, and any of `audio` / `video` / `article` (paste the URL — the matching
 Listen / Watch / Read button appears automatically), plus optional `notes` and
-`references` lists. Leave a link blank and it shows a "Coming soon" tag instead.
+`references` lists. Each episode also has a click-down ("Show notes, articles & references")
+built from `notes` (bullets), `references` (bullets), and `resources` — a list of
+`{ "label": "...", "url": "..." }` links for attaching articles, PDFs, or related reading.
+Leave a media link blank and it shows a "Coming soon" tag instead.
 Set the podcast's `subscribe` links (Apple/Spotify/YouTube/RSS) at the top of the file.
 Then run `python3 build_site.py`. (Or just send me the details and I'll add them.)
 

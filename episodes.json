@@ -19,12 +19,16 @@
       "date": "April 2026",
       "summary": "The birth of blood transfusion — from early concepts to future directions in cardiothoracic surgery.",
       "apple_episode_id": "1000763178589",
-      "audio": "",
-      "video": "",
-      "article": "",
-      "notes": [],
-      "references": [],
-      "status": ""
+      "notes": [
+        "Early attempts at transfusion, from animal-to-human experiments to the first human-to-human transfusions.",
+        "Karl Landsteiner's discovery of the ABO blood groups (1901) and why it made transfusion safe.",
+        "Anticoagulation and storage advances that made banked blood — and modern cardiac surgery — possible.",
+        "Where it's heading: patient blood management and blood conservation in the cardiac OR."
+      ],
+      "references": [
+        "Landsteiner K. Über Agglutinationserscheinungen normalen menschlichen Blutes. Wien Klin Wochenschr. 1901."
+      ],
+      "resources": []
     },
     {
       "type": "Episode",
@@ -33,46 +37,15 @@
       "date": "April 2026",
       "summary": "A brief look into the life and career of Dr. Norman Shumway — from small beginnings in southeastern Michigan to being dubbed the Father of Heart Transplantation, a titan of medical history.",
       "apple_episode_id": "1000762171284",
-      "audio": "",
-      "video": "",
-      "article": "",
-      "notes": [],
-      "references": [],
-      "status": ""
-    },
-    {
-      "type": "Article",
-      "label": "Pt 2",
-      "title": "Milestones in Cardiac Surgery, Part 2: Building on Their Shoulders (1958–1980)",
-      "date": "In progress",
-      "summary": "The two decades that turned cardiac surgery into a mature specialty — selective coronary angiography and bypass grafting, durable mechanical valves, the homograft and pulmonary autograft, orthotopic heart transplantation, and the first total artificial hearts — and the parallel birth of cardiac anesthesia as a recognizable subspecialty.",
-      "audio": "",
-      "video": "",
-      "article": "",
       "notes": [
-        "Authors: E. A. Hessel II, J. C. Songster, J. Bryant, C. Jelly, R. Sladen.",
-        "Traces the work of Sones, Grüntzig, Favaloro, Loop, Starr, Ross, Shumway, Barnard, Kantrowitz, DeBakey, and Cooley.",
-        "Anesthesia milestones: Lowenstein's high-dose opioid technique, Kaplan's nitroglycerin and PA-catheter contributions, Wynands on perioperative ischemia, and the first cardiac anesthesia fellowship under William Lell (MGH, 1971)."
+        "Lower & Shumway's experimental work on orthotopic heart transplantation at Stanford.",
+        "Barnard's 1967 first human transplant vs. Shumway's first U.S. adult heart transplant (1968).",
+        "The long winter of transplantation and the comeback driven by endomyocardial biopsy and improved immunosuppression."
       ],
       "references": [
-        "Swan HJC, Ganz W, et al. Catheterization of the heart in man with use of a flow-directed balloon-tipped catheter. N Engl J Med. 1970.",
-        "Lowenstein E, et al. Cardiovascular response to large doses of intravenous morphine in man. N Engl J Med. 1969.",
-        "Favaloro RG. Saphenous vein autograft replacement of severe segmental coronary artery occlusion. Ann Thorac Surg. 1968."
+        "Lower RR, Shumway NE. Studies on orthotopic homotransplantation of the canine heart. Surg Forum. 1960."
       ],
-      "status": "coming"
-    },
-    {
-      "type": "Article",
-      "label": "Pt 1",
-      "title": "Milestones in Cardiac Surgery, Part 1: Before the Pump",
-      "date": "Planned",
-      "summary": "The foundational era — Souttar and Cutler's early valve attempts, Gross and the ductus, Blalock & Taussig, Bigelow's hypothermia, Gibbon's heart–lung machine, and Lillehei's cross-circulation — when surgeons first dared to enter the heart.",
-      "audio": "",
-      "video": "",
-      "article": "",
-      "notes": [],
-      "references": [],
-      "status": "planned"
+      "resources": []
     }
   ]
 }
