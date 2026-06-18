@@ -647,7 +647,6 @@ subscribe_html = ('<div class="subscribe">' + "".join(_subs) + '</div>') if _sub
 # ===================== build the three pages =====================
 landing_inner = f'''<header class="hero">
   <div class="hero-content">
-    <div class="crest">{ANCHOR_SVG}<span class="crest-txt">{esc(DEPT)}<small>{esc(DIVISION)}</small></span></div>
     <h1>Cross-Clamp<br><span class="accent">Chronicles</span></h1>
     <p class="tagline">Cardiothoracic anesthesia, two ways — a lecture library mapped to the ABA content outline, and a history podcast on how the field came to be.</p>
     <p class="byline">Curated by <strong>{esc(AUTHOR)}</strong></p>
