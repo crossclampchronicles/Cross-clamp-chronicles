@@ -275,17 +275,7 @@ SCENE = '''
 
 SCENE = SCENE.replace("<!--BOOKS-->", BOOKS)
 
-HTML = f"""<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{esc(SITE_TITLE)} — Open Lecture Library</title>
-<meta name="description" content="A warm, open video library of cardiac anesthesiology lectures, organized by the ABA content outline. Curated at Vanderbilt University Medical Center.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-<style>
+CSS = """
   :root {{
     --sky-top:#cfe7ee; --sky-mid:#e6eede; --cream:#faf3e2; --paper:#fffdf6;
     --ink:#33302a; --muted:#867c6d; --rule:#ece4d3;
@@ -423,89 +413,274 @@ HTML = f"""<!DOCTYPE html>
     .body{{padding:26px 18px 50px;}} footer{{padding:60px 20px 40px;}}
     section.aba{{padding:18px 16px;}} .section-meta{{margin-left:0;}}
   }}
-</style>
-</head>
-<body>
-<div class="wrap">
+"""
+CSS = CSS.replace("{{", "{").replace("}}", "}") + """
+  /* ---------- top nav ---------- */
+  .topnav{position:sticky;top:0;z-index:30;display:flex;align-items:center;gap:16px;
+    padding:11px 24px;background:rgba(255,253,246,.93);backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--rule);}
+  .topnav .brand{display:flex;align-items:center;gap:9px;font-family:var(--serif);
+    font-weight:600;font-size:17px;color:#2f2b24;text-decoration:none;}
+  .topnav .brand .anchor{width:21px;height:21px;color:var(--gold-deep);}
+  .topnav .links{margin-left:auto;display:flex;gap:6px;flex-wrap:wrap;}
+  .topnav .links a{padding:7px 13px;border-radius:20px;text-decoration:none;font-size:13.5px;
+    font-weight:700;color:#5d5648;}
+  .topnav .links a:hover{background:var(--gold-soft);color:var(--gold-deep);}
+  .topnav .links a.active{background:var(--gold);color:#3a2f10;}
 
-  <header class="hero">
-    {SCENE}
-    <div class="hero-content">
-      <div class="crest">
-        <svg class="anchor" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="12" cy="4" r="2"/><line x1="12" y1="6" x2="12" y2="22"/>
-          <line x1="7" y1="10" x2="17" y2="10"/>
-          <path d="M4 14 a8 8 0 0 0 16 0"/>
-        </svg>
-        <span class="crest-txt">{esc(DEPT)}<small>{esc(DIVISION)}</small></span>
-      </div>
-      <h1>Adult Cardiac<br><span class="accent">Anesthesiology</span></h1>
-      <p class="tagline">{esc(SITE_TAGLINE)}</p>
-      <p class="byline">Curated by <strong>{esc(AUTHOR)}</strong></p>
-      <div class="btns">
-        <a class="btn btn-primary" href="#sec-A">Browse the curriculum</a>
-        {yt_btn}
-      </div>
-    </div>
-  </header>
+  /* ---------- slim banner ---------- */
+  .banner{position:relative;overflow:hidden;height:210px;
+    background:linear-gradient(180deg,var(--sky-top) 0%,#dcebe0 55%,var(--sky-mid) 100%);}
+  .banner .banner-in{position:relative;z-index:2;padding:30px 48px;}
+  .banner h1{font-family:var(--serif);font-weight:600;font-size:clamp(26px,4vw,36px);margin:0;
+    color:#2a2722;text-shadow:0 1px 9px rgba(255,253,246,.92);}
+  .banner .sub{margin:7px 0 0;color:#4a443a;font-size:15px;max-width:62ch;
+    text-shadow:0 1px 7px rgba(255,253,246,.92);}
 
-  <div class="stats">
-    <div class="stat"><span class="n">{n_sections}</span><span class="l">ABA Sections</span></div>
-    <div class="stat"><span class="n">{n_topics}</span><span class="l">Outline Topics</span></div>
-    <div class="stat"><span class="n">{n_recorded}</span><span class="l">Lectures Recorded</span></div>
-    <div class="stat"><span class="n" id="stat-live">{n_live}</span><span class="l">Now Streaming</span></div>
+  /* ---------- doorways (landing) ---------- */
+  .doors{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:6px 0 8px;}
+  .door{display:block;text-decoration:none;border-radius:20px;overflow:hidden;border:1px solid var(--rule);
+    background:var(--paper);box-shadow:0 10px 26px rgba(120,100,60,.10);transition:transform .15s,box-shadow .15s;}
+  .door:hover{transform:translateY(-4px);box-shadow:0 16px 34px rgba(120,100,60,.16);}
+  .door .art{height:118px;display:flex;align-items:center;justify-content:center;}
+  .door.lib .art{background:linear-gradient(160deg,#efe2bd,#e3c878);}
+  .door.pod .art{background:linear-gradient(160deg,#cfe7ee,#a9d6dd);}
+  .door .art svg{height:72px;width:72px;}
+  .door .txt{padding:18px 20px 20px;}
+  .door .txt h3{font-family:var(--serif);font-weight:600;font-size:21px;margin:0 0 6px;color:#2f2b24;}
+  .door .txt p{margin:0 0 10px;color:#5d5648;font-size:14px;}
+  .door .go{font-weight:700;color:var(--gold-deep);font-size:14px;}
+  .door .meta{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-top:5px;}
+
+  /* ---------- chronicles ---------- */
+  .mascot-wrap{display:flex;align-items:center;gap:18px;background:linear-gradient(160deg,#eef5f3,#dcecef);
+    border:1px solid var(--rule);border-radius:18px;padding:14px 20px;margin:6px 0 22px;}
+  .mascot-wrap .mascot-mic{flex:none;width:88px;height:auto;}
+  .mascot-wrap .mtext{font-family:var(--serif);font-style:italic;color:#4a443a;font-size:16px;}
+  .subscribe{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 24px;}
+  .subscribe a{display:inline-flex;align-items:center;gap:7px;padding:9px 16px;border-radius:22px;
+    border:1px solid var(--rule);background:#fffdf6;text-decoration:none;font-weight:700;font-size:13px;color:#5d5648;}
+  .subscribe a:hover{border-color:var(--gold);color:var(--gold-deep);}
+  .episode{display:flex;gap:16px;border:1px solid var(--rule);border-radius:16px;
+    background:rgba(255,255,255,.7);padding:18px 20px;margin-bottom:16px;}
+  .episode .badge2{flex:none;width:54px;height:54px;border-radius:14px;display:flex;flex-direction:column;
+    align-items:center;justify-content:center;background:var(--gold-soft);color:var(--gold-deep);}
+  .episode .badge2 .k{font-size:8.5px;text-transform:uppercase;letter-spacing:1px;}
+  .episode .badge2 .v{font-family:var(--serif);font-weight:600;font-size:18px;line-height:1;}
+  .episode .ebody{flex:1;min-width:0;}
+  .episode h3{font-family:var(--serif);font-weight:600;font-size:18.5px;margin:0 0 3px;color:#2f2b24;}
+  .episode .when{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin:0 0 8px;}
+  .episode p.sum{margin:0 0 12px;color:#4f4a40;font-size:14.5px;}
+  .episode .acts{display:flex;gap:8px;flex-wrap:wrap;align-items:center;}
+  .episode .acts a{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border-radius:20px;
+    font-size:13px;font-weight:700;text-decoration:none;}
+  .act-listen{background:var(--live-bg);color:var(--live);}
+  .act-watch{background:#fde9e7;color:#c0392b;}
+  .act-read{background:var(--soon-bg);color:var(--soon);}
+  .soon-tag{font-size:10px;text-transform:uppercase;letter-spacing:1px;font-weight:700;
+    padding:4px 11px;border-radius:20px;background:var(--dev-bg);color:var(--dev);}
+  .episode details{margin-top:12px;border-top:1px dashed var(--rule);padding-top:10px;}
+  .episode details summary{cursor:pointer;font-weight:700;font-size:13px;color:var(--gold-deep);}
+  .episode details h4{margin:12px 0 4px;font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--muted);}
+  .episode details ul{margin:0 0 6px;padding-left:18px;font-size:13.5px;color:#4f4a40;}
+
+  @media (max-width:680px){
+    .doors{grid-template-columns:1fr;}
+    .episode{flex-direction:column;}
+    .banner{height:180px;} .banner .banner-in{padding:24px 20px;}
+  }
+"""
+
+# ===================== shared page assets =====================
+BRAND = "Cross-Clamp Chronicles"
+
+_ep = json.loads((HERE / "episodes.json").read_text(encoding="utf-8")) if (HERE / "episodes.json").exists() else {"podcast": {}, "episodes": []}
+POD = _ep.get("podcast", {})
+EPISODES = _ep.get("episodes", [])
+n_entries = len(EPISODES)
+
+FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com">'
+         '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
+         '<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">')
+
+ANCHOR_SVG = ('<svg class="anchor" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" '
+              'stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="4" r="2"/>'
+              '<line x1="12" y1="6" x2="12" y2="22"/><line x1="7" y1="10" x2="17" y2="10"/>'
+              '<path d="M4 14 a8 8 0 0 0 16 0"/></svg>')
+
+ICON_BOOK = ('<svg viewBox="0 0 64 64" fill="#fffdf6" stroke="#a07f17" stroke-width="2.6" stroke-linejoin="round">'
+             '<path d="M32 18 C26 14 16 14 11 16 V50 C16 48 26 48 32 52 Z"/>'
+             '<path d="M32 18 C38 14 48 14 53 16 V50 C48 48 38 48 32 52 Z"/>'
+             '<path d="M17 26 h9 M17 33 h9 M38 26 h9 M38 33 h9" stroke="#c9a227" stroke-width="2" fill="none"/></svg>')
+
+ICON_MIC = ('<svg viewBox="0 0 64 64" fill="none" stroke="#2f7d8a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">'
+            '<rect x="24" y="10" width="16" height="28" rx="8" fill="#fffdf6"/>'
+            '<path d="M18 30 a14 14 0 0 0 28 0"/><line x1="32" y1="44" x2="32" y2="54"/>'
+            '<line x1="22" y1="55" x2="42" y2="55"/></svg>')
+
+def topnav(active):
+    def lk(href, label, key):
+        cls = ' class="active"' if key == active else ''
+        return f'<a href="{href}"{cls}>{label}</a>'
+    return ('<nav class="topnav"><a class="brand" href="index.html">' + ANCHOR_SVG + esc(BRAND) + '</a>'
+            '<div class="links">' + lk("index.html", "Home", "home")
+            + lk("lectures.html", "Lecture Library", "lectures")
+            + lk("chronicles.html", "The Chronicles", "chronicles") + '</div></nav>')
+
+FOOTER = (f'<footer>'
+          f'<svg class="hills" viewBox="0 0 1200 60" preserveAspectRatio="none" aria-hidden="true">'
+          f'<path d="M0,38 C200,18 420,30 640,24 C880,17 1020,38 1200,28 L1200,0 L0,0 Z" fill="#fffdf6"/></svg>'
+          f'<div>{esc(BRAND)} — cardiothoracic anesthesia education from {esc(AUTHOR)}, {esc(DEPT)}. '
+          f'Questions, ideas, or corrections: <a href="mailto:{esc(CONTACT_EMAIL)}">{esc(CONTACT_EMAIL)}</a>.</div>'
+          f'<div class="disclaimer">For educational purposes only; not medical advice. Views are the author&#39;s own and '
+          f'do not represent {esc(DEPT)} or any professional society. &copy; {year} {esc(AUTHOR)}. Updated {today}.</div></footer>')
+
+def shell(title, desc, inner, active, script=""):
+    return (f'<!DOCTYPE html>\n<html lang="en">\n<head>\n<meta charset="UTF-8">\n'
+            f'<meta name="viewport" content="width=device-width, initial-scale=1">\n'
+            f'<title>{esc(title)}</title>\n<meta name="description" content="{esc(desc)}">\n'
+            f'{FONTS}\n<style>{CSS}</style>\n</head>\n<body>\n<div class="wrap">\n'
+            f'{topnav(active)}\n{inner}\n{FOOTER}\n</div>\n{script}\n</body>\n</html>\n')
+
+def build_commodore_mic():
+    return ('<svg class="mascot-mic" viewBox="0 0 124 146" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">'
+            '<g transform="translate(0,4)">'
+            '<rect x="56" y="56" width="13" height="34" rx="4" fill="#f0c9a8"/>'
+            '<path d="M37,86 q25 -9 50 0 l5 40 q-30 10 -60 0 z" fill="#181a22"/>'
+            '<path d="M53,80 L62,98 L71,80 q-9 -4 -18 0 z" fill="#f3efe6"/>'
+            '<g stroke="#d9b53e" stroke-width="2.4" stroke-linecap="round">'
+            '<line x1="49" y1="94" x2="75" y2="94"/><line x1="50" y1="102" x2="74" y2="102"/><line x1="51" y1="110" x2="73" y2="110"/></g>'
+            '<ellipse cx="35" cy="86" rx="9" ry="5" fill="#d9b53e"/><ellipse cx="89" cy="86" rx="9" ry="5" fill="#d9b53e"/>'
+            '<path d="M40,92 q-6 14 -3 28 l10 1 q1 -14 6 -27 z" fill="#181a22"/><circle cx="44" cy="120" r="5" fill="#f0c9a8"/>'
+            '<path d="M43,44 q0 -16 19 -16 q19 0 19 16 l0 12 q0 13 -19 19 q-19 -6 -19 -19 z" fill="#f3d2b3"/>'
+            '<path d="M43,44 q0 -17 19 -17 q19 0 19 17 q-6 -7 -19 -7 q-13 0 -19 7 z" fill="#15151a"/>'
+            '<rect x="42" y="44" width="4" height="15" rx="2" fill="#15151a"/><rect x="78" y="44" width="4" height="15" rx="2" fill="#15151a"/>'
+            '<path d="M49,45 l8 2" stroke="#15151a" stroke-width="2" stroke-linecap="round"/>'
+            '<path d="M75,45 l-8 2" stroke="#15151a" stroke-width="2" stroke-linecap="round"/>'
+            '<circle cx="54" cy="50" r="2.4" fill="#2a2018"/><circle cx="70" cy="50" r="2.4" fill="#2a2018"/>'
+            '<path d="M62,52 l-2 7 l3 1" stroke="#cda584" stroke-width="1.3" fill="none" stroke-linecap="round"/>'
+            '<path d="M55,63 q7 5 14 -1" stroke="#9c5f44" stroke-width="2" fill="none" stroke-linecap="round"/>'
+            '<path d="M29,30 C33,7 48,5 62,12 C76,5 91,7 95,30 C80,41 70,41 62,41 C54,41 44,41 29,30 Z" fill="#15151a"/>'
+            '<path d="M31,30 C36,11 48,9 62,16 C76,9 88,11 93,30" stroke="#d9b53e" stroke-width="2.4" fill="none"/>'
+            '<path d="M55,17 L62,33 L69,17" stroke="#e6c558" stroke-width="3.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>'
+            # right arm + microphone, drawn last so it sits in front
+            '<path d="M86,90 C91,82 91,73 85,68 l-9 5 C80,80 79,86 78,92 Z" fill="#181a22"/>'
+            '<circle cx="82" cy="68" r="5.4" fill="#f0c9a8"/>'
+            '<g transform="rotate(-10 82 58)">'
+            '<rect x="78" y="52" width="8" height="18" rx="4" fill="#2c2f35"/>'
+            '<ellipse cx="82" cy="50" rx="7.5" ry="8.5" fill="#3a3e45" stroke="#23252b" stroke-width="0.8"/>'
+            '<path d="M75,47 h14 M75,50 h14 M76,53 h12" stroke="#5b616a" stroke-width="0.8" fill="none"/>'
+            '<ellipse cx="79" cy="47" rx="2" ry="3" fill="#6d737c" opacity="0.6"/></g>'
+            '</g></svg>')
+
+def render_episode(ep):
+    acts = []
+    if ep.get("audio"):
+        acts.append(f'<a class="act-listen" href="{esc(ep["audio"])}" target="_blank" rel="noopener">▶ Listen</a>')
+    if ep.get("video"):
+        acts.append(f'<a class="act-watch" href="{esc(ep["video"])}" target="_blank" rel="noopener">▶ Watch</a>')
+    if ep.get("article"):
+        acts.append(f'<a class="act-read" href="{esc(ep["article"])}" target="_blank" rel="noopener">▤ Read</a>')
+    if not acts:
+        st = ep.get("status", "")
+        lbl = "Coming soon" if st == "coming" else ("Planned" if st == "planned" else "")
+        if lbl:
+            acts.append(f'<span class="soon-tag">{lbl}</span>')
+    notes = ep.get("notes") or []
+    refs = ep.get("references") or []
+    det = ""
+    if notes or refs:
+        inner = ""
+        if notes:
+            inner += "<h4>Show notes</h4><ul>" + "".join(f"<li>{esc(n)}</li>" for n in notes) + "</ul>"
+        if refs:
+            inner += "<h4>References</h4><ul>" + "".join(f"<li>{esc(r)}</li>" for r in refs) + "</ul>"
+        det = f'<details><summary>Show notes &amp; references</summary>{inner}</details>'
+    return (f'<article class="episode"><div class="badge2"><span class="k">{esc(ep.get("type",""))}</span>'
+            f'<span class="v">{esc(ep.get("label",""))}</span></div><div class="ebody">'
+            f'<h3>{esc(ep.get("title",""))}</h3><p class="when">{esc(ep.get("date",""))}</p>'
+            f'<p class="sum">{esc(ep.get("summary",""))}</p><div class="acts">{"".join(acts)}</div>{det}</div></article>')
+
+_subs = []
+_sb = POD.get("subscribe", {})
+for _k, _lab in (("apple", "Apple Podcasts"), ("spotify", "Spotify"), ("youtube", "YouTube"), ("rss", "RSS")):
+    if _sb.get(_k):
+        _subs.append(f'<a href="{esc(_sb[_k])}" target="_blank" rel="noopener">{_lab}</a>')
+subscribe_html = ('<div class="subscribe">' + "".join(_subs) + '</div>') if _subs else ''
+
+# ===================== build the three pages =====================
+landing_inner = f'''<header class="hero">{SCENE}
+  <div class="hero-content">
+    <div class="crest">{ANCHOR_SVG}<span class="crest-txt">{esc(DEPT)}<small>{esc(DIVISION)}</small></span></div>
+    <h1>Cross-Clamp<br><span class="accent">Chronicles</span></h1>
+    <p class="tagline">Cardiothoracic anesthesia, two ways — a lecture library mapped to the ABA content outline, and a history podcast on how the field came to be.</p>
+    <p class="byline">Curated by <strong>{esc(AUTHOR)}</strong></p>
+    <div class="btns"><a class="btn btn-primary" href="lectures.html">Lecture Library</a><a class="btn btn-yt" href="chronicles.html">The Chronicles</a></div>
   </div>
-
-  <div class="body">
-    <p class="welcome">Welcome aboard. Browse the curriculum below — available lectures are linked, and the library grows as new talks are recorded.</p>
-
-    <div class="toolbar">
-      <input type="search" id="search" placeholder="Search topics and lectures…" aria-label="Search">
-      <label><input type="checkbox" id="liveOnly"> Show available lectures only</label>
-    </div>
-    <nav class="secnav" aria-label="Jump to section">{nav}</nav>
-
-    {"".join(sections_html)}
+</header>
+<div class="body">
+  <p class="welcome">Welcome aboard. Choose your heading — the teaching modules, or stories from the history of cardiac surgery &amp; anesthesia.</p>
+  <div class="doors">
+    <a class="door lib" href="lectures.html"><div class="art">{ICON_BOOK}</div><div class="txt"><h3>Lecture Library</h3><p>Video modules covering the ABA Advanced Cardiac Anesthesiology content outline — built for fellows and anyone brushing up.</p><div class="go">Enter the library →</div><div class="meta">{n_recorded} recorded · {n_topics} topics</div></div></a>
+    <a class="door pod" href="chronicles.html"><div class="art">{ICON_MIC}</div><div class="txt"><h3>The Chronicles</h3><p>A history podcast &amp; archive — episodes, articles, and films on the people and breakthroughs behind modern cardiac care.</p><div class="go">Open the Chronicles →</div><div class="meta">{n_entries} entries &amp; growing</div></div></a>
   </div>
+</div>'''
 
-  <footer>
-    <svg class="hills" viewBox="0 0 1200 60" preserveAspectRatio="none" aria-hidden="true">
-      <path d="M0,38 C200,18 420,30 640,24 C880,17 1020,38 1200,28 L1200,0 L0,0 Z" fill="#fffdf6"/>
-    </svg>
-    <div>Organized around the ABA Advanced Cardiac Anesthesiology (ACA) content outline (November 2024).
-    New lectures are added as they're recorded. Questions or corrections are always welcome:
-    <a href="mailto:{esc(CONTACT_EMAIL)}">{esc(CONTACT_EMAIL)}</a>.</div>
-    <div class="disclaimer">For educational purposes only; not medical advice. Views are the author's own and do not
-    represent {esc(DEPT)} or any professional society. &copy; {year} {esc(AUTHOR)}. Updated {today}.</div>
-  </footer>
-
+lectures_inner = f'''<header class="banner">{SCENE}
+  <div class="banner-in"><h1>Lecture Library</h1><p class="sub">Video modules mapped to the ABA Advanced Cardiac Anesthesiology content outline.</p></div>
+</header>
+<div class="stats">
+  <div class="stat"><span class="n">{n_sections}</span><span class="l">ABA Sections</span></div>
+  <div class="stat"><span class="n">{n_topics}</span><span class="l">Outline Topics</span></div>
+  <div class="stat"><span class="n">{n_recorded}</span><span class="l">Lectures Recorded</span></div>
+  <div class="stat"><span class="n" id="stat-live">{n_live}</span><span class="l">Now Streaming</span></div>
 </div>
+<div class="body">
+  <p class="welcome">Available lectures are linked; the library grows as new talks are recorded. Search or filter to find a topic.</p>
+  <div class="toolbar">
+    <input type="search" id="search" placeholder="Search topics and lectures…" aria-label="Search">
+    <label><input type="checkbox" id="liveOnly"> Show available lectures only</label>
+  </div>
+  <nav class="secnav" aria-label="Jump to section">{nav}</nav>
+  {"".join(sections_html)}
+</div>'''
 
-<script>
-(function(){{
+SCRIPT_LECTURES = """<script>
+(function(){
   var items = Array.from(document.querySelectorAll('.item'));
   var sections = Array.from(document.querySelectorAll('section.aba'));
   var search = document.getElementById('search');
-  search.addEventListener('input', function(){{
+  if(search){ search.addEventListener('input', function(){
     var q = search.value.toLowerCase().trim();
-    items.forEach(function(it){{
-      it.style.display = (!q || it.textContent.toLowerCase().includes(q)) ? '' : 'none';
-    }});
-    sections.forEach(function(s){{
-      var any = Array.from(s.querySelectorAll('.item')).some(function(i){{return i.style.display!=='none';}});
+    items.forEach(function(it){ it.style.display = (!q || it.textContent.toLowerCase().includes(q)) ? '' : 'none'; });
+    sections.forEach(function(s){
+      var any = Array.from(s.querySelectorAll('.item')).some(function(i){ return i.style.display!=='none'; });
       s.style.display = any ? '' : 'none';
-    }});
-  }});
-  document.getElementById('liveOnly').addEventListener('change', function(e){{
-    document.body.classList.toggle('live-only', e.target.checked);
-  }});
-}})();
-</script>
-</body>
-</html>
-"""
+    });
+  }); }
+  var lo = document.getElementById('liveOnly');
+  if(lo){ lo.addEventListener('change', function(e){ document.body.classList.toggle('live-only', e.target.checked); }); }
+})();
+</script>"""
 
-out = HERE / "index.html"
-out.write_text(HTML, encoding="utf-8")
-print("Wrote", out, f"({len(HTML)} bytes)")
-print(f"sections={n_sections} topics={n_topics} recorded={n_recorded} streaming={n_live}")
+chron_inner = f'''<header class="banner">{SCENE}
+  <div class="banner-in"><h1>Cross-Clamp Chronicles</h1><p class="sub">A history podcast &amp; archive — cardiac surgery and anesthesia, and how it all came to be.</p></div>
+</header>
+<div class="body">
+  <div class="mascot-wrap">{build_commodore_mic()}<div class="mtext">“{esc(POD.get("blurb",""))}”</div></div>
+  {subscribe_html}
+  {"".join(render_episode(e) for e in EPISODES)}
+</div>'''
+
+(HERE / "index.html").write_text(
+    shell(BRAND, f"Cardiothoracic anesthesia lectures and a history podcast, from {AUTHOR}.", landing_inner, "home"),
+    encoding="utf-8")
+(HERE / "lectures.html").write_text(
+    shell("Lecture Library · " + BRAND, "Video lectures mapped to the ABA Advanced Cardiac Anesthesiology content outline.", lectures_inner, "lectures", SCRIPT_LECTURES),
+    encoding="utf-8")
+(HERE / "chronicles.html").write_text(
+    shell("The Chronicles · " + BRAND, POD.get("blurb", "A history podcast on cardiac surgery and anesthesia."), chron_inner, "chronicles"),
+    encoding="utf-8")
+
+print("Wrote index.html, lectures.html, chronicles.html")
+print(f"lectures: sections={n_sections} topics={n_topics} recorded={n_recorded} streaming={n_live}; episodes={n_entries}")

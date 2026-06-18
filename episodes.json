@@ -1,0 +1,61 @@
+{
+  "podcast": {
+    "name": "Cross-Clamp Chronicles",
+    "blurb": "Stories from the history of cardiac surgery and anesthesia — the people, the breakthroughs, and the hard-won lessons that shaped how we care for hearts today.",
+    "subscribe": {
+      "apple": "",
+      "spotify": "",
+      "youtube": "",
+      "rss": ""
+    }
+  },
+  "episodes": [
+    {
+      "type": "Article",
+      "label": "Pt 2",
+      "title": "Milestones in Cardiac Surgery, Part 2: Building on Their Shoulders (1958–1980)",
+      "date": "In progress",
+      "summary": "The two decades that turned cardiac surgery into a mature specialty — selective coronary angiography and bypass grafting, durable mechanical valves, the homograft and pulmonary autograft, orthotopic heart transplantation, and the first total artificial hearts — and the parallel birth of cardiac anesthesia as a recognizable subspecialty.",
+      "audio": "",
+      "video": "",
+      "article": "",
+      "notes": [
+        "Authors: E. A. Hessel II, J. C. Songster, J. Bryant, C. Jelly, R. Sladen.",
+        "Traces the work of Sones, Grüntzig, Favaloro, Loop, Starr, Ross, Shumway, Barnard, Kantrowitz, DeBakey, and Cooley.",
+        "Anesthesia milestones: Lowenstein's high-dose opioid technique, Kaplan's nitroglycerin and PA-catheter contributions, Wynands on perioperative ischemia, and the first cardiac anesthesia fellowship under William Lell (MGH, 1971)."
+      ],
+      "references": [
+        "Swan HJC, Ganz W, et al. Catheterization of the heart in man with use of a flow-directed balloon-tipped catheter. N Engl J Med. 1970.",
+        "Lowenstein E, et al. Cardiovascular response to large doses of intravenous morphine in man. N Engl J Med. 1969.",
+        "Favaloro RG. Saphenous vein autograft replacement of severe segmental coronary artery occlusion. Ann Thorac Surg. 1968."
+      ],
+      "status": "coming"
+    },
+    {
+      "type": "Article",
+      "label": "Pt 1",
+      "title": "Milestones in Cardiac Surgery, Part 1: Before the Pump",
+      "date": "Planned",
+      "summary": "The foundational era — Souttar and Cutler's early valve attempts, Gross and the ductus, Blalock & Taussig, Bigelow's hypothermia, Gibbon's heart–lung machine, and Lillehei's cross-circulation — when surgeons first dared to enter the heart.",
+      "audio": "",
+      "video": "",
+      "article": "",
+      "notes": [],
+      "references": [],
+      "status": "planned"
+    },
+    {
+      "type": "Episode",
+      "label": "01",
+      "title": "Welcome to the Chronicles",
+      "date": "Coming soon",
+      "summary": "What this project is, why the history matters to today's cardiac anesthesiologist, and where we'll sail next.",
+      "audio": "",
+      "video": "",
+      "article": "",
+      "notes": [],
+      "references": [],
+      "status": "coming"
+    }
+  ]
+}
