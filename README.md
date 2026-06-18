@@ -1,0 +1,107 @@
+# Adult Cardiac Anesthesiology — Open Lecture Library
+
+A public, professional website that mirrors your ABA ACA content outline. Every
+keyword/topic links straight to the matching YouTube lecture. The whole site is
+generated from one data file, so updates are: **upload to YouTube → paste the link → regenerate.**
+
+```
+website/
+├── curriculum.json   ← the single source of truth (outline + lectures + YouTube links)
+├── build_site.py     ← generator: curriculum.json → index.html
+├── index.html        ← the finished public site (this is what you deploy)
+└── README.md         ← this file
+```
+
+---
+
+## The recommended setup (why this shape)
+
+- **YouTube hosts the videos.** Free, reliable streaming, searchable, and a presence
+  you can point the SCA to. Don't self-host 29 MP4s.
+- **This website is the front door.** It's what you advertise. The ABA outline is the
+  navigation; each topic links to its lecture on YouTube. The site itself is just one
+  static HTML file — cheap and bulletproof to host.
+
+---
+
+## One-time launch
+
+### 1. Put the videos on YouTube
+- Create a channel (e.g. "Adult Cardiac Anesthesiology Lectures").
+- Make a **Playlist** per ABA section (A–L) or one master playlist — your call.
+- Upload each recording. Set visibility to **Public** (so SCA members can find them) or
+  **Unlisted** (viewable only via your site links). Public is better for discoverability.
+- Copy each video's watch URL (`https://www.youtube.com/watch?v=...`).
+
+You currently have **19 recorded lectures** ready to upload (plus more resident lectures
+on file). The site already shows them as "Recorded · posting soon" until you add links.
+
+### 2. Add the links
+Open `curriculum.json`, find each lecture by its title, and paste the URL into its
+`"youtube"` field:
+
+```json
+"Coagulation_Monitoring": {
+  "title": "Coagulation Monitoring & HIT",
+  "lecturer": "Bryant",
+  "youtube": "https://www.youtube.com/watch?v=XXXXXXXXX",   ← paste here
+  "status": "recorded"
+}
+```
+
+> Easiest path: just send me the list of "lecture name → YouTube URL" and I'll fill in
+> `curriculum.json` and regenerate for you.
+
+Also set `YOUTUBE_CHANNEL = "..."` near the top of `build_site.py` to your channel URL —
+that turns on the "Watch on YouTube" button in the header.
+
+### 3. Regenerate
+```bash
+cd website
+python3 build_site.py
+```
+This rewrites `index.html`. Any lecture with a YouTube link becomes a green **Watch**
+link everywhere it appears in the outline.
+
+### 4. Publish (GitHub Pages — free, custom domain, fully automatable)
+1. Create a free GitHub account and a new **public** repository, e.g. `cardiac-lectures`.
+2. Upload the contents of this `website/` folder to the repo (drag-and-drop in the
+   browser works, or `git push`).
+3. Repo **Settings → Pages → Build and deployment → Source: "Deploy from a branch"**,
+   pick `main` / root, Save.
+4. Your site goes live at `https://<username>.github.io/cardiac-lectures/`.
+5. (Optional) Add a custom domain like `cardiaclectures.org` under the same Pages settings
+   — buy the domain (~$12/yr) and point its DNS at GitHub.
+
+> Alternative, even simpler: [app.netlify.com/drop](https://app.netlify.com/drop) — drag
+> the `website` folder onto the page and it's live in seconds with a free URL. Custom
+> domains supported too. Good if you'd rather not touch git.
+
+---
+
+## Updating later (the recurring workflow)
+1. Record a lecture → upload to YouTube.
+2. Paste its URL into `curriculum.json` (or ask me to).
+3. `python3 build_site.py`
+4. Re-upload `index.html` (or `git push`). Done — the lecture is live.
+
+To **change the outline itself** (add a topic, edit wording), edit `curriculum.json`
+and regenerate. To change colors, fonts, or copy, edit `build_site.py`.
+
+---
+
+## What's in the site
+- Maroon academic header with your name and Vanderbilt affiliation.
+- A stats bar (sections, topics, recorded, now-streaming) that updates itself.
+- All 12 ABA sections with every sub-code as a searchable keyword.
+- Live search box + "show available lectures only" toggle.
+- Mobile-responsive, prints cleanly, no external dependencies or tracking.
+
+## Branding / promotion notes
+- Currently branded **personal / Vanderbilt** with an explicit disclaimer that it doesn't
+  represent VUMC or any society. Keep it this way unless the SCA formally agrees to
+  sponsor or endorse it — implying endorsement without it can cause problems.
+- To pitch to the SCA: share the live URL with the SCA education committee / newsletter,
+  post in the SCA member community, and link it from your YouTube channel's About page.
+- Before going fully public, a quick courtesy check with your VUMC department/comms about
+  using the Vanderbilt name on an external educational site is worthwhile.

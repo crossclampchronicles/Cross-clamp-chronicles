@@ -1,0 +1,1414 @@
+{
+  "sections": [
+    {
+      "letter": "A",
+      "title": "Foundations of Adult Cardiac Anesthesiology",
+      "meta": "Anatomy, embryology, electrophysiology, ventricular and circulatory physiology.",
+      "items": [
+        {
+          "code": "A.1.a",
+          "label": "Embryological development",
+          "detail": "Primitive heart structures, timing of development, fetal/newborn blood flow",
+          "gap": false,
+          "gap_note": "",
+          "lectures": [
+            "A_Foundations_of_Adult_Cardiac_Anesthesiology"
+          ]
+        },
+        {
+          "code": "A.1.b",
+          "label": "Cardiac anatomy",
+          "detail": "Chambers/valves, coronary circulation, great vessels, conduction system",
+          "gap": false,
+          "gap_note": "",
+          "lectures": [
+            "A_Foundations_of_Adult_Cardiac_Anesthesiology"
+          ]
+        },
+        {
+          "code": "A.1.c",
+          "label": "Thoracic anatomy",
+          "detail": "Lungs, chest wall, vascular structures",
+          "gap": false,
+          "gap_note": "",
+          "lectures": [
+            "A_Foundations_of_Adult_Cardiac_Anesthesiology"
+          ]
+        },
+        {
+          "code": "A.1.d",
+          "label": "Histology of the heart",
+          "detail": "",
+          "gap": false,
+          "gap_note": "",
+          "lectures": [
+            "A_Foundations_of_Adult_Cardiac_Anesthesiology"
+          ]
+        },
+        {
+          "code": "A.2.a",
+          "label": "Electrophysiology — ion channels, currents",
+          "detail": "",
+          "gap": false,
+          "gap_note": "",
+          "lectures": [
+            "A_Foundations_of_Adult_Cardiac_Anesthesiology"
+          ]
+        },
+        {
+          "code": "A.2.b",
+          "label": "Cardiac cycle — PV loops, ECG timing, valvular function",
+          "detail": "",
+          "gap": false,
+          "gap_note": "",
+          "lectures": [
+            "A_Foundations_of_Adult_Cardiac_Anesthesiology",
+            "Hemodynamic_Calculations"
+          ]
+        },
+        {
+          "code": "A.2.c",
+          "label": "Ventricular function",
+          "detail": "Systolic (contractility, O₂ balance, LV vs RV) and diastolic function",
+          "gap": false,
+          "gap_note": "",
+          "lectures": [
+            "Echo_LV_Function",
+            "Echo_RV_Function_PulmHTN",
+            "Diastology_Restrictive"
+          ]
+        },
+        {
+          "code": "A.2.d",
+          "label": "Regulation of circulation and blood volume",
+          "detail": "Arterial pressure, baroreceptors, venous return, vasomotor center, HPA axis",
+          "gap": false,
+          "gap_note": "",
+          "lectures": [
+            "A_Foundations_of_Adult_Cardiac_Anesthesiology"
+          ]
+        }
+      ]
+    },
+    {
+      "letter": "B",
+      "title": "Preoperative Evaluation of the Patient for Cardiac Surgery",
+      "meta": "Non-invasive workup, catheterization, oral medication management, optimization.",
+      "items": [
+        {
+          "code": "B.1.a-c",
+          "label": "Non-invasive evaluation — ECG, echo, stress testing, nuclear",
+          "detail": "",
+          "gap": false,
+          "gap_note": "",
+          "lectures": [
+            "Preop_Patient_Evaluation_Imaging"
+          ]
+        },
+        {
+          "code": "B.1.d",
+          "label": "Cardiovascular imaging — MRI & CT",
+          "detail": "",
+          "gap": false,
+          "gap_note": "",
+          "lectures": [
+            "Cardiac_Imaging_CT_MRI"
+          ]
+        },
+        {
+          "code": "B.2",
+          "label": "Cardiac catheterization — L/R-sided tracings, valvular pathology, shunts, angiography",
+          "detail": "",
+          "gap": false,
+          "gap_note": "",
+          "lectures": [
+            "RHC_LHC_CO_Calculation"
+          ]
+        },
+        {
+          "code": "B.3",
+          "label": "Oral medications — BB, ACEi, antidiabetics, antiarrhythmics, diuretics, statins, antiplatelets, anticoagulants, GDMT",
+          "detail": "",
+          "gap": false,
+          "gap_note": "",
+          "lectures": [
+            "Perioperative_Medication_Management",
+            "Hemodynamic_Medications"
+          ]
+        },
+        {
+          "code": "B.4",
+          "label": "Preoperative optimization — anemia / blood conservation / prehab",
+          "detail": "",
+          "gap": false,
+          "gap_note": "",
+          "lectures": [
+            "Blood_Conservation"
+          ]
+        }
+      ]
+    },
+    {
+      "letter": "C",
+      "title": "Intraoperative Monitoring of the Patient Undergoing Cardiac Surgery",
+      "meta": "ECG, arterial / CVP / PA monitoring, TEE, neuromonitoring, temperature, coagulation.",
+      "items": [
+        {
+          "code": "C.1-C.5",
+          "label": "ECG, arterial pressure, CVP, PA catheter, alternate CO measurement",
+          "detail": "",
+          "gap": false,
+          "gap_note": "",
+          "lectures": [
+            "Basic_Intraoperative_Monitoring",
+            "Advanced_Monitoring_Hypotension_Prediction"
+          ]
+        },
+        {
+          "code": "C.6.a-b",
+          "label": "TEE — contraindications, evaluation of myocardial function (EF, CO, strain)",
+          "detail": "",
+          "gap": false,
+          "gap_note": "",
+          "lectures": [
+            "TEE_Artifacts_Pitfalls",
+            "Comprehensive_TEE_Exam",
+            "Echo_LV_Function"
+          ]
+        },
+        {
+          "code": "C.6.c",
+          "label": "TEE — evaluation of valvular function",
+          "detail": "",
+          "gap": false,
+          "gap_note": "",
+          "lectures": [
+            "Mitral_Valve_Assessment_TEE",
+            "Aortic_Valve_TEE",
+            "Tricuspid_Pulmonic_TEE",
+            "3D_MV_LV_Assessment"
+          ]
+        },
+        {
+          "code": "C.6.d-e",
+          "label": "TEE — intracardiac masses, cannulas and devices",
+          "detail": "",
+          "gap": false,
+          "gap_note": "",
+          "lectures": [
+            "Neoplastic_Cardiac_Tumors",
+            "Heart_Transplant_TEE"
+          ]
+        },
+        {
+          "code": "C.7",
+          "label": "Neurophysiologic monitoring — cerebral & peripheral oximetry, SSEP/MEP",
+          "detail": "",
+          "gap": false,
+          "gap_note": "",
+          "lectures": [
+            "Neurophysiologic_Monitoring"
+          ]
+        },
+        {
+          "code": "C.8",
+          "label": "Temperature monitoring",
+          "detail": "",
+          "gap": false,
+          "gap_note": "",
+          "lectures": [
+            "Physiologic_Effects_CPB"
+          ]
+        },
+        {
+          "code": "C.9",
+          "label": "Coagulation monitoring — ACT, viscoelastic testing (TEG®, ROTEM®)",
+          "detail": "",
+          "gap": false,
+          "gap_note": "",
+          "lectures": [
+            "Coagulation_Monitoring"
+          ]
+        }
+      ]
+    },
+    {
+      "letter": "D",
+      "title": "Management of Cardiopulmonary Bypass (CPB)",
+      "meta": "Anticoagulation, the CPB circuit, temperature, physiologic disturbances, separation, complications, bleeding.",
+      "items": [
+        {
+          "code": "D.1.a-b",
+          "label": "Heparin pharmacology & altered heparin responsiveness",
+          "detail": "",
+          "gap": false,
+          "gap_note": "",
+          "lectures": [
+            "Coagulation_Monitoring"
+          ]
+        },
+        {
+          "code": "D.1.c",
+          "label": "Heparin-induced thrombocytopenia — diagnosis, management, alternatives",
+          "detail": "",
+          "gap": false,
+          "gap_note": "",
+          "lectures": [
+            "Coagulation_Monitoring"
+          ]
+        },
+        {
+          "code": "D.1.d",
+          "label": "Antifibrinolytic therapy",
+          "detail": "",
+          "gap": false,
+          "gap_note": "",
+          "lectures": [
+            "Blood_Conservation"
+          ]
+        },
+        {
+          "code": "D.2.a",
+          "label": "Cannulation — central, alternate sites, aortic cross-clamp, complications",
+          "detail": "",
+          "gap": false,
+          "gap_note": "",
+          "lectures": [
+            "Cardiac_Cannulation_Protection"
+          ]
+        },
+        {
+          "code": "D.2.b",
+          "label": "Cardioplegia — delivery, effects",
+          "detail": "",
+          "gap": false,
+          "gap_note": "",
+          "lectures": [
+            "Cardiac_Cannulation_Protection"
+          ]
+        },
+        {
+          "code": "D.2.c-d",
+          "label": "Flow and line pressures; CPB effects on PK/PD",
+          "detail": "",
+          "gap": false,
+          "gap_note": "",
+          "lectures": [
+            "Physiologic_Effects_CPB"
+          ]
+        },
+        {
+          "code": "D.3",
+          "label": "Temperature management — hypothermia, rewarming, inflow/outflow, alpha- vs pH-stat, cold agglutinins",
+          "detail": "",
+          "gap": false,
+          "gap_note": "",
+          "lectures": [
+            "Physiologic_Effects_CPB"
+          ]
+        },
+        {
+          "code": "D.4",
+          "label": "Physiological disturbances of CPB — resp, renal, heme, neuro, endocrine",
+          "detail": "",
+          "gap": false,
+          "gap_note": "",
+          "lectures": [
+            "Physiologic_Effects_CPB"
+          ]
+        },
+        {
+          "code": "D.5",
+          "label": "Separation from CPB — inotropes, vasopressors, vasodilators (IV & inhaled), pacing, protamine",
+          "detail": "",
+          "gap": false,
+          "gap_note": "",
+          "lectures": [
+            "Separating_From_Bypass"
+          ]
+        },
+        {
+          "code": "D.6",
+          "label": "Complications after CPB — myocardial stunning, vasoplegia, coagulopathy",
+          "detail": "",
+          "gap": false,
+          "gap_note": "",
+          "lectures": [
+            "Separating_From_Bypass",
+            "Postop_ICU_Care"
+          ]
+        },
+        {
+          "code": "D.7",
+          "label": "Treatment of bleeding — blood products, pharmacologic agents",
+          "detail": "",
+          "gap": false,
+          "gap_note": "",
+          "lectures": [
+            "Blood_Conservation"
+          ]
+        }
+      ]
+    },
+    {
+      "letter": "E",
+      "title": "Mechanical Circulatory Support",
+      "meta": "IABP, temporary VADs (percutaneous), durable LVADs, ECMO.",
+      "items": [
+        {
+          "code": "E.1",
+          "label": "Intra-aortic balloon pump — indications, placement, timing, complications",
+          "detail": "",
+          "gap": false,
+          "gap_note": "",
+          "lectures": [
+            "IABP"
+          ]
+        },
+        {
+          "code": "E.2",
+          "label": "Temporary ventricular assist devices — Impella®, TandemHeart®, TEE role",
+          "detail": "",
+          "gap": false,
+          "gap_note": "",
+          "lectures": [
+            "Mechanical_Circulatory_Support"
+          ]
+        },
+        {
+          "code": "E.3",
+          "label": "Durable VAD — LVAD placement, TEE, VAD parameters, complications",
+          "detail": "",
+          "gap": false,
+          "gap_note": "",
+          "lectures": [
+            "Mechanical_Circulatory_Support"
+          ]
+        },
+        {
+          "code": "E.4",
+          "label": "ECMO — VA, VV, anticoagulation, complications, weaning",
+          "detail": "",
+          "gap": false,
+          "gap_note": "",
+          "lectures": [
+            "ECMO"
+          ]
+        }
+      ]
+    },
+    {
+      "letter": "F",
+      "title": "Cardiac Diseases",
+      "meta": "Cardiomyopathy, heart failure, pericardial disease, ischemic heart disease, rare cardiac diseases.",
+      "items": [
+        {
+          "code": "F.1",
+          "label": "Cardiomyopathy — dilated, ischemic, HCM, restrictive, viral/peripartum; septal myectomy/ablation",
+          "detail": "",
+          "gap": false,
+          "gap_note": "",
+          "lectures": [
+            "Cardiomyopathy"
+          ]
+        },
+        {
+          "code": "F.2.a-c",
+          "label": "Chronic heart failure — HFrEF, HFpEF, medical/device management, CRT, prophylactic ICD",
+          "detail": "",
+          "gap": false,
+          "gap_note": "",
+          "lectures": [
+            "Heart_Failure_Basics",
+            "Advances_HF_Heart_Transplant",
+            "Right_Heart_Failure"
+          ]
+        },
+        {
+          "code": "F.2.d",
+          "label": "Surgical interventions — durable MCS, heart transplant, immunosuppression, graft dysfunction",
+          "detail": "",
+          "gap": false,
+          "gap_note": "",
+          "lectures": [
+            "Heart_Transplant",
+            "Early_Postop_HTx",
+            "Heart_Transplant_TEE"
+          ]
+        },
+        {
+          "code": "F.3.a",
+          "label": "Pericardial disease — tamponade (etiology, CXR, CVP/PAC, echo, anesthetic mgmt, pericardiocentesis, window)",
+          "detail": "",
+          "gap": false,
+          "gap_note": "",
+          "lectures": [
+            "Tamponade"
+          ]
+        },
+        {
+          "code": "F.3.b",
+          "label": "Constrictive pericarditis — pericardiectomy",
+          "detail": "",
+          "gap": false,
+          "gap_note": "",
+          "lectures": [
+            "Tamponade"
+          ]
+        },
+        {
+          "code": "F.4",
+          "label": "Ischemic heart disease — risk factors, O₂ balance, ACS, PCI, CABG (off-pump, MIDCAB, robotic), conduits",
+          "detail": "",
+          "gap": false,
+          "gap_note": "",
+          "lectures": [
+            "Ischemic_Heart_Disease"
+          ]
+        },
+        {
+          "code": "F.5.a",
+          "label": "Rare cardiac diseases — neoplastic (benign/malignant)",
+          "detail": "",
+          "gap": false,
+          "gap_note": "",
+          "lectures": [
+            "Neoplastic_Cardiac_Tumors"
+          ]
+        },
+        {
+          "code": "F.5.b-d",
+          "label": "Infiltrative, storage, endomyocardial diseases",
+          "detail": "",
+          "gap": false,
+          "gap_note": "",
+          "lectures": [
+            "Endocarditis_Infiltrative"
+          ]
+        },
+        {
+          "code": "F.5.e",
+          "label": "CTEPH and pulmonary thromboendarterectomy",
+          "detail": "",
+          "gap": false,
+          "gap_note": "",
+          "lectures": [
+            "Pulmonary_Hypertension_CTEPH",
+            "PE_Management_POCUS"
+          ]
+        }
+      ]
+    },
+    {
+      "letter": "G",
+      "title": "Valvular Heart Disease",
+      "meta": "AS, AR, MS, MR, TR, TS, prosthetic valves, endocarditis.",
+      "items": [
+        {
+          "code": "G.1",
+          "label": "Aortic stenosis — etiologies (subvalvular, valvular), assessment, TAVR vs SAVR, anesthetic mgmt",
+          "detail": "",
+          "gap": false,
+          "gap_note": "",
+          "lectures": [
+            "Management_AV_Pathology",
+            "Aortic_Valve_TEE"
+          ]
+        },
+        {
+          "code": "G.2",
+          "label": "Aortic regurgitation — etiologies, assessment, surgical timing, CPB considerations (LV venting, cardioplegia)",
+          "detail": "",
+          "gap": false,
+          "gap_note": "",
+          "lectures": [
+            "Management_AV_Pathology"
+          ]
+        },
+        {
+          "code": "G.3",
+          "label": "Mitral stenosis — rheumatic vs non-rheumatic, assessment, anesthetic mgmt",
+          "detail": "",
+          "gap": false,
+          "gap_note": "",
+          "lectures": [
+            "Mitral_Valvular_Heart_Disease",
+            "Mitral_Valve_Assessment_TEE"
+          ]
+        },
+        {
+          "code": "G.4",
+          "label": "Mitral regurgitation — primary vs secondary, Carpentier, acute vs chronic, repair vs replacement, MIS, percutaneous (TEER)",
+          "detail": "",
+          "gap": false,
+          "gap_note": "",
+          "lectures": [
+            "Mitral_Valvular_Heart_Disease",
+            "Structural_Mitral_Valve"
+          ]
+        },
+        {
+          "code": "G.5",
+          "label": "Tricuspid regurgitation — primary vs secondary, percutaneous & surgical mgmt",
+          "detail": "",
+          "gap": false,
+          "gap_note": "",
+          "lectures": [
+            "Tricuspid_Pulmonic_TEE",
+            "Structural_TV_Interventions"
+          ]
+        },
+        {
+          "code": "G.6",
+          "label": "Tricuspid stenosis — etiologies, assessment, surgical mgmt",
+          "detail": "",
+          "gap": false,
+          "gap_note": "",
+          "lectures": [
+            "Tricuspid_Pulmonic_TEE"
+          ]
+        },
+        {
+          "code": "G.7",
+          "label": "Prosthetic heart valves — echo evaluation, complications, paravalvular leak",
+          "detail": "",
+          "gap": false,
+          "gap_note": "",
+          "lectures": [
+            "Structural_Heart_LAAO_PVL_ASD"
+          ]
+        },
+        {
+          "code": "G.8",
+          "label": "Endocarditis — diagnosis, surgical treatment, complications",
+          "detail": "",
+          "gap": false,
+          "gap_note": "",
+          "lectures": [
+            "Endocarditis_Infiltrative"
+          ]
+        }
+      ]
+    },
+    {
+      "letter": "H",
+      "title": "Adult Congenital Heart Disease",
+      "meta": "General principles + ASD, VSD, coarctation, Ebstein, TOF, TGV, single ventricle / Fontan.",
+      "items": [
+        {
+          "code": "H.1.a-c, f",
+          "label": "General considerations — corrected/uncorrected, cyanotic/acyanotic, conduits, repeat sternotomy",
+          "detail": "",
+          "gap": false,
+          "gap_note": "",
+          "lectures": [
+            "Adult_Congenital_HD"
+          ]
+        },
+        {
+          "code": "H.1.d-e",
+          "label": "Pulmonary hypertension / Eisenmenger; Single ventricle / Fontan physiology",
+          "detail": "",
+          "gap": false,
+          "gap_note": "",
+          "lectures": [
+            "Single_Ventricle_Fontan"
+          ]
+        },
+        {
+          "code": "H.2",
+          "label": "Pulmonary valve disease — echo, structural interventions, surgical replacement",
+          "detail": "",
+          "gap": false,
+          "gap_note": "",
+          "lectures": [
+            "Tricuspid_Pulmonic_TEE"
+          ]
+        },
+        {
+          "code": "H.3.a-c",
+          "label": "ASD, VSD, aortic coarctation",
+          "detail": "",
+          "gap": false,
+          "gap_note": "",
+          "lectures": [
+            "Adult_Congenital_HD",
+            "Structural_Heart_LAAO_PVL_ASD"
+          ]
+        },
+        {
+          "code": "H.3.d-f",
+          "label": "Ebstein anomaly, Tetralogy of Fallot, Transposition of the great vessels",
+          "detail": "",
+          "gap": false,
+          "gap_note": "",
+          "lectures": [
+            "Adult_Congenital_HD"
+          ]
+        }
+      ]
+    },
+    {
+      "letter": "I",
+      "title": "Thoracic Aortic Disease",
+      "meta": "Acute aortic syndromes, ascending/arch aneurysms, descending aneurysms, spinal cord protection.",
+      "items": [
+        {
+          "code": "I.1",
+          "label": "Acute aortic syndromes — dissection, IMH, PAU, trauma; Stanford/DeBakey; circulatory arrest, cerebral protection",
+          "detail": "",
+          "gap": false,
+          "gap_note": "",
+          "lectures": [
+            "Acute_Aortic_Syndromes"
+          ]
+        },
+        {
+          "code": "I.2",
+          "label": "Ascending / arch aneurysms — risk factors, Crawford classification, surgical management",
+          "detail": "",
+          "gap": false,
+          "gap_note": "",
+          "lectures": [
+            "Thoracic_Vascular_Disease"
+          ]
+        },
+        {
+          "code": "I.3",
+          "label": "Descending aortic aneurysms — TEVAR, open repair, OLV, left heart bypass, spinal cord protection (SSEP/MEP, CSF drainage)",
+          "detail": "",
+          "gap": false,
+          "gap_note": "",
+          "lectures": [
+            "Thoracic_Vascular_Disease",
+            "Lung_Isolation_OLV"
+          ]
+        }
+      ]
+    },
+    {
+      "letter": "J",
+      "title": "Electrophysiology Procedures",
+      "meta": "Arrhythmia management, pacemakers, ICDs, ablations, LAAO, cardioversion, radiation safety.",
+      "items": [
+        {
+          "code": "J.1",
+          "label": "Advanced arrhythmia identification and management",
+          "detail": "",
+          "gap": false,
+          "gap_note": "",
+          "lectures": [
+            "EP_Dysrhythmias"
+          ]
+        },
+        {
+          "code": "J.2",
+          "label": "Pacemaker insertion — PPM/ICD, CRT, leadless, S-ICD, perioperative CIED mgmt, lead extractions",
+          "detail": "",
+          "gap": false,
+          "gap_note": "",
+          "lectures": [
+            "Pacemakers_ICDs"
+          ]
+        },
+        {
+          "code": "J.3",
+          "label": "Ablations — SVT, AF/flutter, convergent procedure, VT",
+          "detail": "",
+          "gap": false,
+          "gap_note": "",
+          "lectures": [
+            "EP_Procedures_ICD_Ablation"
+          ]
+        },
+        {
+          "code": "J.4",
+          "label": "Left atrial appendage occluder devices",
+          "detail": "",
+          "gap": false,
+          "gap_note": "",
+          "lectures": [
+            "Structural_Heart_LAAO_PVL_ASD",
+            "Cardioversion_LAAO"
+          ]
+        },
+        {
+          "code": "J.5",
+          "label": "Cardioversion — pharmacologic, electrical",
+          "detail": "",
+          "gap": false,
+          "gap_note": "",
+          "lectures": [
+            "Cardioversion_LAAO"
+          ]
+        },
+        {
+          "code": "J.6",
+          "label": "Radiation safety",
+          "detail": "",
+          "gap": true,
+          "gap_note": "No dedicated lecture identified — could be incorporated into EP Procedures or Pacemakers/ICDs.",
+          "lectures": []
+        }
+      ]
+    },
+    {
+      "letter": "K",
+      "title": "Postoperative Considerations",
+      "meta": "Pulmonary, cardiac, hematologic, pain, neurologic.",
+      "items": [
+        {
+          "code": "K.1",
+          "label": "Pulmonary — advanced vent modes, ARDS, TRALI, liberation from mechanical ventilation",
+          "detail": "",
+          "gap": false,
+          "gap_note": "",
+          "lectures": [
+            "Postop_Care_Vent_TRALI_ARDS"
+          ]
+        },
+        {
+          "code": "K.2",
+          "label": "Cardiac — arrhythmias, graft dysfunction, tamponade, LV/RV/biventricular failure, vasoplegia",
+          "detail": "",
+          "gap": false,
+          "gap_note": "",
+          "lectures": [
+            "Postop_ICU_Care",
+            "Early_Postop_HTx"
+          ]
+        },
+        {
+          "code": "K.3",
+          "label": "Hematologic — coagulopathy management, return to OR",
+          "detail": "",
+          "gap": false,
+          "gap_note": "",
+          "lectures": [
+            "Blood_Conservation"
+          ]
+        },
+        {
+          "code": "K.4",
+          "label": "Pain control — sedation, multimodal analgesia, regional anesthesia, chest wall nerve blocks (US anatomy)",
+          "detail": "",
+          "gap": false,
+          "gap_note": "",
+          "lectures": [
+            "Pain_Management",
+            "Regional_Cardiac"
+          ]
+        },
+        {
+          "code": "K.5.a",
+          "label": "Delayed emergence — stroke, seizure",
+          "detail": "",
+          "gap": false,
+          "gap_note": "",
+          "lectures": [
+            "Perioperative_CNS_Dysfunction"
+          ]
+        },
+        {
+          "code": "K.5.b-c",
+          "label": "Postoperative cognitive dysfunction; Delirium",
+          "detail": "",
+          "gap": false,
+          "gap_note": "",
+          "lectures": [
+            "Delirium_POCD"
+          ]
+        }
+      ]
+    },
+    {
+      "letter": "L",
+      "title": "Other Topics",
+      "meta": "Research methodology, practice management, QI/safety, DEI, healthcare disparities, ethics/medico-legal, wellness.",
+      "items": [
+        {
+          "code": "L.1",
+          "label": "Research methodology / statistical analysis — design, conduct, data interpretation",
+          "detail": "",
+          "gap": false,
+          "gap_note": "",
+          "lectures": [
+            "Research_QI_Patient_Safety"
+          ]
+        },
+        {
+          "code": "L.2",
+          "label": "Practice management — cost, OR staffing, population health, informatics, AI/ML, documentation/coding/billing",
+          "detail": "",
+          "gap": false,
+          "gap_note": "",
+          "lectures": [
+            "Practice_Management_Coding"
+          ]
+        },
+        {
+          "code": "L.3",
+          "label": "Quality improvement and patient safety — errors, human factors, crisis mgmt, QI design, performance assessment, change mgmt",
+          "detail": "",
+          "gap": false,
+          "gap_note": "",
+          "lectures": [
+            "Research_QI_Patient_Safety"
+          ]
+        },
+        {
+          "code": "L.4",
+          "label": "Diversity, Equity, and Inclusion — surgical outcomes, barriers, bias, interventions, DEI in workplace and academia",
+          "detail": "",
+          "gap": false,
+          "gap_note": "",
+          "lectures": [
+            "Healthcare_Disparities_DEI"
+          ]
+        },
+        {
+          "code": "L.5",
+          "label": "Healthcare disparities — SDOH, maternal, ICU",
+          "detail": "",
+          "gap": false,
+          "gap_note": "",
+          "lectures": [
+            "Healthcare_Disparities_DEI"
+          ]
+        },
+        {
+          "code": "L.6.a-e",
+          "label": "Ethics & medico-legal — professionalism, consent/autonomy/DNR, malpractice, HIPAA, certification, research ethics",
+          "detail": "",
+          "gap": false,
+          "gap_note": "",
+          "lectures": [
+            "Ethics_Medico_Legal"
+          ]
+        },
+        {
+          "code": "L.6.f",
+          "label": "Clinician wellness and self-care — burnout, sleep deprivation, disability adaptations, substance abuse",
+          "detail": "",
+          "gap": true,
+          "gap_note": "No dedicated lecture — per prior schedule edit, wellness/burnout content was replaced by Healthcare Disparities. Consider re-adding or merging into the Ethics lecture.",
+          "lectures": []
+        }
+      ]
+    }
+  ],
+  "lectures": {
+    "A_Foundations_of_Adult_Cardiac_Anesthesiology": {
+      "slug": "A_Foundations_of_Adult_Cardiac_Anesthesiology",
+      "title": "Foundations of Adult Cardiac Anesthesiology",
+      "lecturer": "Bryant",
+      "youtube": "",
+      "status": "recorded",
+      "recording_file": "A_Foundations_of_Adult_Cardiac_Anesthesiology - Repaired.mp4"
+    },
+    "Hemodynamic_Calculations": {
+      "slug": "Hemodynamic_Calculations",
+      "title": "Hemodynamic Calculations",
+      "lecturer": "Eid",
+      "youtube": "",
+      "status": "in_progress",
+      "recording_file": ""
+    },
+    "Echo_LV_Function": {
+      "slug": "Echo_LV_Function",
+      "title": "Echo — LV Function",
+      "lecturer": "Bryant",
+      "youtube": "",
+      "status": "recorded",
+      "recording_file": "Echo_LV_Systolic_Function_with_images.mp4"
+    },
+    "Echo_RV_Function_PulmHTN": {
+      "slug": "Echo_RV_Function_PulmHTN",
+      "title": "Echo — RV Function / Pulmonary HTN",
+      "lecturer": "",
+      "youtube": "",
+      "status": "planned",
+      "recording_file": ""
+    },
+    "Diastology_Restrictive": {
+      "slug": "Diastology_Restrictive",
+      "title": "Diastology / Restrictive Physiology",
+      "lecturer": "McIlroy",
+      "youtube": "",
+      "status": "in_progress",
+      "recording_file": ""
+    },
+    "Preop_Patient_Evaluation_Imaging": {
+      "slug": "Preop_Patient_Evaluation_Imaging",
+      "title": "Preop Patient Evaluation & Imaging",
+      "lecturer": "",
+      "youtube": "",
+      "status": "in_progress",
+      "recording_file": ""
+    },
+    "Cardiac_Imaging_CT_MRI": {
+      "slug": "Cardiac_Imaging_CT_MRI",
+      "title": "Cardiac Imaging (CT/MRI) in Cardiac Anesthesia",
+      "lecturer": "Bryant",
+      "youtube": "",
+      "status": "recorded",
+      "recording_file": "Cardiac_Imaging_CT_MRI.mp4"
+    },
+    "RHC_LHC_CO_Calculation": {
+      "slug": "RHC_LHC_CO_Calculation",
+      "title": "RHC / LHC / Cardiac Output Calculation",
+      "lecturer": "",
+      "youtube": "",
+      "status": "in_progress",
+      "recording_file": ""
+    },
+    "Perioperative_Medication_Management": {
+      "slug": "Perioperative_Medication_Management",
+      "title": "Perioperative Medication Management",
+      "lecturer": "BB, ACEi, DAPT, DOAC",
+      "youtube": "",
+      "status": "planned",
+      "recording_file": ""
+    },
+    "Hemodynamic_Medications": {
+      "slug": "Hemodynamic_Medications",
+      "title": "Hemodynamic Medications + Anesthetic Induction Agents",
+      "lecturer": "",
+      "youtube": "",
+      "status": "planned",
+      "recording_file": ""
+    },
+    "Blood_Conservation": {
+      "slug": "Blood_Conservation",
+      "title": "Blood Conservation",
+      "lecturer": "Neumann",
+      "youtube": "",
+      "status": "recorded",
+      "recording_file": "Blood Conservation resident lecture.mp4"
+    },
+    "Basic_Intraoperative_Monitoring": {
+      "slug": "Basic_Intraoperative_Monitoring",
+      "title": "Basic Intraoperative Monitoring",
+      "lecturer": "Bryant",
+      "youtube": "",
+      "status": "recorded",
+      "recording_file": "Monitoring Resident Lecture.mp4"
+    },
+    "Advanced_Monitoring_Hypotension_Prediction": {
+      "slug": "Advanced_Monitoring_Hypotension_Prediction",
+      "title": "Advanced Monitoring & Hypotension Prediction",
+      "lecturer": "Eid",
+      "youtube": "",
+      "status": "planned",
+      "recording_file": ""
+    },
+    "TEE_Artifacts_Pitfalls": {
+      "slug": "TEE_Artifacts_Pitfalls",
+      "title": "TEE Artifacts and Pitfalls",
+      "lecturer": "Deegan",
+      "youtube": "",
+      "status": "planned",
+      "recording_file": ""
+    },
+    "Comprehensive_TEE_Exam": {
+      "slug": "Comprehensive_TEE_Exam",
+      "title": "Comprehensive TEE Exam",
+      "lecturer": "Sileshi",
+      "youtube": "",
+      "status": "planned",
+      "recording_file": ""
+    },
+    "Mitral_Valve_Assessment_TEE": {
+      "slug": "Mitral_Valve_Assessment_TEE",
+      "title": "Mitral Valve Assessment TEE",
+      "lecturer": "Pretorius",
+      "youtube": "",
+      "status": "recorded",
+      "recording_file": "Mitral valve TEE Resident Lecture.mp4"
+    },
+    "Aortic_Valve_TEE": {
+      "slug": "Aortic_Valve_TEE",
+      "title": "Aortic Valve TEE",
+      "lecturer": "Bryant",
+      "youtube": "",
+      "status": "planned",
+      "recording_file": ""
+    },
+    "Tricuspid_Pulmonic_TEE": {
+      "slug": "Tricuspid_Pulmonic_TEE",
+      "title": "Tricuspid & Pulmonic Valvular Heart Disease TEE",
+      "lecturer": "",
+      "youtube": "",
+      "status": "recorded",
+      "recording_file": "Pulmonic valve disease Resident lecture.mp4"
+    },
+    "3D_MV_LV_Assessment": {
+      "slug": "3D_MV_LV_Assessment",
+      "title": "3D MV / LV Assessment",
+      "lecturer": "",
+      "youtube": "",
+      "status": "planned",
+      "recording_file": ""
+    },
+    "Neoplastic_Cardiac_Tumors": {
+      "slug": "Neoplastic_Cardiac_Tumors",
+      "title": "Neoplastic Disorders & Cardiac Tumors",
+      "lecturer": "Bryant",
+      "youtube": "",
+      "status": "in_progress",
+      "recording_file": ""
+    },
+    "Heart_Transplant_TEE": {
+      "slug": "Heart_Transplant_TEE",
+      "title": "Heart Transplant TEE",
+      "lecturer": "",
+      "youtube": "",
+      "status": "planned",
+      "recording_file": ""
+    },
+    "Neurophysiologic_Monitoring": {
+      "slug": "Neurophysiologic_Monitoring",
+      "title": "Neurophysiologic Monitoring",
+      "lecturer": "Cerebral Oximetry, SSEP/MEP",
+      "youtube": "",
+      "status": "recorded",
+      "recording_file": "Neuromonitoring and protection.mp4"
+    },
+    "Physiologic_Effects_CPB": {
+      "slug": "Physiologic_Effects_CPB",
+      "title": "Physiologic Effects of CPB / Temperature Management",
+      "lecturer": "",
+      "youtube": "",
+      "status": "planned",
+      "recording_file": ""
+    },
+    "Coagulation_Monitoring": {
+      "slug": "Coagulation_Monitoring",
+      "title": "Coagulation Monitoring & HIT",
+      "lecturer": "Bryant",
+      "youtube": "",
+      "status": "recorded",
+      "recording_file": "Coagulation_Monitoring.mp4"
+    },
+    "Cardiac_Cannulation_Protection": {
+      "slug": "Cardiac_Cannulation_Protection",
+      "title": "Cardiac Cannulation / Cardiac Protection",
+      "lecturer": "Quintana",
+      "youtube": "",
+      "status": "planned",
+      "recording_file": ""
+    },
+    "Separating_From_Bypass": {
+      "slug": "Separating_From_Bypass",
+      "title": "Separating from Bypass",
+      "lecturer": "Kellegrew",
+      "youtube": "",
+      "status": "recorded",
+      "recording_file": "weaning from bypass Resident Lecture.mp4"
+    },
+    "Postop_ICU_Care": {
+      "slug": "Postop_ICU_Care",
+      "title": "Post-Op ICU Care",
+      "lecturer": "",
+      "youtube": "",
+      "status": "planned",
+      "recording_file": ""
+    },
+    "IABP": {
+      "slug": "IABP",
+      "title": "IABP",
+      "lecturer": "Sileshi",
+      "youtube": "",
+      "status": "planned",
+      "recording_file": ""
+    },
+    "Mechanical_Circulatory_Support": {
+      "slug": "Mechanical_Circulatory_Support",
+      "title": "Mechanical Circulatory Support (overview)",
+      "lecturer": "",
+      "youtube": "",
+      "status": "planned",
+      "recording_file": ""
+    },
+    "ECMO": {
+      "slug": "ECMO",
+      "title": "ECMO",
+      "lecturer": "Adeje",
+      "youtube": "",
+      "status": "planned",
+      "recording_file": ""
+    },
+    "Cardiomyopathy": {
+      "slug": "Cardiomyopathy",
+      "title": "Cardiomyopathy",
+      "lecturer": "HCM / Dilated / Restrictive / Ischemic",
+      "youtube": "",
+      "status": "planned",
+      "recording_file": ""
+    },
+    "Heart_Failure_Basics": {
+      "slug": "Heart_Failure_Basics",
+      "title": "Heart Failure Basics + HFpEF",
+      "lecturer": "Rali",
+      "youtube": "",
+      "status": "planned",
+      "recording_file": ""
+    },
+    "Advances_HF_Heart_Transplant": {
+      "slug": "Advances_HF_Heart_Transplant",
+      "title": "Advances in HF Treatment and Heart Transplantation",
+      "lecturer": "Shah",
+      "youtube": "",
+      "status": "recorded",
+      "recording_file": "Advances in heart failure_transplant (Dr. Shah) Resident Lecture.mp4"
+    },
+    "Right_Heart_Failure": {
+      "slug": "Right_Heart_Failure",
+      "title": "Right Heart Failure",
+      "lecturer": "",
+      "youtube": "",
+      "status": "planned",
+      "recording_file": ""
+    },
+    "Heart_Transplant": {
+      "slug": "Heart_Transplant",
+      "title": "Heart Transplant",
+      "lecturer": "",
+      "youtube": "",
+      "status": "planned",
+      "recording_file": ""
+    },
+    "Early_Postop_HTx": {
+      "slug": "Early_Postop_HTx",
+      "title": "Early Postoperative Management of Heart Transplant",
+      "lecturer": "",
+      "youtube": "",
+      "status": "planned",
+      "recording_file": ""
+    },
+    "Tamponade": {
+      "slug": "Tamponade",
+      "title": "Tamponade & Pericardial Disease",
+      "lecturer": "Bryant",
+      "youtube": "",
+      "status": "planned",
+      "recording_file": ""
+    },
+    "Ischemic_Heart_Disease": {
+      "slug": "Ischemic_Heart_Disease",
+      "title": "Ischemic Heart Disease & Revascularization",
+      "lecturer": "",
+      "youtube": "",
+      "status": "planned",
+      "recording_file": ""
+    },
+    "Endocarditis_Infiltrative": {
+      "slug": "Endocarditis_Infiltrative",
+      "title": "Endocarditis & Rare/Infiltrative Cardiac Disease",
+      "lecturer": "Bryant",
+      "youtube": "",
+      "status": "recorded",
+      "recording_file": "Endocarditis_Infiltrative_Cardiomyopathies.mp4"
+    },
+    "Pulmonary_Hypertension_CTEPH": {
+      "slug": "Pulmonary_Hypertension_CTEPH",
+      "title": "Pulmonary Hypertension & CTEPH",
+      "lecturer": "",
+      "youtube": "",
+      "status": "planned",
+      "recording_file": ""
+    },
+    "PE_Management_POCUS": {
+      "slug": "PE_Management_POCUS",
+      "title": "PE Management & POCUS",
+      "lecturer": "Whyte",
+      "youtube": "",
+      "status": "recorded",
+      "recording_file": "PE (Whyte) Resident Lecture.mp4"
+    },
+    "Management_AV_Pathology": {
+      "slug": "Management_AV_Pathology",
+      "title": "Management of Aortic Valve Pathology",
+      "lecturer": "Bryant",
+      "youtube": "",
+      "status": "recorded",
+      "recording_file": "Aortic Valve Disease Resident Lecture.mp4"
+    },
+    "Mitral_Valvular_Heart_Disease": {
+      "slug": "Mitral_Valvular_Heart_Disease",
+      "title": "Mitral Valvular Heart Disease",
+      "lecturer": "",
+      "youtube": "",
+      "status": "recorded",
+      "recording_file": "mitral disease recording Resident Lecture.mp4"
+    },
+    "Structural_Mitral_Valve": {
+      "slug": "Structural_Mitral_Valve",
+      "title": "Structural Mitral Valve",
+      "lecturer": "Pretorius",
+      "youtube": "",
+      "status": "planned",
+      "recording_file": ""
+    },
+    "Structural_TV_Interventions": {
+      "slug": "Structural_TV_Interventions",
+      "title": "Structural Heart Tricuspid Valve Interventions",
+      "lecturer": "Pretorius",
+      "youtube": "",
+      "status": "planned",
+      "recording_file": ""
+    },
+    "Structural_Heart_LAAO_PVL_ASD": {
+      "slug": "Structural_Heart_LAAO_PVL_ASD",
+      "title": "Structural Heart",
+      "lecturer": "LAAO, PVL, ASD/PFO Closure",
+      "youtube": "",
+      "status": "planned",
+      "recording_file": ""
+    },
+    "Adult_Congenital_HD": {
+      "slug": "Adult_Congenital_HD",
+      "title": "Adult Congenital Heart Disease",
+      "lecturer": "Tapia",
+      "youtube": "",
+      "status": "planned",
+      "recording_file": ""
+    },
+    "Single_Ventricle_Fontan": {
+      "slug": "Single_Ventricle_Fontan",
+      "title": "Single Ventricle / Fontan / Eisenmenger Physiology",
+      "lecturer": "",
+      "youtube": "",
+      "status": "planned",
+      "recording_file": ""
+    },
+    "Acute_Aortic_Syndromes": {
+      "slug": "Acute_Aortic_Syndromes",
+      "title": "Acute Aortic Syndromes & Anesthetic Management",
+      "lecturer": "Bryant",
+      "youtube": "",
+      "status": "recorded",
+      "recording_file": "Acute_Aortic_Syndromes.mp4"
+    },
+    "Thoracic_Vascular_Disease": {
+      "slug": "Thoracic_Vascular_Disease",
+      "title": "Thoracic Vascular Disease — Aneurysm",
+      "lecturer": "Gelfand",
+      "youtube": "",
+      "status": "recorded",
+      "recording_file": "Thoracic Aorta (Gelfand).mp4"
+    },
+    "Lung_Isolation_OLV": {
+      "slug": "Lung_Isolation_OLV",
+      "title": "Lung Isolation / One-Lung Ventilation",
+      "lecturer": "Tapia-Ruano",
+      "youtube": "",
+      "status": "planned",
+      "recording_file": ""
+    },
+    "EP_Dysrhythmias": {
+      "slug": "EP_Dysrhythmias",
+      "title": "Electrophysiology / Perioperative Dysrhythmias",
+      "lecturer": "",
+      "youtube": "",
+      "status": "planned",
+      "recording_file": ""
+    },
+    "Pacemakers_ICDs": {
+      "slug": "Pacemakers_ICDs",
+      "title": "Pacemakers & ICDs",
+      "lecturer": "Sileshi",
+      "youtube": "",
+      "status": "planned",
+      "recording_file": ""
+    },
+    "EP_Procedures_ICD_Ablation": {
+      "slug": "EP_Procedures_ICD_Ablation",
+      "title": "EP Procedures: ICDs, Ablation, Laser Leads",
+      "lecturer": "Chen",
+      "youtube": "",
+      "status": "planned",
+      "recording_file": ""
+    },
+    "Cardioversion_LAAO": {
+      "slug": "Cardioversion_LAAO",
+      "title": "Cardioversion & LAAO Devices",
+      "lecturer": "Bryant",
+      "youtube": "",
+      "status": "in_progress",
+      "recording_file": ""
+    },
+    "Postop_Care_Vent_TRALI_ARDS": {
+      "slug": "Postop_Care_Vent_TRALI_ARDS",
+      "title": "Postop Care / Mechanical Ventilation / TRALI / ARDS",
+      "lecturer": "",
+      "youtube": "",
+      "status": "planned",
+      "recording_file": ""
+    },
+    "Pain_Management": {
+      "slug": "Pain_Management",
+      "title": "Pain Management",
+      "lecturer": "Neumann",
+      "youtube": "",
+      "status": "recorded",
+      "recording_file": "Pain control in ICU REsident Lecture.mp4"
+    },
+    "Regional_Cardiac": {
+      "slug": "Regional_Cardiac",
+      "title": "Regional Anesthesia for Cardiac Surgery",
+      "lecturer": "",
+      "youtube": "",
+      "status": "planned",
+      "recording_file": ""
+    },
+    "Perioperative_CNS_Dysfunction": {
+      "slug": "Perioperative_CNS_Dysfunction",
+      "title": "Perioperative CNS Dysfunction, Protection, Monitoring",
+      "lecturer": "",
+      "youtube": "",
+      "status": "recorded",
+      "recording_file": "Neuromonitoring and protection.mp4"
+    },
+    "Delirium_POCD": {
+      "slug": "Delirium_POCD",
+      "title": "Postoperative Delirium & POCD in Cardiac Surgery",
+      "lecturer": "Bryant",
+      "youtube": "",
+      "status": "in_progress",
+      "recording_file": ""
+    },
+    "Research_QI_Patient_Safety": {
+      "slug": "Research_QI_Patient_Safety",
+      "title": "Research Methodology / QI / Patient Safety",
+      "lecturer": "",
+      "youtube": "",
+      "status": "planned",
+      "recording_file": ""
+    },
+    "Practice_Management_Coding": {
+      "slug": "Practice_Management_Coding",
+      "title": "Practice Management, Coding & Career Topics",
+      "lecturer": "",
+      "youtube": "",
+      "status": "planned",
+      "recording_file": ""
+    },
+    "Healthcare_Disparities_DEI": {
+      "slug": "Healthcare_Disparities_DEI",
+      "title": "Healthcare Disparities & DEI in Cardiac Anesthesia",
+      "lecturer": "",
+      "youtube": "",
+      "status": "planned",
+      "recording_file": ""
+    },
+    "Ethics_Medico_Legal": {
+      "slug": "Ethics_Medico_Legal",
+      "title": "Ethics & Medico-legal Issues",
+      "lecturer": "",
+      "youtube": "",
+      "status": "planned",
+      "recording_file": ""
+    }
+  }
+}
