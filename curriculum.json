@@ -905,7 +905,7 @@
   "A_Foundations_of_Adult_Cardiac_Anesthesiology": {
    "slug": "A_Foundations_of_Adult_Cardiac_Anesthesiology",
    "title": "Foundations of Adult Cardiac Anesthesiology",
-   "lecturer": "Bryant",
+   "lecturer": "",
    "youtube": "https://www.youtube.com/watch?v=23bV261k35Q",
    "status": "recorded",
    "recording_file": "A_Foundations_of_Adult_Cardiac_Anesthesiology - Repaired.mp4",
@@ -914,7 +914,7 @@
   "Hemodynamic_Calculations": {
    "slug": "Hemodynamic_Calculations",
    "title": "Hemodynamic Calculations",
-   "lecturer": "Eid",
+   "lecturer": "",
    "youtube": "https://youtu.be/aYaxUrHS4u0",
    "status": "recorded",
    "recording_file": "",
@@ -923,7 +923,7 @@
   "Echo_LV_Function": {
    "slug": "Echo_LV_Function",
    "title": "Echo — LV Function",
-   "lecturer": "Bryant",
+   "lecturer": "",
    "youtube": "https://youtu.be/6Nl2glK7ngc",
    "status": "recorded",
    "recording_file": "Echo_LV_Systolic_Function_with_images.mp4",
@@ -941,7 +941,7 @@
   "Diastology_Restrictive": {
    "slug": "Diastology_Restrictive",
    "title": "Diastology / Restrictive Physiology",
-   "lecturer": "McIlroy",
+   "lecturer": "",
    "youtube": "https://youtu.be/6_8hFIhZOZk",
    "status": "recorded",
    "recording_file": "",
@@ -959,7 +959,7 @@
   "Cardiac_Imaging_CT_MRI": {
    "slug": "Cardiac_Imaging_CT_MRI",
    "title": "Cardiac Imaging (CT/MRI) in Cardiac Anesthesia",
-   "lecturer": "Bryant",
+   "lecturer": "",
    "youtube": "https://youtu.be/56xe0txWeLU",
    "status": "recorded",
    "recording_file": "Cardiac_Imaging_CT_MRI.mp4",
@@ -992,7 +992,7 @@
   "Blood_Conservation": {
    "slug": "Blood_Conservation",
    "title": "Blood Conservation",
-   "lecturer": "Neumann",
+   "lecturer": "",
    "youtube": "",
    "status": "recorded",
    "recording_file": "Blood Conservation resident lecture.mp4"
@@ -1000,7 +1000,7 @@
   "Basic_Intraoperative_Monitoring": {
    "slug": "Basic_Intraoperative_Monitoring",
    "title": "Basic Intraoperative Monitoring",
-   "lecturer": "Bryant",
+   "lecturer": "",
    "youtube": "",
    "status": "recorded",
    "recording_file": "Monitoring Resident Lecture.mp4"
@@ -1008,7 +1008,7 @@
   "Advanced_Monitoring_Hypotension_Prediction": {
    "slug": "Advanced_Monitoring_Hypotension_Prediction",
    "title": "Advanced Monitoring & Hypotension Prediction",
-   "lecturer": "Eid",
+   "lecturer": "",
    "youtube": "",
    "status": "planned",
    "recording_file": ""
@@ -1016,7 +1016,7 @@
   "TEE_Artifacts_Pitfalls": {
    "slug": "TEE_Artifacts_Pitfalls",
    "title": "TEE Artifacts and Pitfalls",
-   "lecturer": "Deegan",
+   "lecturer": "",
    "youtube": "",
    "status": "planned",
    "recording_file": ""
@@ -1024,7 +1024,7 @@
   "Comprehensive_TEE_Exam": {
    "slug": "Comprehensive_TEE_Exam",
    "title": "Comprehensive TEE Exam",
-   "lecturer": "Sileshi",
+   "lecturer": "",
    "youtube": "",
    "status": "planned",
    "recording_file": ""
@@ -1032,7 +1032,7 @@
   "Mitral_Valve_Assessment_TEE": {
    "slug": "Mitral_Valve_Assessment_TEE",
    "title": "Mitral Valve Assessment TEE",
-   "lecturer": "Pretorius",
+   "lecturer": "",
    "youtube": "",
    "status": "recorded",
    "recording_file": "Mitral valve TEE Resident Lecture.mp4"
@@ -1040,7 +1040,7 @@
   "Aortic_Valve_TEE": {
    "slug": "Aortic_Valve_TEE",
    "title": "Aortic Valve TEE",
-   "lecturer": "Bryant",
+   "lecturer": "",
    "youtube": "",
    "status": "planned",
    "recording_file": ""
@@ -1064,7 +1064,7 @@
   "Neoplastic_Cardiac_Tumors": {
    "slug": "Neoplastic_Cardiac_Tumors",
    "title": "Neoplastic Disorders & Cardiac Tumors",
-   "lecturer": "Bryant",
+   "lecturer": "",
    "youtube": "",
    "status": "in_progress",
    "recording_file": ""
@@ -1096,7 +1096,7 @@
   "Coagulation_Monitoring": {
    "slug": "Coagulation_Monitoring",
    "title": "Coagulation Monitoring & HIT",
-   "lecturer": "Bryant",
+   "lecturer": "",
    "youtube": "",
    "status": "recorded",
    "recording_file": "Coagulation_Monitoring.mp4"
@@ -1104,7 +1104,7 @@
   "Cardiac_Cannulation_Protection": {
    "slug": "Cardiac_Cannulation_Protection",
    "title": "Cardiac Cannulation / Cardiac Protection",
-   "lecturer": "Quintana",
+   "lecturer": "",
    "youtube": "",
    "status": "planned",
    "recording_file": ""
@@ -1112,7 +1112,7 @@
   "Separating_From_Bypass": {
    "slug": "Separating_From_Bypass",
    "title": "Separating from Bypass",
-   "lecturer": "Kellegrew",
+   "lecturer": "",
    "youtube": "",
    "status": "recorded",
    "recording_file": "weaning from bypass Resident Lecture.mp4"
@@ -1128,7 +1128,7 @@
   "IABP": {
    "slug": "IABP",
    "title": "IABP",
-   "lecturer": "Sileshi",
+   "lecturer": "",
    "youtube": "",
    "status": "planned",
    "recording_file": ""
@@ -1144,7 +1144,7 @@
   "ECMO": {
    "slug": "ECMO",
    "title": "ECMO",
-   "lecturer": "Adeje",
+   "lecturer": "",
    "youtube": "",
    "status": "planned",
    "recording_file": ""
@@ -1160,7 +1160,7 @@
   "Heart_Failure_Basics": {
    "slug": "Heart_Failure_Basics",
    "title": "Heart Failure Basics + HFpEF",
-   "lecturer": "Rali",
+   "lecturer": "",
    "youtube": "",
    "status": "planned",
    "recording_file": ""
@@ -1168,7 +1168,7 @@
   "Advances_HF_Heart_Transplant": {
    "slug": "Advances_HF_Heart_Transplant",
    "title": "Advances in HF Treatment and Heart Transplantation",
-   "lecturer": "Shah",
+   "lecturer": "",
    "youtube": "",
    "status": "recorded",
    "recording_file": "Advances in heart failure_transplant (Dr. Shah) Resident Lecture.mp4"
@@ -1200,7 +1200,7 @@
   "Tamponade": {
    "slug": "Tamponade",
    "title": "Tamponade & Pericardial Disease",
-   "lecturer": "Bryant",
+   "lecturer": "",
    "youtube": "",
    "status": "planned",
    "recording_file": ""
@@ -1216,7 +1216,7 @@
   "Endocarditis_Infiltrative": {
    "slug": "Endocarditis_Infiltrative",
    "title": "Endocarditis & Rare/Infiltrative Cardiac Disease",
-   "lecturer": "Bryant",
+   "lecturer": "",
    "youtube": "",
    "status": "recorded",
    "recording_file": "Endocarditis_Infiltrative_Cardiomyopathies.mp4"
@@ -1232,7 +1232,7 @@
   "PE_Management_POCUS": {
    "slug": "PE_Management_POCUS",
    "title": "PE Management & POCUS",
-   "lecturer": "Whyte",
+   "lecturer": "",
    "youtube": "",
    "status": "recorded",
    "recording_file": "PE (Whyte) Resident Lecture.mp4"
@@ -1240,7 +1240,7 @@
   "Management_AV_Pathology": {
    "slug": "Management_AV_Pathology",
    "title": "Management of Aortic Valve Pathology",
-   "lecturer": "Bryant",
+   "lecturer": "",
    "youtube": "",
    "status": "recorded",
    "recording_file": "Aortic Valve Disease Resident Lecture.mp4"
@@ -1256,7 +1256,7 @@
   "Structural_Mitral_Valve": {
    "slug": "Structural_Mitral_Valve",
    "title": "Structural Mitral Valve",
-   "lecturer": "Pretorius",
+   "lecturer": "",
    "youtube": "",
    "status": "planned",
    "recording_file": ""
@@ -1264,7 +1264,7 @@
   "Structural_TV_Interventions": {
    "slug": "Structural_TV_Interventions",
    "title": "Structural Heart Tricuspid Valve Interventions",
-   "lecturer": "Pretorius",
+   "lecturer": "",
    "youtube": "",
    "status": "planned",
    "recording_file": ""
@@ -1280,7 +1280,7 @@
   "Adult_Congenital_HD": {
    "slug": "Adult_Congenital_HD",
    "title": "Adult Congenital Heart Disease",
-   "lecturer": "Tapia",
+   "lecturer": "",
    "youtube": "",
    "status": "planned",
    "recording_file": ""
@@ -1296,7 +1296,7 @@
   "Acute_Aortic_Syndromes": {
    "slug": "Acute_Aortic_Syndromes",
    "title": "Acute Aortic Syndromes & Anesthetic Management",
-   "lecturer": "Bryant",
+   "lecturer": "",
    "youtube": "",
    "status": "recorded",
    "recording_file": "Acute_Aortic_Syndromes.mp4"
@@ -1304,7 +1304,7 @@
   "Thoracic_Vascular_Disease": {
    "slug": "Thoracic_Vascular_Disease",
    "title": "Thoracic Vascular Disease — Aneurysm",
-   "lecturer": "Gelfand",
+   "lecturer": "",
    "youtube": "",
    "status": "recorded",
    "recording_file": "Thoracic Aorta (Gelfand).mp4"
@@ -1312,7 +1312,7 @@
   "Lung_Isolation_OLV": {
    "slug": "Lung_Isolation_OLV",
    "title": "Lung Isolation / One-Lung Ventilation",
-   "lecturer": "Tapia-Ruano",
+   "lecturer": "",
    "youtube": "",
    "status": "planned",
    "recording_file": ""
@@ -1328,7 +1328,7 @@
   "Pacemakers_ICDs": {
    "slug": "Pacemakers_ICDs",
    "title": "Pacemakers & ICDs",
-   "lecturer": "Sileshi",
+   "lecturer": "",
    "youtube": "",
    "status": "planned",
    "recording_file": ""
@@ -1336,7 +1336,7 @@
   "EP_Procedures_ICD_Ablation": {
    "slug": "EP_Procedures_ICD_Ablation",
    "title": "EP Procedures: ICDs, Ablation, Laser Leads",
-   "lecturer": "Chen",
+   "lecturer": "",
    "youtube": "",
    "status": "planned",
    "recording_file": ""
@@ -1344,7 +1344,7 @@
   "Cardioversion_LAAO": {
    "slug": "Cardioversion_LAAO",
    "title": "Cardioversion & LAAO Devices",
-   "lecturer": "Bryant",
+   "lecturer": "",
    "youtube": "",
    "status": "in_progress",
    "recording_file": ""
@@ -1360,7 +1360,7 @@
   "Pain_Management": {
    "slug": "Pain_Management",
    "title": "Pain Management",
-   "lecturer": "Neumann",
+   "lecturer": "",
    "youtube": "",
    "status": "recorded",
    "recording_file": "Pain control in ICU REsident Lecture.mp4"
@@ -1384,7 +1384,7 @@
   "Delirium_POCD": {
    "slug": "Delirium_POCD",
    "title": "Postoperative Delirium & POCD in Cardiac Surgery",
-   "lecturer": "Bryant",
+   "lecturer": "",
    "youtube": "",
    "status": "in_progress",
    "recording_file": ""
@@ -1424,7 +1424,7 @@
   "Cardiovascular_Physiology": {
    "slug": "Cardiovascular_Physiology",
    "title": "Cardiovascular Physiology",
-   "lecturer": "Resident lecture",
+   "lecturer": "",
    "youtube": "https://youtu.be/75iuaFDAYSY",
    "status": "recorded",
    "recording_file": "CV physiology Resident Lecture.mp4",
