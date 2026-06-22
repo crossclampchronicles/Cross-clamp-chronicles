@@ -60,6 +60,59 @@ n_topics     = sum(len(s["items"]) for s in DATA["sections"])
 n_recorded   = sum(1 for l in lectures.values() if l.get("status") == "recorded")
 n_live       = sum(1 for l in lectures.values() if (l.get("youtube") or "").strip())
 
+# ----- "Now Streaming" thumbnail gallery -----
+THUMB_DIR = "thumbnails/"
+GALLERY_ORDER = [
+    "A_Foundations_of_Adult_Cardiac_Anesthesiology", "Cardiovascular_Physiology",
+    "Hemodynamic_Calculations", "Echo_LV_Function", "Echo_RV_Function_PulmHTN",
+    "Diastology_Restrictive", "Preop_Patient_Evaluation_Imaging", "Cardiac_Imaging_CT_MRI",
+]
+GALLERY_CSS = """<style>
+.gallery{margin:6px 0 30px;}
+.gallery .gh{font-family:var(--serif);font-weight:600;font-size:24px;color:#2a2722;margin:0 0 4px;}
+.gallery .gsub{font-size:14px;color:var(--muted);margin:0 0 16px;}
+.ggrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(232px,1fr));gap:18px;}
+.gcard{display:block;text-decoration:none;color:inherit;border-radius:14px;overflow:hidden;
+  background:var(--paper);border:1px solid var(--rule);box-shadow:0 6px 18px rgba(120,100,60,.10);
+  transition:transform .15s ease, box-shadow .15s ease;}
+.gcard:hover{transform:translateY(-3px);box-shadow:0 12px 26px rgba(120,100,60,.20);}
+.gthumb{position:relative;aspect-ratio:16/9;overflow:hidden;background:#e9e2d2;}
+.gthumb img{width:100%;height:100%;object-fit:cover;display:block;}
+.gplay{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:52px;height:52px;
+  border-radius:50%;background:rgba(192,57,43,.92);color:#fff;display:flex;align-items:center;
+  justify-content:center;font-size:21px;box-shadow:0 2px 12px rgba(0,0,0,.32);}
+.gmeta{padding:11px 13px 14px;}
+.gtitle{display:block;font-weight:700;font-size:14.5px;line-height:1.3;color:#2a2722;}
+.gby{display:block;font-size:12px;color:var(--muted);margin-top:3px;}
+.gmore{display:inline-block;margin-top:18px;font-weight:700;color:var(--gold-deep);text-decoration:none;}
+.gmore:hover{text-decoration:underline;}
+</style>"""
+
+def gallery_html(limit=None, heading="Now Streaming",
+                 sub="Lectures available to watch now — tap a card to play on YouTube.",
+                 more_link=None):
+    order = GALLERY_ORDER + [k for k in lectures if k not in GALLERY_ORDER]
+    seen, cards = set(), []
+    for slug in order:
+        lec = lectures.get(slug)
+        if not lec or slug in seen: continue
+        yt = (lec.get("youtube") or "").strip(); th = (lec.get("thumbnail") or "").strip()
+        if not (yt and th): continue
+        seen.add(slug)
+        by = f'<span class="gby">{esc(lec.get("lecturer",""))}</span>' if lec.get("lecturer") else ""
+        cards.append(
+            f'<a class="gcard" href="{esc(yt)}" target="_blank" rel="noopener">'
+            f'<div class="gthumb"><img src="{THUMB_DIR}{esc(th)}" alt="{esc(lec["title"])}" loading="lazy">'
+            f'<span class="gplay" aria-hidden="true">&#9654;</span></div>'
+            f'<div class="gmeta"><span class="gtitle">{esc(lec["title"])}</span>{by}</div></a>')
+        if limit and len(cards) >= limit: break
+    if not cards: return ""
+    more = f'<a class="gmore" href="{more_link}">Browse the full library &rarr;</a>' if more_link else ""
+    return (GALLERY_CSS +
+            f'<section class="gallery"><h2 class="gh">{esc(heading)}</h2>'
+            f'<p class="gsub">{esc(sub)}</p>'
+            f'<div class="ggrid">{"".join(cards)}</div>{more}</section>')
+
 # ----- sections html -----
 sections_html = []
 for i, sec in enumerate(DATA["sections"]):
@@ -667,6 +720,7 @@ landing_inner = f'''<header class="hero">
     <a class="door lib" href="lectures.html"><div class="art">{ICON_BOOK}</div><div class="txt"><h3>ABA Content Lecture Library</h3><p>Video modules covering the ABA Advanced Cardiac Anesthesiology content outline — built for fellows and anyone brushing up.</p><div class="go">Enter the library →</div><div class="meta">{n_recorded} recorded · {n_topics} topics</div></div></a>
     <a class="door pod" href="chronicles.html"><div class="art">{ICON_MIC}</div><div class="txt"><h3>The Chronicles</h3><p>A history podcast &amp; archive — episodes, articles, and films on the people and breakthroughs behind modern cardiac care.</p><div class="go">Open the Chronicles →</div><div class="meta">{n_entries} entries &amp; growing</div></div></a>
   </div>
+  {gallery_html(limit=4, heading="Latest Lectures", sub="Fresh video modules — tap to watch on YouTube.", more_link="lectures.html")}
 </div>'''
 
 lectures_inner = f'''<header class="banner">{SCENE}
@@ -680,6 +734,7 @@ lectures_inner = f'''<header class="banner">{SCENE}
 </div>
 <div class="body">
   <p class="welcome">Available lectures are linked; the library grows as new talks are recorded. Search or filter to find a topic.</p>
+  {gallery_html()}
   <div class="toolbar">
     <input type="search" id="search" placeholder="Search topics and lectures…" aria-label="Search">
     <label><input type="checkbox" id="liveOnly"> Show available lectures only</label>
