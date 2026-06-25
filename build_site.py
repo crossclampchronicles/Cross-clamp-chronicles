@@ -62,10 +62,21 @@ n_live       = sum(1 for l in lectures.values() if (l.get("youtube") or "").stri
 
 # ----- "Now Streaming" thumbnail gallery -----
 THUMB_DIR = "thumbnails/"
+# Newest first — most recently added lectures lead the gallery and the homepage strip.
+# When you add a new video, move its slug to the top of this list.
 GALLERY_ORDER = [
-    "A_Foundations_of_Adult_Cardiac_Anesthesiology", "Cardiovascular_Physiology",
-    "Hemodynamic_Calculations", "Echo_LV_Function", "Echo_RV_Function_PulmHTN",
-    "Diastology_Restrictive", "Preop_Patient_Evaluation_Imaging", "Cardiac_Imaging_CT_MRI",
+    # latest batch
+    "Temporary_Epicardial_Pacemakers", "Pain_Management", "Acute_Aortic_Syndromes",
+    "Mitral_Valvular_Heart_Disease", "Management_AV_Pathology", "Endocarditis_Infiltrative",
+    "Coagulation_Monitoring", "Neurophysiologic_Monitoring",
+    # monitoring / echo / meds batch
+    "Strain_Imaging", "Fluid_Responsiveness", "Advanced_Monitoring_Hypotension_Prediction",
+    "Basic_Intraoperative_Monitoring", "Hemodynamic_Medications",
+    "Perioperative_Medication_Management", "RHC_LHC_CO_Calculation",
+    # original set
+    "Cardiac_Imaging_CT_MRI", "Preop_Patient_Evaluation_Imaging", "Diastology_Restrictive",
+    "Echo_RV_Function_PulmHTN", "Echo_LV_Function", "Hemodynamic_Calculations",
+    "Cardiovascular_Physiology", "A_Foundations_of_Adult_Cardiac_Anesthesiology",
 ]
 GALLERY_CSS = """<style>
 .gallery{margin:6px 0 30px;}
@@ -383,7 +394,7 @@ CSS = """
   .hero h1,.hero .tagline,.hero .byline,.crest .crest-txt{{text-shadow:0 1px 8px rgba(255,253,246,.85),0 0 2px rgba(255,253,246,.7);}}
 
   /* ---------- stats ---------- */
-  .stats{{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;
+  .stats{{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;
     margin:26px 36px 4px;position:relative;z-index:3;}}
   .stat{{background:var(--paper);border:1px solid var(--rule);border-radius:18px;
     padding:18px 14px;text-align:center;box-shadow:0 8px 24px rgba(120,100,60,.10);}}
@@ -717,7 +728,7 @@ landing_inner = f'''<header class="hero">
 <div class="body">
   <p class="welcome">Welcome aboard. Choose your heading — the teaching modules, or stories from the history of cardiac surgery &amp; anesthesia.</p>
   <div class="doors">
-    <a class="door lib" href="lectures.html"><div class="art">{ICON_BOOK}</div><div class="txt"><h3>ABA Content Lecture Library</h3><p>Video modules covering the ABA Advanced Cardiac Anesthesiology content outline — built for fellows and anyone brushing up.</p><div class="go">Enter the library →</div><div class="meta">{n_recorded} recorded · {n_topics} topics</div></div></a>
+    <a class="door lib" href="lectures.html"><div class="art">{ICON_BOOK}</div><div class="txt"><h3>ABA Content Lecture Library</h3><p>Video modules covering the ABA Advanced Cardiac Anesthesiology content outline — built for fellows and anyone brushing up.</p><div class="go">Enter the library →</div><div class="meta">{n_live} available · {n_topics} topics</div></div></a>
     <a class="door pod" href="chronicles.html"><div class="art">{ICON_MIC}</div><div class="txt"><h3>The Chronicles</h3><p>A history podcast &amp; archive — episodes, articles, and films on the people and breakthroughs behind modern cardiac care.</p><div class="go">Open the Chronicles →</div><div class="meta">{n_entries} entries &amp; growing</div></div></a>
   </div>
   {gallery_html(limit=4, heading="Latest Lectures", sub="Fresh video modules — tap to watch on YouTube.", more_link="lectures.html")}
@@ -729,7 +740,6 @@ lectures_inner = f'''<header class="banner">{SCENE}
 <div class="stats">
   <div class="stat"><span class="n">{n_sections}</span><span class="l">ABA Sections</span></div>
   <div class="stat"><span class="n">{n_topics}</span><span class="l">Outline Topics</span></div>
-  <div class="stat"><span class="n">{n_recorded}</span><span class="l">Lectures Recorded</span></div>
   <div class="stat"><span class="n" id="stat-live">{n_live}</span><span class="l">Now Streaming</span></div>
 </div>
 <div class="body">
