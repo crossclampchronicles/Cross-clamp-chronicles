@@ -165,7 +165,8 @@
      "gap_note": "",
      "lectures": [
       "Basic_Intraoperative_Monitoring",
-      "Advanced_Monitoring_Hypotension_Prediction"
+      "Advanced_Monitoring_Hypotension_Prediction",
+      "Fluid_Responsiveness"
      ]
     },
     {
@@ -177,7 +178,8 @@
      "lectures": [
       "TEE_Artifacts_Pitfalls",
       "Comprehensive_TEE_Exam",
-      "Echo_LV_Function"
+      "Echo_LV_Function",
+      "Strain_Imaging"
      ]
     },
     {
@@ -712,7 +714,8 @@
      "gap": false,
      "gap_note": "",
      "lectures": [
-      "Pacemakers_ICDs"
+      "Pacemakers_ICDs",
+      "Temporary_Epicardial_Pacemakers"
      ]
     },
     {
@@ -969,25 +972,28 @@
    "slug": "RHC_LHC_CO_Calculation",
    "title": "RHC / LHC / Cardiac Output Calculation",
    "lecturer": "",
-   "youtube": "",
-   "status": "in_progress",
-   "recording_file": ""
+   "youtube": "https://youtu.be/DPNfKB_nqio",
+   "status": "recorded",
+   "recording_file": "",
+   "thumbnail": "rhc_lhc.jpg"
   },
   "Perioperative_Medication_Management": {
    "slug": "Perioperative_Medication_Management",
    "title": "Perioperative Medication Management",
    "lecturer": "BB, ACEi, DAPT, DOAC",
-   "youtube": "",
-   "status": "planned",
-   "recording_file": ""
+   "youtube": "https://youtu.be/DUgFF0pot9Y",
+   "status": "recorded",
+   "recording_file": "",
+   "thumbnail": "periop_meds.jpg"
   },
   "Hemodynamic_Medications": {
    "slug": "Hemodynamic_Medications",
    "title": "Hemodynamic Medications + Anesthetic Induction Agents",
    "lecturer": "",
-   "youtube": "",
-   "status": "planned",
-   "recording_file": ""
+   "youtube": "https://youtu.be/jFPYTsvDO_w",
+   "status": "recorded",
+   "recording_file": "",
+   "thumbnail": "hemodynamic_meds.jpg"
   },
   "Blood_Conservation": {
    "slug": "Blood_Conservation",
@@ -1001,17 +1007,19 @@
    "slug": "Basic_Intraoperative_Monitoring",
    "title": "Basic Intraoperative Monitoring",
    "lecturer": "",
-   "youtube": "",
+   "youtube": "https://youtu.be/XE4LwnY00xQ",
    "status": "recorded",
-   "recording_file": "Monitoring Resident Lecture.mp4"
+   "recording_file": "Monitoring Resident Lecture.mp4",
+   "thumbnail": "basic_monitoring.jpg"
   },
   "Advanced_Monitoring_Hypotension_Prediction": {
    "slug": "Advanced_Monitoring_Hypotension_Prediction",
    "title": "Advanced Monitoring & Hypotension Prediction",
    "lecturer": "",
-   "youtube": "",
-   "status": "planned",
-   "recording_file": ""
+   "youtube": "https://youtu.be/_FZemD7ADbw",
+   "status": "recorded",
+   "recording_file": "",
+   "thumbnail": "advanced_monitoring.jpg"
   },
   "TEE_Artifacts_Pitfalls": {
    "slug": "TEE_Artifacts_Pitfalls",
@@ -1081,9 +1089,10 @@
    "slug": "Neurophysiologic_Monitoring",
    "title": "Neurophysiologic Monitoring",
    "lecturer": "Cerebral Oximetry, SSEP/MEP",
-   "youtube": "",
+   "youtube": "https://youtu.be/eB8LeADze48",
    "status": "recorded",
-   "recording_file": "Neuromonitoring and protection.mp4"
+   "recording_file": "Neuromonitoring and protection.mp4",
+   "thumbnail": "neuromonitoring.jpg"
   },
   "Physiologic_Effects_CPB": {
    "slug": "Physiologic_Effects_CPB",
@@ -1097,9 +1106,10 @@
    "slug": "Coagulation_Monitoring",
    "title": "Coagulation Monitoring & HIT",
    "lecturer": "",
-   "youtube": "",
+   "youtube": "https://youtu.be/NMfpeNDP9j8",
    "status": "recorded",
-   "recording_file": "Coagulation_Monitoring.mp4"
+   "recording_file": "Coagulation_Monitoring.mp4",
+   "thumbnail": "coagulation.jpg"
   },
   "Cardiac_Cannulation_Protection": {
    "slug": "Cardiac_Cannulation_Protection",
@@ -1217,9 +1227,10 @@
    "slug": "Endocarditis_Infiltrative",
    "title": "Endocarditis & Rare/Infiltrative Cardiac Disease",
    "lecturer": "",
-   "youtube": "",
+   "youtube": "https://youtu.be/xP8zqudT_vg",
    "status": "recorded",
-   "recording_file": "Endocarditis_Infiltrative_Cardiomyopathies.mp4"
+   "recording_file": "Endocarditis_Infiltrative_Cardiomyopathies.mp4",
+   "thumbnail": "endocarditis.jpg"
   },
   "Pulmonary_Hypertension_CTEPH": {
    "slug": "Pulmonary_Hypertension_CTEPH",
@@ -1241,17 +1252,19 @@
    "slug": "Management_AV_Pathology",
    "title": "Management of Aortic Valve Pathology",
    "lecturer": "",
-   "youtube": "",
+   "youtube": "https://youtu.be/iy5m98gt5WU",
    "status": "recorded",
-   "recording_file": "Aortic Valve Disease Resident Lecture.mp4"
+   "recording_file": "Aortic Valve Disease Resident Lecture.mp4",
+   "thumbnail": "av_pathology.jpg"
   },
   "Mitral_Valvular_Heart_Disease": {
    "slug": "Mitral_Valvular_Heart_Disease",
    "title": "Mitral Valvular Heart Disease",
    "lecturer": "",
-   "youtube": "",
+   "youtube": "https://youtu.be/IlXT2fata8o",
    "status": "recorded",
-   "recording_file": "mitral disease recording Resident Lecture.mp4"
+   "recording_file": "mitral disease recording Resident Lecture.mp4",
+   "thumbnail": "mitral_disease.jpg"
   },
   "Structural_Mitral_Valve": {
    "slug": "Structural_Mitral_Valve",
@@ -1297,9 +1310,10 @@
    "slug": "Acute_Aortic_Syndromes",
    "title": "Acute Aortic Syndromes & Anesthetic Management",
    "lecturer": "",
-   "youtube": "",
+   "youtube": "https://youtu.be/oaoca695Sio",
    "status": "recorded",
-   "recording_file": "Acute_Aortic_Syndromes.mp4"
+   "recording_file": "Acute_Aortic_Syndromes.mp4",
+   "thumbnail": "aortic_syndromes.jpg"
   },
   "Thoracic_Vascular_Disease": {
    "slug": "Thoracic_Vascular_Disease",
@@ -1361,9 +1375,10 @@
    "slug": "Pain_Management",
    "title": "Pain Management",
    "lecturer": "",
-   "youtube": "",
+   "youtube": "https://youtu.be/bK-kO8nK2dA",
    "status": "recorded",
-   "recording_file": "Pain control in ICU REsident Lecture.mp4"
+   "recording_file": "Pain control in ICU REsident Lecture.mp4",
+   "thumbnail": "pain_management.jpg"
   },
   "Regional_Cardiac": {
    "slug": "Regional_Cardiac",
@@ -1429,6 +1444,33 @@
    "status": "recorded",
    "recording_file": "CV physiology Resident Lecture.mp4",
    "thumbnail": "cv_physiology.jpg"
+  },
+  "Fluid_Responsiveness": {
+   "slug": "Fluid_Responsiveness",
+   "title": "Fluid Responsiveness",
+   "lecturer": "",
+   "youtube": "https://youtu.be/bUeCvtuElkI",
+   "status": "recorded",
+   "recording_file": "",
+   "thumbnail": "fluid_responsiveness.jpg"
+  },
+  "Strain_Imaging": {
+   "slug": "Strain_Imaging",
+   "title": "Strain Imaging",
+   "lecturer": "",
+   "youtube": "https://youtu.be/5rl_VcUu42Q",
+   "status": "recorded",
+   "recording_file": "",
+   "thumbnail": "strain_imaging.jpg"
+  },
+  "Temporary_Epicardial_Pacemakers": {
+   "slug": "Temporary_Epicardial_Pacemakers",
+   "title": "Temporary Epicardial Pacemakers",
+   "lecturer": "",
+   "youtube": "https://youtu.be/Cc8794mUa9U",
+   "status": "recorded",
+   "recording_file": "",
+   "thumbnail": "epicardial_pacing.jpg"
   }
  }
 }
