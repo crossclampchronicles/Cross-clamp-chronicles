@@ -116,6 +116,31 @@
   .refs ul{margin:5px 0 0;padding-left:18px;}
   .nav-row{display:flex;justify-content:space-between;align-items:center;margin-top:20px;gap:12px;}
 
+  /* flag-for-review */
+  .qhead{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:12px;}
+  .qhead .chips{margin-bottom:0;}
+  .flagbtn{flex:none;font:inherit;font-size:12.5px;font-weight:700;cursor:pointer;
+    padding:6px 12px;border-radius:18px;border:1.5px solid var(--rule);background:#fffdf6;color:var(--muted);
+    display:inline-flex;align-items:center;gap:6px;transition:.12s;}
+  .flagbtn:hover{border-color:var(--dev);color:var(--dev);}
+  .flagbtn.on{background:var(--dev-bg);border-color:var(--dev);color:var(--dev);}
+  .flagsView{background:rgba(255,255,255,.7);border:1px solid var(--rule);border-radius:18px;
+    padding:24px 26px;box-shadow:0 8px 24px rgba(120,100,60,.08);}
+  .flagsView h2{font-family:var(--serif);font-weight:600;font-size:21px;margin:0 0 4px;color:#2f2b24;}
+  .flagsView .fsub{font-size:13px;color:var(--muted);margin:0 0 18px;}
+  .flag-item{border:1px solid var(--rule);border-radius:12px;padding:13px 16px;margin-bottom:11px;background:#fffdf6;}
+  .flag-item .fmeta{font-size:11px;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);font-weight:700;margin:0 0 5px;}
+  .flag-item .fq{font-size:14.5px;font-weight:700;color:#3a352c;margin:0 0 8px;line-height:1.45;}
+  .flag-item textarea{width:100%;font:inherit;font-size:13.5px;padding:9px 12px;border:1px solid var(--rule);
+    border-radius:10px;background:#fffdf6;resize:vertical;min-height:46px;color:var(--ink);}
+  .flag-item textarea:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px var(--gold-soft);}
+  .flag-item .frow{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:8px;}
+  .flag-item .unflag{font:inherit;font-size:12.5px;font-weight:700;color:var(--wrong);background:none;border:none;cursor:pointer;padding:0;}
+  .flag-item .saved{font-size:12px;color:var(--live);font-weight:700;opacity:0;transition:opacity .2s;}
+  .flag-item .saved.show{opacity:1;}
+  .flagsView .toolbar2{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px;}
+  .flagsView .empty{font-style:italic;color:var(--muted);}
+
   /* results */
   .results{text-align:center;background:rgba(255,255,255,.7);border:1px solid var(--rule);
     border-radius:18px;padding:36px 28px;box-shadow:0 8px 24px rgba(120,100,60,.08);}
@@ -186,8 +211,14 @@
         <label class="check"><input type="checkbox" id="shuffleChk" checked> Shuffle questions</label>
       </div>
       <p class="countnote" id="poolNote"></p>
-      <button class="btn btn-primary" id="startBtn">Begin quiz &rarr;</button>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;">
+        <button class="btn btn-primary" id="startBtn">Begin quiz &rarr;</button>
+        <button class="btn btn-ghost" id="flagsBtn">&#9873; Flagged for review (0)</button>
+      </div>
     </section>
+
+    <!-- FLAGGED REVIEW -->
+    <section class="hidden" id="flagsView"></section>
 
     <!-- QUIZ -->
     <section class="hidden" id="quiz">
@@ -225,6 +256,7 @@
       DATA = (j.questions||[]);
       buildLectureSelect();
       updatePoolNote();
+      updateFlagCount();
     })
     .catch(function(){ $('#loadErr').classList.remove('hidden'); $('#setup').classList.add('hidden'); });
 
@@ -250,6 +282,7 @@
     $('#poolNote').textContent = n + ' question' + (n===1?'':'s') + ' available in this selection.';
   }
   $('#lectureSel').addEventListener('change', updatePoolNote);
+  $('#flagsBtn').addEventListener('click', showFlags);
 
   $('#startBtn').addEventListener('click', function(){
     POOL = currentPool();
@@ -273,11 +306,15 @@
     }).join('');
     var refsHtml = (q.references&&q.references.length)
       ? '<div class="refs"><b>References</b><ul>'+q.references.map(function(r){return '<li>'+esc(r)+'</li>';}).join('')+'</ul></div>' : '';
+    var isFlagged = !!getFlags()[q.id];
     $('#qcard').innerHTML =
-      '<div class="chips">'
+      '<div class="qhead">'
+      + '<div class="chips">'
         + '<span class="chip chip-code">ABA '+esc(q.aba_code||'')+'</span>'
         + (q.topic?'<span class="chip chip-topic">'+esc(q.topic)+'</span>':'')
         + '<span class="chip chip-'+diff+'">'+diff+'</span>'
+      + '</div>'
+      + '<button class="flagbtn'+(isFlagged?' on':'')+'" id="flagBtn" title="Flag this question for later review">&#9873; <span id="flagLbl">'+(isFlagged?'Flagged':'Flag')+'</span></button>'
       + '</div>'
       + '<p class="stem">'+esc(q.stem)+'</p>'
       + '<div class="options">'+optsHtml+'</div>'
@@ -293,7 +330,76 @@
       b.addEventListener('click', function(){ choose(parseInt(b.getAttribute('data-i'),10)); });
     });
     var nb = $('#nextBtn'); if(nb){ nb.addEventListener('click', next); }
+    var fb = $('#flagBtn'); if(fb){ fb.addEventListener('click', function(){ toggleFlag(q); }); }
     updateProgress();
+  }
+
+  /* ---- flag-for-review (stored in browser localStorage) ---- */
+  function getFlags(){ try{ return JSON.parse(localStorage.getItem('ccq_flags')||'{}'); }catch(e){ return {}; } }
+  function setFlags(f){ try{ localStorage.setItem('ccq_flags', JSON.stringify(f)); }catch(e){} updateFlagCount(); }
+  function updateFlagCount(){ var n=Object.keys(getFlags()).length; var b=$('#flagsBtn'); if(b){ b.innerHTML='&#9873; Flagged for review ('+n+')'; } }
+  function toggleFlag(q){
+    var f=getFlags();
+    if(f[q.id]){ delete f[q.id]; }
+    else { f[q.id]={stem:q.stem, lecture:q.lecture_title, aba:q.aba_code, note:'', ts:Date.now()}; }
+    setFlags(f);
+    var on=!!f[q.id], btn=$('#flagBtn'), lbl=$('#flagLbl');
+    if(btn){ btn.classList.toggle('on', on); } if(lbl){ lbl.textContent=on?'Flagged':'Flag'; }
+  }
+
+  function showFlags(){
+    $('#setup').classList.add('hidden'); $('#quiz').classList.add('hidden'); $('#resultsWrap').classList.add('hidden');
+    var f=getFlags(), ids=Object.keys(f).sort(function(a,b){return f[b].ts-f[a].ts;});
+    var body;
+    if(!ids.length){
+      body='<p class="empty">No flagged questions yet. While taking a quiz, tap &#9873; Flag on any question you want to revisit or edit.</p>';
+    } else {
+      body=ids.map(function(id){
+        var x=f[id];
+        return '<div class="flag-item" data-id="'+esc(id)+'">'
+          + '<p class="fmeta">'+esc(x.lecture||'')+' · ABA '+esc(x.aba||'')+' · '+esc(id)+'</p>'
+          + '<p class="fq">'+esc(x.stem||'')+'</p>'
+          + '<textarea placeholder="Note for editing (what to fix)…">'+esc(x.note||'')+'</textarea>'
+          + '<div class="frow"><button class="unflag">Remove flag</button><span class="saved">Saved</span></div>'
+          + '</div>';
+      }).join('');
+    }
+    $('#flagsView').innerHTML =
+      '<div class="flagsView"><h2>Flagged for review</h2>'
+      + '<p class="fsub">Stored in this browser. Add a note on each, then export the list to act on your edits.</p>'
+      + body
+      + '<div class="toolbar2">'
+        + '<button class="btn btn-ghost" id="backBtn">&larr; Back</button>'
+        + (ids.length?'<button class="btn btn-primary" id="exportBtn">Download flags (JSON)</button>'
+          + '<button class="btn btn-ghost" id="copyBtn">Copy as text</button>'
+          + '<button class="btn btn-ghost" id="clearFlagsBtn">Clear all</button>':'')
+      + '</div></div>';
+    $('#flagsView').classList.remove('hidden');
+    // wire note autosave + remove
+    Array.prototype.forEach.call($('#flagsView').querySelectorAll('.flag-item'), function(el){
+      var id=el.getAttribute('data-id');
+      var ta=el.querySelector('textarea'), saved=el.querySelector('.saved');
+      if(ta){ ta.addEventListener('input', function(){ var ff=getFlags(); if(ff[id]){ ff[id].note=ta.value; setFlags(ff); saved.classList.add('show'); setTimeout(function(){saved.classList.remove('show');},900); } }); }
+      var rm=el.querySelector('.unflag');
+      if(rm){ rm.addEventListener('click', function(){ var ff=getFlags(); delete ff[id]; setFlags(ff); showFlags(); }); }
+    });
+    $('#backBtn').addEventListener('click', function(){ $('#flagsView').classList.add('hidden'); $('#setup').classList.remove('hidden'); });
+    var ex=$('#exportBtn'); if(ex){ ex.addEventListener('click', exportFlags); }
+    var cp=$('#copyBtn'); if(cp){ cp.addEventListener('click', copyFlags); }
+    var cl=$('#clearFlagsBtn'); if(cl){ cl.addEventListener('click', function(){ if(confirm('Clear all flagged questions?')){ setFlags({}); showFlags(); } }); }
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
+  function exportFlags(){
+    var f=getFlags();
+    var blob=new Blob([JSON.stringify(f,null,2)],{type:'application/json'});
+    var a=document.createElement('a'); a.href=URL.createObjectURL(blob);
+    a.download='qbank_flags.json'; a.click(); URL.revokeObjectURL(a.href);
+  }
+  function copyFlags(){
+    var f=getFlags(), ids=Object.keys(f);
+    var txt=ids.map(function(id){ var x=f[id]; return '['+id+'] '+x.lecture+' (ABA '+x.aba+')\n'+x.stem+(x.note?'\nNOTE: '+x.note:'')+'\n'; }).join('\n');
+    if(navigator.clipboard){ navigator.clipboard.writeText(txt).then(function(){ alert('Copied '+ids.length+' flagged question(s) to clipboard.'); }); }
+    else { prompt('Copy the flagged questions:', txt); }
   }
 
   function choose(i){
