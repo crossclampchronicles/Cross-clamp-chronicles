@@ -614,6 +614,7 @@ def topnav(active):
     return ('<nav class="topnav"><a class="brand" href="index.html">' + ANCHOR_SVG + esc(BRAND) + '</a>'
             '<div class="links">' + lk("index.html", "Home", "home")
             + lk("lectures.html", "ABA Content Lecture Library", "lectures")
+            + lk("qbank.html", "Question Bank", "qbank")
             + lk("chronicles.html", "The Chronicles", "chronicles") + '</div></nav>')
 
 FOOTER = (f'<footer>'

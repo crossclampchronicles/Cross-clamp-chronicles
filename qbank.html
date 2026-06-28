@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Question Bank · Cross-Clamp Chronicles</title>
+<meta name="description" content="Board-style question bank for adult cardiac anesthesiology, mapped to the ABA ACA content outline.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#faf3e2; --paper:#fffdf6; --ink:#33302a; --muted:#867c6d; --rule:#ece4d3;
+    --gold:#c9a227; --gold-deep:#a07f17; --gold-soft:#f2e7c2;
+    --sky-top:#cfe7ee; --sky-mid:#e6eede;
+    --live:#3c8a5b; --live-bg:#e5f2e4;
+    --wrong:#c0392b; --wrong-bg:#fde9e7;
+    --soon:#5a86b0; --soon-bg:#e9f1f8;
+    --dev:#b48319; --dev-bg:#faf0d6;
+    --serif:"Fraunces", Georgia, serif;
+    --sans:"Nunito Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;color:var(--ink);font-family:var(--sans);line-height:1.6;
+    background:
+      radial-gradient(1200px 500px at 85% -10%, #fbf1cf 0%, rgba(251,241,207,0) 60%),
+      radial-gradient(900px 500px at 0% 20%, #e7f0e0 0%, rgba(231,240,224,0) 55%),
+      var(--cream);}
+  a{color:inherit;}
+  .wrap{max-width:1020px;margin:0 auto;background:var(--paper);
+    box-shadow:0 0 60px rgba(120,100,60,.08);min-height:100vh;}
+
+  /* top nav (matches site) */
+  .topnav{position:sticky;top:0;z-index:30;display:flex;align-items:center;gap:16px;
+    padding:11px 24px;background:rgba(255,253,246,.93);backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--rule);}
+  .topnav .brand{display:flex;align-items:center;gap:9px;font-family:var(--serif);
+    font-weight:600;font-size:17px;color:#2f2b24;text-decoration:none;}
+  .topnav .brand .anchor{width:21px;height:21px;color:var(--gold-deep);}
+  .topnav .links{margin-left:auto;display:flex;gap:6px;flex-wrap:wrap;}
+  .topnav .links a{padding:7px 13px;border-radius:20px;text-decoration:none;font-size:13.5px;
+    font-weight:700;color:#5d5648;}
+  .topnav .links a:hover{background:var(--gold-soft);color:var(--gold-deep);}
+  .topnav .links a.active{background:var(--gold);color:#3a2f10;}
+
+  /* slim banner */
+  .banner{position:relative;overflow:hidden;height:172px;
+    background:linear-gradient(180deg,var(--sky-top) 0%,#dcebe0 55%,var(--sky-mid) 100%);}
+  .banner-in{position:relative;z-index:2;padding:26px 48px;max-width:560px;}
+  .banner h1{font-family:var(--serif);font-weight:600;font-size:clamp(22px,3.3vw,30px);margin:0;
+    line-height:1.08;color:#2a2722;text-shadow:0 1px 9px rgba(255,253,246,.95);}
+  .banner .sub{margin:8px 0 0;color:#4a443a;font-size:14.5px;max-width:46ch;
+    text-shadow:0 1px 7px rgba(255,253,246,.95);}
+
+  .body{padding:30px 48px 64px;}
+  .welcome{font-family:var(--serif);font-size:17px;font-style:italic;color:#5b5446;
+    border-left:3px solid var(--gold-soft);padding:2px 0 2px 18px;margin:4px 0 26px;max-width:720px;}
+
+  /* setup panel */
+  .setup{background:var(--paper);border:1px solid var(--rule);border-radius:18px;
+    padding:22px 24px;box-shadow:0 8px 24px rgba(120,100,60,.08);margin-bottom:18px;}
+  .setup h2{font-family:var(--serif);font-weight:600;font-size:20px;margin:0 0 14px;color:#2f2b24;}
+  .field{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;margin-bottom:14px;}
+  .field label{font-size:13px;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.6px;}
+  select{font:inherit;padding:9px 14px;border:1px solid var(--rule);border-radius:12px;background:#fffdf6;color:var(--ink);min-width:230px;}
+  select:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px var(--gold-soft);}
+  .check{display:inline-flex;align-items:center;gap:8px;font-size:14px;color:#4f4a40;text-transform:none;letter-spacing:0;font-weight:400;cursor:pointer;}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:28px;
+    font-size:15px;font-weight:700;text-decoration:none;border:1.5px solid transparent;cursor:pointer;
+    box-shadow:0 4px 14px rgba(120,95,30,.14);transition:transform .15s ease;}
+  .btn:hover{transform:translateY(-2px);}
+  .btn-primary{background:var(--gold);color:#3a2f10;border-color:var(--gold-deep);}
+  .btn-ghost{background:#fffdf6;color:var(--gold-deep);border-color:var(--gold-soft);}
+  .countnote{font-size:13px;color:var(--muted);margin-top:4px;}
+
+  /* progress */
+  .progress-wrap{display:flex;align-items:center;gap:14px;margin:6px 0 18px;}
+  .pbar{flex:1;height:9px;background:var(--gold-soft);border-radius:6px;overflow:hidden;}
+  .pbar > i{display:block;height:100%;width:0;background:var(--gold);transition:width .3s ease;}
+  .pmeta{font-size:13px;color:var(--muted);white-space:nowrap;font-weight:700;}
+
+  /* question card */
+  .qcard{background:rgba(255,255,255,.7);border:1px solid var(--rule);border-radius:18px;
+    padding:24px 26px;box-shadow:0 8px 24px rgba(120,100,60,.08);}
+  .chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px;}
+  .chip{font-size:10px;text-transform:uppercase;letter-spacing:.7px;font-weight:700;
+    padding:3px 10px;border-radius:20px;}
+  .chip-code{color:var(--gold-deep);background:var(--gold-soft);font-family:ui-monospace,Menlo,monospace;}
+  .chip-topic{color:var(--soon);background:var(--soon-bg);}
+  .chip-easy{color:var(--live);background:var(--live-bg);}
+  .chip-medium{color:var(--dev);background:var(--dev-bg);}
+  .chip-hard{color:var(--wrong);background:var(--wrong-bg);}
+  .stem{font-size:17.5px;font-weight:700;color:#2f2b24;margin:2px 0 18px;line-height:1.5;}
+  .options{display:flex;flex-direction:column;gap:11px;}
+  .opt{display:flex;gap:12px;align-items:flex-start;text-align:left;padding:14px 16px;border-radius:13px;
+    border:1.5px solid var(--rule);background:#fffdf6;font:inherit;font-size:15px;color:var(--ink);
+    cursor:pointer;transition:border-color .12s,background .12s;}
+  .opt:hover:not(:disabled){border-color:var(--gold);background:#fffaf0;}
+  .opt:disabled{cursor:default;}
+  .opt .key{flex:none;width:26px;height:26px;border-radius:50%;background:var(--gold-soft);
+    color:var(--gold-deep);font-weight:700;display:flex;align-items:center;justify-content:center;font-size:13px;}
+  .opt.correct{border-color:var(--live);background:var(--live-bg);}
+  .opt.correct .key{background:var(--live);color:#fff;}
+  .opt.chosen-wrong{border-color:var(--wrong);background:var(--wrong-bg);}
+  .opt.chosen-wrong .key{background:var(--wrong);color:#fff;}
+
+  .explain{margin-top:18px;border-top:1px dashed var(--rule);padding-top:16px;display:none;}
+  .explain.show{display:block;}
+  .verdict{font-weight:700;font-size:15px;margin:0 0 8px;}
+  .verdict.right{color:var(--live);}
+  .verdict.wrong{color:var(--wrong);}
+  .explain p.txt{margin:0 0 12px;font-size:14.5px;color:#4f4a40;}
+  .refs{font-size:12.5px;color:var(--muted);}
+  .refs b{color:#5d5648;text-transform:uppercase;letter-spacing:.5px;font-size:11px;}
+  .refs ul{margin:5px 0 0;padding-left:18px;}
+  .nav-row{display:flex;justify-content:space-between;align-items:center;margin-top:20px;gap:12px;}
+
+  /* results */
+  .results{text-align:center;background:rgba(255,255,255,.7);border:1px solid var(--rule);
+    border-radius:18px;padding:36px 28px;box-shadow:0 8px 24px rgba(120,100,60,.08);}
+  .results .score{font-family:var(--serif);font-size:52px;font-weight:600;color:var(--gold-deep);line-height:1;}
+  .results .slabel{font-size:13px;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin:6px 0 18px;}
+  .results h2{font-family:var(--serif);font-weight:600;font-size:24px;color:#2f2b24;margin:0 0 6px;}
+  .results .best{font-size:13px;color:var(--muted);margin:0 0 22px;}
+  .results .btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+  .review{margin-top:26px;text-align:left;}
+  .review h3{font-family:var(--serif);font-weight:600;font-size:18px;color:#2f2b24;margin:0 0 12px;}
+  .rev-item{border:1px solid var(--rule);border-radius:12px;padding:12px 16px;margin-bottom:10px;background:#fffdf6;}
+  .rev-item .rq{font-weight:700;font-size:14px;color:#3a352c;margin:0 0 4px;}
+  .rev-item .ra{font-size:13.5px;color:#4f4a40;margin:0;}
+  .rev-item .ra .ok{color:var(--live);font-weight:700;}
+
+  .hidden{display:none !important;}
+  .err{color:var(--wrong);font-weight:700;}
+
+  footer{margin-top:10px;padding:48px 48px 40px;color:#5d5648;font-size:13px;
+    background:linear-gradient(180deg,#fffdf6 0%,#eef3e8 100%);}
+  footer .disclaimer{margin-top:10px;font-style:italic;color:#7d7568;font-size:12px;}
+
+  @media (max-width:680px){
+    .body{padding:24px 18px 50px;} .banner-in{padding:22px 20px;} footer{padding:40px 20px 36px;}
+    .setup,.qcard,.results{padding:20px 16px;} select{min-width:0;width:100%;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav class="topnav">
+    <a class="brand" href="index.html">
+      <svg class="anchor" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="4" r="2"/><line x1="12" y1="6" x2="12" y2="22"/><line x1="7" y1="10" x2="17" y2="10"/><path d="M4 14 a8 8 0 0 0 16 0"/></svg>
+      Cross-Clamp Chronicles
+    </a>
+    <div class="links">
+      <a href="index.html">Home</a>
+      <a href="lectures.html">ABA Content Lecture Library</a>
+      <a href="qbank.html" class="active">Question Bank</a>
+      <a href="chronicles.html">The Chronicles</a>
+    </div>
+  </nav>
+
+  <header class="banner">
+    <div class="banner-in">
+      <h1>Question Bank</h1>
+      <p class="sub">Board-style questions with explanations, mapped to the ABA Advanced Cardiac Anesthesiology content outline.</p>
+    </div>
+  </header>
+
+  <div class="body">
+    <p class="welcome">Pick a lecture, choose how many questions, and work through single-best-answer items. Each answer reveals a full explanation and references.</p>
+
+    <!-- SETUP -->
+    <section class="setup" id="setup">
+      <h2>Start a quiz</h2>
+      <div class="field">
+        <label for="lectureSel">Lecture</label>
+        <select id="lectureSel"><option value="ALL">All lectures</option></select>
+      </div>
+      <div class="field">
+        <label for="countSel">Questions</label>
+        <select id="countSel">
+          <option value="5">5</option>
+          <option value="10" selected>10</option>
+          <option value="0">All available</option>
+        </select>
+        <label class="check"><input type="checkbox" id="shuffleChk" checked> Shuffle questions</label>
+      </div>
+      <p class="countnote" id="poolNote"></p>
+      <button class="btn btn-primary" id="startBtn">Begin quiz &rarr;</button>
+    </section>
+
+    <!-- QUIZ -->
+    <section class="hidden" id="quiz">
+      <div class="progress-wrap">
+        <div class="pbar"><i id="pbarFill"></i></div>
+        <span class="pmeta" id="pmeta">1 / 10 · Score 0</span>
+      </div>
+      <div class="qcard" id="qcard"></div>
+    </section>
+
+    <!-- RESULTS -->
+    <section class="hidden" id="resultsWrap"></section>
+
+    <p id="loadErr" class="err hidden">Could not load questions.json — make sure it sits next to this page (and that you are viewing over http, not a file:// path).</p>
+  </div>
+
+  <footer>
+    <div>Cross-Clamp Chronicles — cardiothoracic anesthesia education from John Bryant, MD, Vanderbilt University Medical Center.</div>
+    <div class="disclaimer">For educational purposes only; not medical advice and not affiliated with the ABA. Questions are study aids, not actual board items. &copy; 2026 John Bryant, MD.</div>
+  </footer>
+</div>
+
+<script>
+(function(){
+  var DATA = [], POOL = [], QUIZ = [], idx = 0, score = 0, answered = false, wrongList = [];
+  var $ = function(s){ return document.querySelector(s); };
+
+  function shuffle(a){ a = a.slice(); for(var i=a.length-1;i>0;i--){ var j=Math.floor(Math.random()*(i+1)); var t=a[i]; a[i]=a[j]; a[j]=t; } return a; }
+  function esc(s){ var d=document.createElement('div'); d.textContent=(s==null?'':s); return d.innerHTML; }
+  function bestKey(slug){ return 'ccq_best_'+slug; }
+
+  fetch('questions.json', {cache:'no-store'})
+    .then(function(r){ if(!r.ok) throw new Error('http '+r.status); return r.json(); })
+    .then(function(j){
+      DATA = (j.questions||[]);
+      buildLectureSelect();
+      updatePoolNote();
+    })
+    .catch(function(){ $('#loadErr').classList.remove('hidden'); $('#setup').classList.add('hidden'); });
+
+  function buildLectureSelect(){
+    var sel = $('#lectureSel');
+    var seen = {}, order = [];
+    DATA.forEach(function(q){ if(!seen[q.lecture_slug]){ seen[q.lecture_slug]=q.lecture_title||q.lecture_slug; order.push(q.lecture_slug); } });
+    order.forEach(function(slug){
+      var n = DATA.filter(function(q){ return q.lecture_slug===slug; }).length;
+      var o = document.createElement('option');
+      o.value = slug; o.textContent = seen[slug] + ' ('+n+')';
+      sel.appendChild(o);
+    });
+    if(order.length===1){ sel.value = order[0]; }
+  }
+
+  function currentPool(){
+    var lec = $('#lectureSel').value;
+    return DATA.filter(function(q){ return lec==='ALL' || q.lecture_slug===lec; });
+  }
+  function updatePoolNote(){
+    var n = currentPool().length;
+    $('#poolNote').textContent = n + ' question' + (n===1?'':'s') + ' available in this selection.';
+  }
+  $('#lectureSel').addEventListener('change', updatePoolNote);
+
+  $('#startBtn').addEventListener('click', function(){
+    POOL = currentPool();
+    if(!POOL.length){ return; }
+    var want = parseInt($('#countSel').value,10);
+    var list = $('#shuffleChk').checked ? shuffle(POOL) : POOL.slice();
+    QUIZ = (want===0) ? list : list.slice(0, Math.min(want, list.length));
+    idx = 0; score = 0; answered = false; wrongList = [];
+    $('#setup').classList.add('hidden');
+    $('#resultsWrap').classList.add('hidden');
+    $('#quiz').classList.remove('hidden');
+    renderQuestion();
+  });
+
+  function renderQuestion(){
+    answered = false;
+    var q = QUIZ[idx];
+    var diff = (q.difficulty||'medium').toLowerCase();
+    var optsHtml = q.options.map(function(opt, i){
+      return '<button class="opt" data-i="'+i+'"><span class="key">'+String.fromCharCode(65+i)+'</span><span>'+esc(opt)+'</span></button>';
+    }).join('');
+    var refsHtml = (q.references&&q.references.length)
+      ? '<div class="refs"><b>References</b><ul>'+q.references.map(function(r){return '<li>'+esc(r)+'</li>';}).join('')+'</ul></div>' : '';
+    $('#qcard').innerHTML =
+      '<div class="chips">'
+        + '<span class="chip chip-code">ABA '+esc(q.aba_code||'')+'</span>'
+        + (q.topic?'<span class="chip chip-topic">'+esc(q.topic)+'</span>':'')
+        + '<span class="chip chip-'+diff+'">'+diff+'</span>'
+      + '</div>'
+      + '<p class="stem">'+esc(q.stem)+'</p>'
+      + '<div class="options">'+optsHtml+'</div>'
+      + '<div class="explain" id="explain">'
+        + '<p class="verdict" id="verdict"></p>'
+        + '<p class="txt">'+esc(q.explanation||'')+'</p>'
+        + refsHtml
+        + '<div class="nav-row"><span></span>'
+          + '<button class="btn btn-primary" id="nextBtn">'+(idx===QUIZ.length-1?'See results &rarr;':'Next question &rarr;')+'</button>'
+        + '</div>'
+      + '</div>';
+    Array.prototype.forEach.call($('#qcard').querySelectorAll('.opt'), function(b){
+      b.addEventListener('click', function(){ choose(parseInt(b.getAttribute('data-i'),10)); });
+    });
+    var nb = $('#nextBtn'); if(nb){ nb.addEventListener('click', next); }
+    updateProgress();
+  }
+
+  function choose(i){
+    if(answered) return;
+    answered = true;
+    var q = QUIZ[idx];
+    var correct = q.answer_index;
+    var btns = $('#qcard').querySelectorAll('.opt');
+    Array.prototype.forEach.call(btns, function(b){
+      var bi = parseInt(b.getAttribute('data-i'),10);
+      b.disabled = true;
+      if(bi===correct) b.classList.add('correct');
+      if(bi===i && i!==correct) b.classList.add('chosen-wrong');
+    });
+    var v = $('#verdict');
+    if(i===correct){ score++; v.textContent='Correct.'; v.className='verdict right'; }
+    else { v.textContent='Not quite — correct answer: '+String.fromCharCode(65+correct)+'.'; v.className='verdict wrong';
+           wrongList.push({q:q, chosen:i}); }
+    $('#explain').classList.add('show');
+    updateProgress();
+  }
+
+  function updateProgress(){
+    var done = answered ? idx+1 : idx;
+    $('#pbarFill').style.width = ((idx+(answered?1:0))/QUIZ.length*100)+'%';
+    $('#pmeta').textContent = (idx+1)+' / '+QUIZ.length+' · Score '+score;
+  }
+
+  function next(){
+    if(idx < QUIZ.length-1){ idx++; renderQuestion(); }
+    else { showResults(); }
+  }
+
+  function showResults(){
+    $('#quiz').classList.add('hidden');
+    var pct = Math.round(score/QUIZ.length*100);
+    var lec = $('#lectureSel').value;
+    var bk = bestKey(lec), prevBest = parseInt(localStorage.getItem(bk)||'-1',10);
+    var isBest = pct>prevBest;
+    if(isBest){ try{ localStorage.setItem(bk, String(pct)); }catch(e){} }
+    var msg = pct>=80 ? 'Strong work.' : (pct>=60 ? 'Solid — a few to firm up.' : 'Worth another pass.');
+    var bestTxt = (prevBest>=0 || isBest) ? ('Best for this selection: '+Math.max(pct,prevBest<0?0:prevBest)+'%'+(isBest?' (new best!)':'')) : '';
+    var reviewHtml = '';
+    if(wrongList.length){
+      reviewHtml = '<div class="review"><h3>Review — missed questions</h3>'
+        + wrongList.map(function(w){
+            var c = w.q.answer_index;
+            return '<div class="rev-item"><p class="rq">'+esc(w.q.stem)+'</p>'
+              + '<p class="ra">Correct: <span class="ok">'+String.fromCharCode(65+c)+'. '+esc(w.q.options[c])+'</span></p></div>';
+          }).join('')
+        + '</div>';
+    } else {
+      reviewHtml = '<div class="review"><h3>Clean sweep — no missed questions.</h3></div>';
+    }
+    $('#resultsWrap').innerHTML =
+      '<div class="results">'
+        + '<div class="score">'+score+'/'+QUIZ.length+'</div>'
+        + '<div class="slabel">'+pct+'% correct</div>'
+        + '<h2>'+msg+'</h2>'
+        + (bestTxt?'<p class="best">'+bestTxt+'</p>':'')
+        + '<div class="btns">'
+          + '<button class="btn btn-primary" id="againBtn">Try again</button>'
+          + '<button class="btn btn-ghost" id="newBtn">Change selection</button>'
+        + '</div>'
+        + reviewHtml
+      + '</div>';
+    $('#resultsWrap').classList.remove('hidden');
+    $('#againBtn').addEventListener('click', function(){ $('#startBtn').click(); });
+    $('#newBtn').addEventListener('click', function(){
+      $('#resultsWrap').classList.add('hidden'); $('#setup').classList.remove('hidden');
+      window.scrollTo({top:0,behavior:'smooth'});
+    });
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
+})();
+</script>
+</body>
+</html>
