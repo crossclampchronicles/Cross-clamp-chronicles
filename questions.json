@@ -33,15 +33,15 @@
       "aba_code": "A.2.b",
       "topic": "Cardiac output — thermodilution",
       "difficulty": "medium",
-      "stem": "A thermodilution cardiac output is likely to be FALSELY ELEVATED in which of the following?",
+      "stem": "In a patient with severe tricuspid regurgitation, how does thermodilution most often misestimate cardiac output, and why?",
       "options": [
-        "Severe tricuspid regurgitation",
-        "A cold, hypothermic patient",
-        "Rapid administration of cold fluid through a CRRT circuit",
-        "Underestimation of oxygen consumption"
+        "It underestimates output, because regurgitant to-and-fro flow recirculates the indicator and produces a prolonged, low-amplitude curve",
+        "It overestimates output, because regurgitant flow washes the indicator out of the pulmonary artery faster",
+        "It is unaffected, because the thermistor sits downstream of the tricuspid valve",
+        "It overestimates output, because the injectate warms before reaching the thermistor"
       ],
       "answer_index": 0,
-      "explanation": "Thermodilution (Stewart–Hamilton) computes output inversely from the area under the thermistor temperature–time curve. Tricuspid regurgitation causes the cold indicator to recirculate, reducing the measured area and falsely raising the reported output. Intracardiac shunt and warm/slow injectate do the same. A cold patient or rapid cooling tends to falsely lower the value, and VO₂ underestimation is a Fick (not thermodilution) error.",
+      "explanation": "Thermodilution (Stewart–Hamilton) computes output inversely from the area under the thermistor temperature–time curve. In significant tricuspid regurgitation the cold indicator shuttles back and forth across the valve, giving a prolonged, low-amplitude curve with a long tail (a larger area under the curve) and violating the single-pass assumption — so the computed output is typically falsely LOW (underestimated). The direction is debated in the literature, but underestimation is the more commonly cited effect; either way the measurement is unreliable, and Fick is preferred in the regurgitant, low-output heart.",
       "references": [
         "Kern MJ, Sorajja P, Lim MJ. The Cardiac Catheterization Handbook. 7th ed. 2020."
       ]
@@ -111,9 +111,9 @@
       "lecture_slug": "Hemodynamic_Calculations",
       "lecture_title": "Hemodynamic Calculations",
       "aba_code": "A.2.b",
-      "topic": "Oxygen delivery",
+      "topic": "Oxygen delivery determinants",
       "difficulty": "easy",
-      "stem": "Oxygen delivery (DO₂) is determined primarily by cardiac output, hemoglobin, and arterial saturation. Which variable contributes the LEAST to total arterial oxygen content?",
+      "stem": "Oxygen delivery (DO₂ = cardiac output × arterial oxygen content) depends on cardiac output, hemoglobin, saturation, and dissolved oxygen. Under normal conditions, which of these contributes the LEAST to oxygen delivery?",
       "options": [
         "Cardiac output",
         "Hemoglobin concentration",
@@ -121,7 +121,7 @@
         "Dissolved oxygen (PaO₂)"
       ],
       "answer_index": 3,
-      "explanation": "CaO₂ = (1.34 × Hb × SaO₂) + (0.003 × PaO₂). The dissolved-oxygen term (0.003 × PaO₂) is tiny relative to the hemoglobin-bound oxygen, so PaO₂ contributes least. Oxygen delivery is driven by output, hemoglobin, and saturation — not by the partial pressure of dissolved oxygen.",
+      "explanation": "DO₂ = CO × [(1.34 × Hb × SaO₂) + (0.003 × PaO₂)] × 10. The dissolved-oxygen term (0.003 × PaO₂) is tiny next to hemoglobin-bound oxygen, so dissolved PaO₂ contributes least. Cardiac output, hemoglobin, and saturation are all major determinants of delivery.",
       "references": [
         "Baim DS, Grossman W. Cardiac Catheterization, Angiography, and Intervention. 8th ed. 2014."
       ]
@@ -182,7 +182,7 @@
         "Sinus rhythm"
       ],
       "answer_index": 1,
-      "explanation": "Hakki drops the Gorlin term HR × SEP × 44.3 because it approximates 1 at normal heart rates. At heart rates below ~65 or above ~100 bpm that term no longer equals one, so the simplification loses accuracy. Within a normal rate range it tracks Gorlin closely (r ≈ 0.96).",
+      "explanation": "Hakki drops the Gorlin term HR × SEP × 44.3 because it approximates 1 at normal heart rates. At markedly low or high heart rates (roughly below 65 or above 100 bpm) that term no longer approximates one, so the simplification loses accuracy. Within a normal rate range it tracks Gorlin closely (r ≈ 0.96).",
       "references": [
         "Hakki AH, et al. Circulation. 1981;63(5):1050–1055."
       ]
@@ -382,7 +382,7 @@
         "4.7 L/min/m2"
       ],
       "answer_index": 1,
-      "explanation": "LVOT area = pi x (1.0)^2 = 3.14 cm2; stroke volume = 3.14 x 20 = ~63 mL; cardiac output = 63 x 75 = ~4710 mL/min = ~4.7 L/min; cardiac index = 4.7 / 2.0 = ~2.4 L/min/m2. This falls within the normal range (2.5-4.0) at the low-normal end; values below 2.2 indicate low output.",
+      "explanation": "LVOT area = pi x (1.0)^2 = 3.14 cm2; stroke volume = 3.14 x 20 = ~63 mL; cardiac output = 63 x 75 = ~4710 mL/min = ~4.7 L/min; cardiac index = 4.7 / 2.0 = ~2.4 L/min/m2. That is just below the lower limit of normal (commonly cited as 2.5-4.0 L/min/m2); values below ~2.2 indicate frank low output.",
       "references": [
         "Lang RM et al. Recommendations for Cardiac Chamber Quantification by Echocardiography in Adults. JASE 2015;28(1):1-39."
       ]
@@ -602,7 +602,7 @@
         "Septal/lateral e', average E/e', LA volume index, and peak TR velocity"
       ],
       "answer_index": 3,
-      "explanation": "The four criteria are e' (septal less than 7 or lateral less than 10 cm/s), average E/e' greater than 14, LA volume index greater than 34 mL/m2, and peak TR velocity greater than 2.8 m/s. Two or fewer positive indicates normal function; three of four positive indicates dysfunction; exactly two is indeterminate.",
+      "explanation": "The four criteria are e' (septal less than 7 or lateral less than 10 cm/s), average E/e' greater than 14, LA volume index greater than 34 mL/m2, and peak TR velocity greater than 2.8 m/s. If fewer than half (0-1 of 4) are positive, diastolic function is normal; exactly half (2 of 4) is indeterminate; more than half (3-4 of 4) indicates diastolic dysfunction.",
       "references": [
         "Nagueh SF et al. Recommendations for the Evaluation of LV Diastolic Function by Echocardiography. JASE 2016;29(4):277-314."
       ]
@@ -1059,7 +1059,7 @@
         "Systole; aortic systolic pressure minus right atrial pressure",
         "Diastole; aortic diastolic pressure minus left ventricular end-diastolic pressure",
         "Systole; mean arterial pressure minus central venous pressure",
-        "Diastole; mean arterial pressure minus pulmonary capillary wedge pressure"
+        "Diastole; mean arterial pressure minus right atrial pressure"
       ],
       "answer_index": 1,
       "explanation": "The LV is perfused almost entirely in diastole because high systolic wall tension compresses intramural vessels; CPP_LV = aortic diastolic pressure minus LVEDP. Systolic and CVP-based formulas describe RV or systemic perfusion, not LV coronary perfusion.",
@@ -1282,7 +1282,7 @@
         "720 dyne·s·cm^-5"
       ],
       "answer_index": 1,
-      "explanation": "SVR = 80 x (80 - 8) / 4 = 80 x 72 / 4 = 80 x 18 = 1440 dyne·s·cm^-5, within the normal 800-1200 to mildly elevated range. The distractors result from omitting the factor of 80, omitting CVP, or arithmetic error.",
+      "explanation": "SVR = 80 x (80 - 8) / 4 = 80 x 72 / 4 = 80 x 18 = 1440 dyne·s·cm^-5, which is mildly above the normal range of 800-1200. The distractors result from omitting the factor of 80, omitting CVP, or arithmetic error.",
       "references": [
         "Kaplan's Cardiac Anesthesia, 8th ed."
       ]
@@ -1762,7 +1762,7 @@
         "It is invalidated by spontaneous breathing"
       ],
       "answer_index": 1,
-      "explanation": "PLR provides a reversible ~300 mL auto-bolus, and a >= 10% rise in stroke volume or VTI within about a minute identifies responders; it requires a real-time SV/VTI measure to interpret. A key advantage is that it remains valid in atrial fibrillation and spontaneous breathing.",
+      "explanation": "PLR provides a reversible auto-bolus of roughly 150-300 mL, and a >= 10% rise in stroke volume or VTI within about a minute identifies responders; it requires a real-time SV/VTI measure to interpret. A key advantage is that it remains valid in atrial fibrillation and spontaneous breathing.",
       "references": [
         "Monnet X, Marik P, Teboul JL. Intensive Care Med 2016;42:1935-1947"
       ]
@@ -1952,7 +1952,7 @@
       "lecture_slug": "Hemodynamic_Medications",
       "lecture_title": "Hemodynamic Medications + Anesthetic Induction Agents",
       "aba_code": "B.3",
-      "topic": "Phenylephrine bolus dosing",
+      "topic": "HCM/LVOT obstruction: agent choice",
       "difficulty": "medium",
       "stem": "A tachycardic patient with hypertrophic cardiomyopathy and dynamic LVOT obstruction develops hypotension after induction. Which agent and rationale is most appropriate?",
       "options": [
@@ -2004,7 +2004,7 @@
       "answer_index": 0,
       "explanation": "Methylene blue has MAOI-like activity, so combining it with serotonergic drugs (SSRIs, SNRIs, MAOIs) can precipitate serotonin syndrome; G6PD deficiency is the other key caution. Hypertension, beta-blockade, and mild CKD are not the principal contraindications to methylene blue.",
       "references": [
-        "Levin MA, et al. Methylene blue reduces mortality and morbidity in vasoplegic patients after cardiac surgery. Ann Thorac Surg. 2004;77(2):496-499."
+        "FDA Drug Safety Communication: Serious CNS reactions possible when methylene blue is given to patients taking serotonergic psychiatric medications. 2011."
       ]
     },
     {
@@ -2259,10 +2259,10 @@
         "Celite",
         "Kaolin",
         "Glass beads with no activator",
-        "Diatomaceous earth"
+        "Recalcified citrate with no particulate activator"
       ],
       "answer_index": 1,
-      "explanation": "Aprotinin falsely prolongs the celite (diatomaceous earth) ACT far more than the kaolin ACT, so kaolin (or an HMS heparin level) should be used in patients on aprotinin. Celite and diatomaceous earth are the same problematic activator, and a glass cartridge does not solve the aprotinin interference as reliably as kaolin.",
+      "explanation": "Aprotinin falsely prolongs the celite-activated ACT far more than the kaolin ACT, so kaolin (or an HMS heparin level) should be used in patients on aprotinin. A celite ACT overstates the heparin effect, an unactivated/recalcified test is too insensitive for CPB-level heparin, and a glass cartridge does not solve the aprotinin interference as reliably as kaolin.",
       "references": [
         "Shore-Lesserson L, et al. STS/SCA/AmSECT/SABM Guidelines: Anticoagulation During CPB. Ann Thorac Surg 2018;105:650."
       ]
@@ -2302,7 +2302,7 @@
         "Bivalirudin has no measurable effect on the ACT"
       ],
       "answer_index": 1,
-      "explanation": "Bivalirudin is cleared by proteolysis and renal elimination, so stagnant blood (cardiotomy reservoir, side pockets, suction lines) will clot; keeping flow through all circuit components is essential. There is no protamine reversal (clearance is the reversal), renal failure prolongs its half-life rather than contraindicating it in normal kidneys, and it does prolong the ACT, targeting greater than 2.5 times baseline.",
+      "explanation": "Bivalirudin is cleared by proteolysis and renal elimination, so stagnant blood (cardiotomy reservoir, side pockets, suction lines) will clot; keeping flow through all circuit components is essential. There is no protamine reversal (clearance is the reversal), renal failure prolongs its half-life rather than contraindicating it in normal kidneys, and it does prolong the ACT, targeting approximately 2.5 times baseline.",
       "references": [
         "Dyke CM, et al. Bivalirudin for CPB (CHOOSE-ON). Ann Thorac Surg 2007;84:836."
       ]
@@ -2899,7 +2899,7 @@
         "About 4 METs; usually no further cardiac testing is needed",
         "About 1 MET; further stress testing is mandatory",
         "About 10 METs; the patient should be deferred for cardiopulmonary exercise testing",
-        "About 2 METs; biomarkers are contraindicated"
+        "About 2 METs; coronary angiography is required before surgery"
       ],
       "answer_index": 0,
       "explanation": "Climbing a flight of stairs corresponds to roughly 4 METs, the pivot of the perioperative algorithm; functional capacity at or above 4 METs (or DASI > 34) usually means no further cardiac testing is required. It is below 4 METs or unknown capacity in an elevated-risk patient that triggers biomarkers and, rarely, stress testing.",
@@ -2982,7 +2982,7 @@
         "BNP < 250 pg/mL and NT-proBNP < 900 ng/L"
       ],
       "answer_index": 0,
-      "explanation": "A normal natriuretic peptide (BNP < 92, NT-proBNP < 300 ng/L) indicates low risk and can stop the workup. NT-proBNP/BNP carries a Class 2a recommendation for risk stratification in known CVD, age > 65, or > 45 with symptoms.",
+      "explanation": "A normal natriuretic peptide (BNP < 92 pg/mL, NT-proBNP < 300 ng/L) is a commonly cited low-risk cutoff. Preoperative NT-proBNP/BNP carries a Class 2a recommendation specifically for elevated-risk patients with poor or unknown functional capacity, and the optimal threshold is not firmly established.",
       "references": [
         "Thompson A, et al. 2024 AHA/ACC Perioperative Cardiovascular Management Guideline. Circulation. 2024;150(19):e351-e442."
       ]
@@ -3597,12 +3597,12 @@
       "stem": "A patient with asymptomatic severe AS and normal EF presents for hip surgery. Regarding neuraxial anesthesia, which statement is most accurate?",
       "options": [
         "Single-shot spinal is preferred because it avoids airway manipulation",
-        "Single-shot spinal is contraindicated due to abrupt sympathectomy and afterload drop",
+        "Single-shot spinal is best avoided (relatively contraindicated) due to abrupt sympathectomy and afterload drop",
         "Spinal and general anesthesia carry identical hemodynamic risk",
         "Neuraxial of any type is absolutely contraindicated"
       ],
       "answer_index": 1,
-      "explanation": "Single-shot spinal is contraindicated in severe AS because the sudden sympathectomy precipitously drops afterload, threatening coronary perfusion of the hypertrophied LV. A slowly titrated epidural or CSE with an arterial line and vasopressor is feasible in skilled hands.",
+      "explanation": "A single-shot spinal is best avoided in severe AS because the sudden sympathectomy can precipitously drop afterload, threatening coronary perfusion of the hypertrophied LV. A slowly titrated epidural or CSE with an arterial line and vasopressor is the safer neuraxial approach; neuraxial is not absolutely contraindicated.",
       "references": [
         "Thompson A et al. 2024 AHA/ACC perioperative cardiovascular guideline. JACC 2024;84:1869-1969."
       ]
@@ -3662,7 +3662,7 @@
         "Replace only if the diameter exceeds 6.0 cm"
       ],
       "answer_index": 1,
-      "explanation": "With a BAV, ascending aortic replacement is indicated at ≥5.0 cm, or at ≥4.5 cm when the patient is already undergoing aortic valve surgery. At 4.6 cm with concomitant SAVR, the aorta should be replaced rather than left behind.",
+      "explanation": "With a BAV, the isolated ascending aneurysm is replaced at ≥5.5 cm (or ≥5.0 cm at experienced aortic centers or with high-risk features), and at ≥4.5 cm when the patient is already undergoing aortic valve surgery. At 4.6 cm with concomitant SAVR, the aorta should be replaced rather than left behind.",
       "references": [
         "Isselbacher EM et al. 2022 ACC/AHA Aortic Disease Guideline. Circulation 2022;146:e334-e482."
       ]
@@ -3734,7 +3734,7 @@
       "aba_code": "G.3",
       "topic": "Severe MS grading",
       "difficulty": "medium",
-      "stem": "By 2020 ACC/AHA criteria, which mitral valve area defines severe (progressive to severe symptomatic) mitral stenosis?",
+      "stem": "By 2020 ACC/AHA criteria, which mitral valve area defines severe mitral stenosis?",
       "options": [
         "MVA ≤2.5 cm²",
         "MVA ≤2.0 cm²",
